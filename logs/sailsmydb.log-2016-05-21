@@ -1,0 +1,1980 @@
+[2016-05-21 10:35:20.452] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:35:20.458] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:35:21.084] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 10:35:21.084] [INFO] console - 
+[2016-05-21 10:35:21.091] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 10:35:21.092] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 10:35:21.093] [INFO] console - What would you like Sails to do?
+[2016-05-21 10:35:21.093] [INFO] console - 
+[2016-05-21 10:35:21.094] [INFO] console - 
+[2016-05-21 10:35:21.101] [INFO] console - 
+[2016-05-21 10:35:26.741] [INFO] console - 
+[2016-05-21 10:35:26.742] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 10:35:26.742] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 10:35:26.743] [INFO] console - 
+[2016-05-21 10:44:37.970] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 10:44:50.493] [WARN] tom.txt - mes tirages
+[2016-05-21 10:44:50.828] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 10:44:50.928] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 10:46:30.435] [WARN] tom.txt - mes tirages
+[2016-05-21 10:46:30.509] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 10:46:30.522] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 10:57:47.800] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:57:47.810] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:57:48.061] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 10:57:48.065] [INFO] console - 
+[2016-05-21 10:57:48.068] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 10:57:48.068] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 10:57:48.068] [INFO] console - What would you like Sails to do?
+[2016-05-21 10:57:48.068] [INFO] console - 
+[2016-05-21 10:57:48.071] [INFO] console - 
+[2016-05-21 10:57:48.071] [INFO] console - 
+[2016-05-21 10:57:49.312] [INFO] console - 
+[2016-05-21 10:57:49.313] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 10:57:49.313] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 10:57:49.313] [INFO] console - 
+[2016-05-21 10:58:04.213] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 10:58:11.423] [WARN] tom.txt - mes tirages
+[2016-05-21 10:58:11.647] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 10:58:11.765] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 10:59:00.526] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:59:00.531] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 10:59:00.735] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 10:59:00.736] [INFO] console - 
+[2016-05-21 10:59:00.738] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 10:59:00.738] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 10:59:00.738] [INFO] console - What would you like Sails to do?
+[2016-05-21 10:59:00.738] [INFO] console - 
+[2016-05-21 10:59:00.739] [INFO] console - 
+[2016-05-21 10:59:00.739] [INFO] console - 
+[2016-05-21 10:59:01.768] [INFO] console - 
+[2016-05-21 10:59:01.769] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 10:59:01.769] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 10:59:01.769] [INFO] console - 
+[2016-05-21 10:59:11.180] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 10:59:20.719] [WARN] tom.txt - mes tirages
+[2016-05-21 10:59:20.892] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 10:59:20.951] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:05:29.921] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:05:36.503] [WARN] tom.txt - mes tirages
+[2016-05-21 11:05:36.600] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:05:36.625] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:20:15.068] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:20:15.077] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:20:15.282] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:20:15.283] [INFO] console - 
+[2016-05-21 11:20:15.285] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:20:15.285] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:20:15.285] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:20:15.285] [INFO] console - 
+[2016-05-21 11:20:15.286] [INFO] console - 
+[2016-05-21 11:20:15.286] [INFO] console - 
+[2016-05-21 11:20:16.269] [INFO] console - 
+[2016-05-21 11:20:16.274] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:20:16.274] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:20:16.275] [INFO] console - 
+[2016-05-21 11:20:20.457] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:20:24.065] [WARN] tom.txt - mes tirages
+[2016-05-21 11:20:24.302] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:20:24.374] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:21:35.407] [WARN] tom.txt - mes tirages
+[2016-05-21 11:21:35.500] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:21:35.510] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:25:20.057] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:25:20.064] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:25:20.160] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:25:20.160] [INFO] console - 
+[2016-05-21 11:25:20.162] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:25:20.163] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:25:20.163] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:25:20.163] [INFO] console - 
+[2016-05-21 11:25:20.163] [INFO] console - 
+[2016-05-21 11:25:20.163] [INFO] console - 
+[2016-05-21 11:25:21.541] [INFO] console - 
+[2016-05-21 11:25:21.542] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:25:21.543] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:25:21.543] [INFO] console - 
+[2016-05-21 11:25:35.394] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:25:43.592] [WARN] tom.txt - mes tirages
+[2016-05-21 11:25:43.812] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:25:43.894] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:32:42.947] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:32:42.952] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:32:43.110] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:32:43.111] [INFO] console - 
+[2016-05-21 11:32:43.113] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:32:43.113] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:32:43.113] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:32:43.114] [INFO] console - 
+[2016-05-21 11:32:43.114] [INFO] console - 
+[2016-05-21 11:32:43.114] [INFO] console - 
+[2016-05-21 11:32:43.870] [INFO] console - 
+[2016-05-21 11:32:43.871] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:32:43.871] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:32:43.871] [INFO] console - 
+[2016-05-21 11:32:48.251] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:32:51.301] [WARN] tom.txt - mes tirages
+[2016-05-21 11:32:51.471] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:32:51.535] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:38:55.428] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:38:55.441] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:38:55.662] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:38:55.663] [INFO] console - 
+[2016-05-21 11:38:55.665] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:38:55.665] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:38:55.666] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:38:55.666] [INFO] console - 
+[2016-05-21 11:38:55.666] [INFO] console - 
+[2016-05-21 11:38:55.666] [INFO] console - 
+[2016-05-21 11:38:56.412] [INFO] console - 
+[2016-05-21 11:38:56.413] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:38:56.413] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:38:56.413] [INFO] console - 
+[2016-05-21 11:39:05.452] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:39:07.901] [WARN] tom.txt - mes tirages
+[2016-05-21 11:39:08.209] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:39:08.252] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:48:38.627] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:48:38.645] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:48:38.832] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:48:38.835] [INFO] console - 
+[2016-05-21 11:48:38.837] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:48:38.843] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:48:38.843] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:48:38.843] [INFO] console - 
+[2016-05-21 11:48:38.844] [INFO] console - 
+[2016-05-21 11:48:38.844] [INFO] console - 
+[2016-05-21 11:48:39.609] [INFO] console - 
+[2016-05-21 11:48:39.610] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:48:39.610] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:48:39.610] [INFO] console - 
+[2016-05-21 11:53:56.162] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:54:00.154] [WARN] tom.txt - mes tirages
+[2016-05-21 11:54:00.304] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:54:00.358] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 11:57:51.117] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:57:51.123] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 11:57:51.250] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 11:57:51.250] [INFO] console - 
+[2016-05-21 11:57:51.253] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 11:57:51.253] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 11:57:51.253] [INFO] console - What would you like Sails to do?
+[2016-05-21 11:57:51.253] [INFO] console - 
+[2016-05-21 11:57:51.254] [INFO] console - 
+[2016-05-21 11:57:51.254] [INFO] console - 
+[2016-05-21 11:57:52.838] [INFO] console - 
+[2016-05-21 11:57:52.846] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 11:57:52.847] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 11:57:52.848] [INFO] console - 
+[2016-05-21 11:58:02.079] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 11:58:17.086] [WARN] tom.txt - mes tirages
+[2016-05-21 11:58:17.331] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 11:58:17.401] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 12:10:43.200] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 12:10:43.210] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 12:10:43.394] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 12:10:43.395] [INFO] console - 
+[2016-05-21 12:10:43.398] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 12:10:43.399] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 12:10:43.399] [INFO] console - What would you like Sails to do?
+[2016-05-21 12:10:43.399] [INFO] console - 
+[2016-05-21 12:10:43.399] [INFO] console - 
+[2016-05-21 12:10:43.400] [INFO] console - 
+[2016-05-21 12:10:45.446] [INFO] console - 
+[2016-05-21 12:10:45.447] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 12:10:45.447] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 12:10:45.447] [INFO] console - 
+[2016-05-21 12:10:51.309] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 12:10:55.459] [WARN] tom.txt - mes tirages
+[2016-05-21 12:10:55.726] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 12:10:55.793] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 15:28:27.147] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 15:28:27.161] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-21 15:28:27.562] [INFO] console - -----------------------------------------------------------------
+[2016-05-21 15:28:27.563] [INFO] console - 
+[2016-05-21 15:28:27.565] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-21 15:28:27.565] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-21 15:28:27.566] [INFO] console - What would you like Sails to do?
+[2016-05-21 15:28:27.566] [INFO] console - 
+[2016-05-21 15:28:27.566] [INFO] console - 
+[2016-05-21 15:28:27.567] [INFO] console - 
+[2016-05-21 15:28:29.314] [INFO] console - 
+[2016-05-21 15:28:29.315] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-21 15:28:29.315] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-21 15:28:29.315] [INFO] console - 
+[2016-05-21 15:29:23.802] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 15:29:32.431] [WARN] tom.txt - mes tirages
+[2016-05-21 15:29:32.608] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 15:29:32.677] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 15:30:12.342] [INFO] tom.txt - ok dans save
+[2016-05-21 15:30:12.343] [DEBUG] tom.txt - { id: [32m'2'[39m,
+  MTIR_DATE: [32m'2016-05-07 20:00:00'[39m,
+  MTIR_1: [32m'41'[39m,
+  MTIR_2: [32m'44'[39m,
+  MTIR_3: [32m'45'[39m,
+  MTIR_4: [32m'48'[39m,
+  MTIR_5: [32m'49'[39m,
+  MTIR_C: [32m'10'[39m,
+  MTIR_COUT: [32m'0'[39m,
+  MTIR_GAIN: [32m'2'[39m }
+[2016-05-21 15:30:12.384] [INFO] console - joujour à sa mèmère : samedi
+[2016-05-21 15:30:12.426] [WARN] console - null
+[2016-05-21 15:30:12.464] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 15:30:12.480] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-21 15:34:23.179] [WARN] tom.txt - coucouroucoucou
+[2016-05-21 15:34:31.955] [WARN] tom.txt - mes tirages
+[2016-05-21 15:34:32.139] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-21 15:34:32.172] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]

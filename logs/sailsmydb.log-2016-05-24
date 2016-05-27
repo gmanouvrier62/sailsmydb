@@ -1,0 +1,1435 @@
+[2016-05-24 08:55:08.055] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 08:55:08.059] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 08:55:08.060] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 08:55:08.225] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 08:55:08.225] [INFO] console - 
+[2016-05-24 08:55:08.227] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 08:55:08.227] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 08:55:08.228] [INFO] console - What would you like Sails to do?
+[2016-05-24 08:55:08.228] [INFO] console - 
+[2016-05-24 08:55:08.228] [INFO] console - 
+[2016-05-24 08:55:08.228] [INFO] console - 
+[2016-05-24 08:55:11.282] [INFO] console - 
+[2016-05-24 08:55:11.283] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 08:55:11.283] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 08:55:11.283] [INFO] console - 
+[2016-05-24 08:55:57.284] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 08:56:15.220] [INFO] tom.txt - ok dans save
+[2016-05-24 08:56:15.222] [DEBUG] tom.txt - { id: [32m''[39m,
+  RED_DATE: [32m'2016-05-23 20:00:00'[39m,
+  RED_NUM: [ [32m'24'[39m, [32m'29'[39m, [32m'34'[39m, [32m'39'[39m, [32m'44'[39m, [32m'49'[39m, [length]: [33m6[39m ] }
+[2016-05-24 08:56:15.276] [INFO] tom.txt - 
+[2016-05-24 08:56:15.370] [DEBUG] tom.txt - [ RowDataPacket { lemax: [33m3[39m }, [length]: [33m1[39m ]
+[2016-05-24 08:56:15.370] [WARN] tom.txt - la val = 3
+[2016-05-24 08:56:15.371] [WARN] tom.txt - ok
+[2016-05-24 08:56:15.372] [WARN] tom.txt - { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: null }
+[2016-05-24 08:56:15.373] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '24' }
+[2016-05-24 08:56:15.374] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '24' }
+[2016-05-24 08:56:15.380] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '29' }
+[2016-05-24 08:56:15.380] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '29' }
+[2016-05-24 08:56:15.383] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '34' }
+[2016-05-24 08:56:15.385] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '34' }
+[2016-05-24 08:56:15.387] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '39' }
+[2016-05-24 08:56:15.387] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '39' }
+[2016-05-24 08:56:15.389] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '44' }
+[2016-05-24 08:56:15.389] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '44' }
+[2016-05-24 08:56:15.391] [WARN] tom.txt - enr :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '49' }
+[2016-05-24 08:56:15.391] [INFO] console - DANS MODEL :  { id_reduction: 4,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '49' }
+[2016-05-24 09:01:54.278] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 09:01:54.282] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 09:01:54.283] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 09:01:54.360] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 09:01:54.360] [INFO] console - 
+[2016-05-24 09:01:54.361] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 09:01:54.361] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 09:01:54.362] [INFO] console - What would you like Sails to do?
+[2016-05-24 09:01:54.362] [INFO] console - 
+[2016-05-24 09:01:54.362] [INFO] console - 
+[2016-05-24 09:01:54.362] [INFO] console - 
+[2016-05-24 09:01:55.419] [INFO] console - 
+[2016-05-24 09:01:55.420] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 09:01:55.420] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 09:01:55.420] [INFO] console - 
+[2016-05-24 09:02:03.008] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 09:02:30.491] [INFO] tom.txt - ok dans save
+[2016-05-24 09:02:30.493] [DEBUG] tom.txt - { id: [32m''[39m,
+  RED_DATE: [32m'2016-05-23 20:00:00'[39m,
+  RED_NUM: [ [32m'1'[39m, [32m'7'[39m, [32m'13'[39m, [32m'18'[39m, [32m'23'[39m, [32m'28'[39m, [32m'29'[39m, [length]: [33m7[39m ] }
+[2016-05-24 09:02:30.498] [INFO] tom.txt - 
+[2016-05-24 09:02:30.510] [DEBUG] tom.txt - [ RowDataPacket { lemax: [33m4[39m }, [length]: [33m1[39m ]
+[2016-05-24 09:02:30.511] [WARN] tom.txt - la val = 4
+[2016-05-24 09:02:30.511] [WARN] tom.txt - ok
+[2016-05-24 09:02:30.513] [WARN] tom.txt - { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: null }
+[2016-05-24 09:02:30.513] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '1' }
+[2016-05-24 09:02:30.514] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',1)
+[2016-05-24 09:02:30.515] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '7' }
+[2016-05-24 09:02:30.516] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',7)
+[2016-05-24 09:02:30.517] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '13' }
+[2016-05-24 09:02:30.517] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',13)
+[2016-05-24 09:02:30.518] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '18' }
+[2016-05-24 09:02:30.519] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',18)
+[2016-05-24 09:02:30.519] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '23' }
+[2016-05-24 09:02:30.520] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',23)
+[2016-05-24 09:02:30.520] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '28' }
+[2016-05-24 09:02:30.521] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',28)
+[2016-05-24 09:02:30.521] [WARN] tom.txt - enr :  { id_reduction: 5,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '29' }
+[2016-05-24 09:02:30.523] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (5,'2016-05-23 20:00:00',29)
+[2016-05-24 12:46:45.326] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:46:45.332] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:46:45.334] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:46:45.642] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 12:46:45.642] [INFO] console - 
+[2016-05-24 12:46:45.645] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 12:46:45.645] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 12:46:45.648] [INFO] console - What would you like Sails to do?
+[2016-05-24 12:46:45.648] [INFO] console - 
+[2016-05-24 12:46:45.649] [INFO] console - 
+[2016-05-24 12:46:45.649] [INFO] console - 
+[2016-05-24 12:46:46.627] [INFO] console - 
+[2016-05-24 12:46:46.627] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 12:46:46.628] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 12:46:46.628] [INFO] console - 
+[2016-05-24 12:47:09.257] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 12:47:15.847] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 12:49:40.172] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:49:40.178] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:49:40.179] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:49:41.044] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 12:49:41.044] [INFO] console - 
+[2016-05-24 12:49:41.046] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 12:49:41.047] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 12:49:41.047] [INFO] console - What would you like Sails to do?
+[2016-05-24 12:49:41.047] [INFO] console - 
+[2016-05-24 12:49:41.048] [INFO] console - 
+[2016-05-24 12:49:41.048] [INFO] console - 
+[2016-05-24 12:49:42.815] [INFO] console - 
+[2016-05-24 12:49:42.816] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 12:49:42.816] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 12:49:42.816] [INFO] console - 
+[2016-05-24 12:51:30.948] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 12:52:49.268] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 12:52:53.348] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 12:55:56.383] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:55:56.390] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:55:56.392] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 12:55:56.769] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 12:55:56.769] [INFO] console - 
+[2016-05-24 12:55:56.771] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 12:55:56.771] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 12:55:56.772] [INFO] console - What would you like Sails to do?
+[2016-05-24 12:55:56.772] [INFO] console - 
+[2016-05-24 12:55:56.772] [INFO] console - 
+[2016-05-24 12:55:56.772] [INFO] console - 
+[2016-05-24 12:55:58.071] [INFO] console - 
+[2016-05-24 12:55:58.072] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 12:55:58.072] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 12:55:58.072] [INFO] console - 
+[2016-05-24 12:56:02.603] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 12:56:05.784] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 12:56:14.144] [INFO] tom.txt - ok dans save
+[2016-05-24 12:56:14.152] [DEBUG] tom.txt - { id: [32m''[39m,
+  RED_DATE: [32m'2016-05-23 20:00:00'[39m,
+  RED_NUM: [ [32m'18'[39m, [32m'23'[39m, [32m'28'[39m, [32m'33'[39m, [32m'38'[39m, [32m'43'[39m, [length]: [33m6[39m ] }
+[2016-05-24 12:56:14.187] [INFO] tom.txt - 
+[2016-05-24 12:56:14.194] [DEBUG] tom.txt - [ RowDataPacket { lemax: [1mnull[22m }, [length]: [33m1[39m ]
+[2016-05-24 12:56:14.194] [WARN] tom.txt - la val = NaN
+[2016-05-24 12:56:14.194] [ERROR] tom.txt - ATTENTION si pas vide => error
+[2016-05-24 12:56:14.196] [WARN] tom.txt - { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: null }
+[2016-05-24 12:56:14.197] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '18' }
+[2016-05-24 12:56:14.199] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',18)
+[2016-05-24 12:56:14.200] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '23' }
+[2016-05-24 12:56:14.201] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',23)
+[2016-05-24 12:56:14.204] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '28' }
+[2016-05-24 12:56:14.205] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',28)
+[2016-05-24 12:56:14.206] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '33' }
+[2016-05-24 12:56:14.210] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',33)
+[2016-05-24 12:56:14.214] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '38' }
+[2016-05-24 12:56:14.215] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',38)
+[2016-05-24 12:56:14.216] [WARN] tom.txt - enr :  { id_reduction: 1,
+  RED_DATE: '2016-05-23 20:00:00',
+  RED_NUM: '43' }
+[2016-05-24 12:56:14.217] [INFO] console - DANS MODEL :  insert into myloto.reductions (id_reduction, RED_DATE, RED_NUM) values  (1,'2016-05-23 20:00:00',43)
+[2016-05-24 12:56:26.698] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 12:56:29.002] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 14:05:34.160] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:29:15.329] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:29:15.336] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:29:15.338] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:29:15.695] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:29:15.695] [INFO] console - 
+[2016-05-24 17:29:15.697] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:29:15.697] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:29:15.697] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:29:15.697] [INFO] console - 
+[2016-05-24 17:29:15.697] [INFO] console - 
+[2016-05-24 17:29:15.697] [INFO] console - 
+[2016-05-24 17:29:16.963] [INFO] console - 
+[2016-05-24 17:29:16.964] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:29:16.964] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:29:16.964] [INFO] console - 
+[2016-05-24 17:29:58.892] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:30:02.808] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:32:02.722] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:32:08.358] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:32:24.953] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:32:24.958] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:32:24.960] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:32:25.185] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:32:25.185] [INFO] console - 
+[2016-05-24 17:32:25.187] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:32:25.188] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:32:25.188] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:32:25.188] [INFO] console - 
+[2016-05-24 17:32:25.188] [INFO] console - 
+[2016-05-24 17:32:25.189] [INFO] console - 
+[2016-05-24 17:32:27.079] [INFO] console - 
+[2016-05-24 17:32:27.080] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:32:27.080] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:32:27.080] [INFO] console - 
+[2016-05-24 17:32:37.072] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:32:41.954] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:34:41.897] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:35:55.360] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:35:55.364] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:35:55.365] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:35:55.450] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:35:55.450] [INFO] console - 
+[2016-05-24 17:35:55.452] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:35:55.452] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:35:55.452] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:35:55.452] [INFO] console - 
+[2016-05-24 17:35:55.452] [INFO] console - 
+[2016-05-24 17:35:55.453] [INFO] console - 
+[2016-05-24 17:35:56.340] [INFO] console - 
+[2016-05-24 17:35:56.343] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:35:56.343] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:35:56.343] [INFO] console - 
+[2016-05-24 17:35:59.735] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:36:03.627] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:36:03.632] [INFO] tom.txt - rikette  select * from myloto.mesreductions order by id_reduction desc
+[2016-05-24 17:36:03.688] [ERROR] tom.txt - pas de rs???
+[2016-05-24 17:36:47.687] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:36:47.690] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:36:47.691] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:36:47.797] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:36:47.797] [INFO] console - 
+[2016-05-24 17:36:47.799] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:36:47.799] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:36:47.799] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:36:47.799] [INFO] console - 
+[2016-05-24 17:36:47.799] [INFO] console - 
+[2016-05-24 17:36:47.800] [INFO] console - 
+[2016-05-24 17:36:48.485] [INFO] console - 
+[2016-05-24 17:36:48.485] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:36:48.485] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:36:48.485] [INFO] console - 
+[2016-05-24 17:36:52.162] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:36:56.790] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:36:56.799] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:36:56.846] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:36:56.851] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:36:56.853] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:36:56.853] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:36:56.853] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:36:56.854] [WARN] tom.txt - alors id= NaN
+[2016-05-24 17:40:00.173] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:40:00.177] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:40:00.179] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:40:00.263] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:40:00.263] [INFO] console - 
+[2016-05-24 17:40:00.264] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:40:00.265] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:40:00.265] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:40:00.265] [INFO] console - 
+[2016-05-24 17:40:00.265] [INFO] console - 
+[2016-05-24 17:40:00.266] [INFO] console - 
+[2016-05-24 17:40:01.526] [INFO] console - 
+[2016-05-24 17:40:01.526] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:40:01.526] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:40:01.526] [INFO] console - 
+[2016-05-24 17:40:05.490] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:40:11.961] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:40:11.962] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:41:35.771] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:41:35.776] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:41:35.777] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:41:35.904] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:41:35.904] [INFO] console - 
+[2016-05-24 17:41:35.907] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:41:35.907] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:41:35.907] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:41:35.907] [INFO] console - 
+[2016-05-24 17:41:35.908] [INFO] console - 
+[2016-05-24 17:41:35.908] [INFO] console - 
+[2016-05-24 17:41:37.362] [INFO] console - 
+[2016-05-24 17:41:37.363] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:41:37.363] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:41:37.363] [INFO] console - 
+[2016-05-24 17:41:40.944] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:41:43.976] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:41:43.977] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:41:44.005] [DEBUG] tom.txt - [ ,
+  { NUMS: 
+     [ [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:14.130] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:47:14.136] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:47:14.138] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:47:14.274] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:47:14.275] [INFO] console - 
+[2016-05-24 17:47:14.277] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:47:14.278] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:47:14.279] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:47:14.279] [INFO] console - 
+[2016-05-24 17:47:14.279] [INFO] console - 
+[2016-05-24 17:47:14.280] [INFO] console - 
+[2016-05-24 17:47:15.064] [INFO] console - 
+[2016-05-24 17:47:15.064] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:47:15.065] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:47:15.065] [INFO] console - 
+[2016-05-24 17:47:26.243] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:47:29.488] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:47:29.491] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:47:29.527] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.539] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [90mundefined[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:29.540] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.542] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [90mundefined[39m, [90mundefined[39m, [length]: [33m2[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:29.543] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.546] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [90mundefined[39m, [90mundefined[39m, [90mundefined[39m, [length]: [33m3[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:29.547] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.552] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [90mundefined[39m, [90mundefined[39m, [90mundefined[39m, [90mundefined[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:29.552] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.556] [DEBUG] tom.txt - [ ,
+  { NUMS: 
+     [ [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:47:29.559] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:47:29.563] [DEBUG] tom.txt - [ ,
+  { NUMS: 
+     [ [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [90mundefined[39m,
+       [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:06.472] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:48:06.478] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:48:06.479] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:48:06.616] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:48:06.616] [INFO] console - 
+[2016-05-24 17:48:06.618] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:48:06.618] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:48:06.619] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:48:06.619] [INFO] console - 
+[2016-05-24 17:48:06.619] [INFO] console - 
+[2016-05-24 17:48:06.619] [INFO] console - 
+[2016-05-24 17:48:08.798] [INFO] console - 
+[2016-05-24 17:48:08.798] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:48:08.798] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:48:08.798] [INFO] console - 
+[2016-05-24 17:48:13.525] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:48:16.661] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:48:16.662] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:48:16.687] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.697] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:16.698] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.700] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:16.701] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.703] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:16.704] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.706] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:16.707] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.711] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:48:16.711] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:48:16.713] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:47.801] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:51:47.806] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:51:47.808] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:51:47.935] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:51:47.935] [INFO] console - 
+[2016-05-24 17:51:47.937] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:51:47.937] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:51:47.938] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:51:47.938] [INFO] console - 
+[2016-05-24 17:51:47.938] [INFO] console - 
+[2016-05-24 17:51:47.939] [INFO] console - 
+[2016-05-24 17:51:48.851] [INFO] console - 
+[2016-05-24 17:51:48.851] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:51:48.851] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:51:48.851] [INFO] console - 
+[2016-05-24 17:51:52.489] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:51:55.427] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:51:55.427] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:51:55.474] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.488] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:55.489] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.491] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:55.495] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.497] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:55.497] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.499] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:55.503] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.506] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:51:55.509] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:51:55.515] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:34.644] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:52:34.650] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:52:34.652] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-24 17:52:34.779] [INFO] console - -----------------------------------------------------------------
+[2016-05-24 17:52:34.779] [INFO] console - 
+[2016-05-24 17:52:34.782] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-24 17:52:34.782] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-24 17:52:34.782] [INFO] console - What would you like Sails to do?
+[2016-05-24 17:52:34.782] [INFO] console - 
+[2016-05-24 17:52:34.783] [INFO] console - 
+[2016-05-24 17:52:34.783] [INFO] console - 
+[2016-05-24 17:52:35.882] [INFO] console - 
+[2016-05-24 17:52:35.884] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-24 17:52:35.884] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-24 17:52:35.884] [INFO] console - 
+[2016-05-24 17:52:43.565] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:52:46.848] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:52:46.849] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:52:46.874] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.880] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:46.880] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.883] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:46.884] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.887] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:46.887] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.891] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:46.892] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.896] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:52:46.896] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:52:46.898] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:16.901] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:56:19.882] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:56:19.883] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:56:19.889] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.891] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:19.891] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.894] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:19.895] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.898] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:19.898] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.904] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:19.904] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.906] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:19.906] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:56:19.909] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:56:59.870] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:57:02.626] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:57:02.630] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:57:02.635] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.639] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:02.640] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.642] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:02.642] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.644] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:02.647] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.650] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:02.650] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.652] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:02.652] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:02.658] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:50.701] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 17:57:53.674] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 17:57:53.674] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 17:57:53.678] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.682] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:53.682] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.685] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:53.685] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.688] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:53.688] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.690] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:53.691] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.692] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 17:57:53.695] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 17:57:53.697] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:00:22.581] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 18:00:38.268] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 18:00:59.438] [WARN] tom.txt - coucouroucoucou
+[2016-05-24 18:01:02.499] [INFO] tom.txt - ok dans mesreductions/list
+[2016-05-24 18:01:02.500] [INFO] tom.txt - rikette  select * from myloto.reductions order by id_reduction desc
+[2016-05-24 18:01:02.504] [WARN] tom.txt - src :  RowDataPacket {
+  id: 1,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 18,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.505] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [length]: [33m1[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:01:02.506] [WARN] tom.txt - src :  RowDataPacket {
+  id: 2,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 23,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.507] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [length]: [33m2[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:01:02.511] [WARN] tom.txt - src :  RowDataPacket {
+  id: 3,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 28,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.512] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [length]: [33m3[39m ], RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:01:02.513] [WARN] tom.txt - src :  RowDataPacket {
+  id: 4,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 33,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.516] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [length]: [33m4[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:01:02.516] [WARN] tom.txt - src :  RowDataPacket {
+  id: 5,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 38,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.518] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [length]: [33m5[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]
+[2016-05-24 18:01:02.518] [WARN] tom.txt - src :  RowDataPacket {
+  id: 6,
+  id_reduction: 1,
+  RED_DATE: Mon May 23 2016 20:00:00 GMT+0200 (CEST),
+  RED_NUM: 43,
+  createdAt: '0000-00-00 00:00:00',
+  updatedAt: '0000-00-00 00:00:00' }
+[2016-05-24 18:01:02.519] [DEBUG] tom.txt - [ ,
+  { NUMS: [ [33m18[39m, [33m23[39m, [33m28[39m, [33m33[39m, [33m38[39m, [33m43[39m, [length]: [33m6[39m ],
+    RED_DATE: [32m'2016-05-23'[39m },
+  [length]: [33m2[39m ]

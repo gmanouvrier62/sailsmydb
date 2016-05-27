@@ -1,0 +1,50 @@
+pour requirejs sous sails il faut : 
+
+npm install grunt-requirejs-config --save-dev
+
+
+ecrire un fichier de script grunt dans ( /tasks/config/requirejs.js)genre : 
+
+module.exports = function(grunt) {
+  grunt.config.set('requirejs', {
+    dev: {
+        options: {
+            baseUrl: "assets/",
+            name: 'main',
+            optimize: "uglify2",//'none',//"uglify2",
+            //wrap: true,
+            paths: {
+                // Major libraries
+                    jquery: '../vendor/jquery',
+                    underscore: '../vendor/underscore',
+                    backbone: '../vendor/backbone',
+                    // Require.js plugins
+
+                },
+                removeCombined: true,
+                inlineText: true,
+                useStrict: true,
+                out: "build/main.js",
+                waitSeconds: 200
+            },
+        }
+    });
+
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+};
+
+puis dans autostart grunt : 
+
+ tasks/register/compileAssets.js
+
+exemple : 
+module.exports = function (grunt) {
+    grunt.registerTask('compileAssets', [
+        'clean:dev',
+        'jst:dev',
+        'less:dev',
+        'copy:dev',
+        'coffee:dev',
+        'requirejs:dev'
+    ]);
+};

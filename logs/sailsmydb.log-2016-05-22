@@ -1,0 +1,1803 @@
+[2016-05-22 09:58:14.898] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 10:13:17.196] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 10:13:17.202] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 10:13:17.730] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 10:13:17.730] [INFO] console - 
+[2016-05-22 10:13:17.732] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 10:13:17.733] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 10:13:17.738] [INFO] console - What would you like Sails to do?
+[2016-05-22 10:13:17.738] [INFO] console - 
+[2016-05-22 10:13:17.739] [INFO] console - 
+[2016-05-22 10:13:17.739] [INFO] console - 
+[2016-05-22 10:13:19.947] [INFO] console - 
+[2016-05-22 10:13:19.948] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 10:13:19.948] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 10:13:19.948] [INFO] console - 
+[2016-05-22 10:13:47.951] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 10:13:54.301] [WARN] tom.txt - mes tirages
+[2016-05-22 10:13:54.484] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 10:13:54.554] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-22 10:14:47.137] [INFO] tom.txt - ok dans save
+[2016-05-22 10:14:47.139] [DEBUG] tom.txt - { id: [32m'2'[39m,
+  MTIR_DATE: [32m'2016-05-07 20:00:00'[39m,
+  MTIR_1: [32m'40'[39m,
+  MTIR_2: [32m'44'[39m,
+  MTIR_3: [32m'45'[39m,
+  MTIR_4: [32m'47'[39m,
+  MTIR_5: [32m'49'[39m,
+  MTIR_C: [32m'10'[39m,
+  MTIR_COUT: [32m'0'[39m,
+  MTIR_GAIN: [32m'1'[39m }
+[2016-05-22 10:14:47.177] [INFO] tom.txt - 
+[2016-05-22 10:14:47.178] [WARN] tom.txt - OK ca va updater :  { id: '2',
+  MTIR_DATE: '2016-05-07 20:00:00',
+  MTIR_1: '40',
+  MTIR_2: '44',
+  MTIR_3: '45',
+  MTIR_4: '47',
+  MTIR_5: '49',
+  MTIR_C: '10',
+  MTIR_COUT: '0',
+  MTIR_GAIN: '1' }
+[2016-05-22 10:14:47.245] [WARN] tom.txt - null
+[2016-05-22 10:14:47.277] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 10:14:47.299] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-22 10:15:42.024] [WARN] tom.txt - mes tirages
+[2016-05-22 10:15:42.158] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 10:15:42.183] [DEBUG] tom.txt - [ RowDataPacket {
+    id: [33m7[39m,
+    MTIR_DATE: [32m'2016-05-30'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m19[39m,
+    MTIR_3: [33m24[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:05:43 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m3[39m,
+    MTIR_DATE: [32m'2016-05-28'[39m,
+    MTIR_1: [33m28[39m,
+    MTIR_2: [33m33[39m,
+    MTIR_3: [33m38[39m,
+    MTIR_4: [33m43[39m,
+    MTIR_5: [33m48[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m2[39m,
+    createdAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 14:21:10 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m2[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m40[39m,
+    MTIR_2: [33m44[39m,
+    MTIR_3: [33m45[39m,
+    MTIR_4: [33m48[39m,
+    MTIR_5: [33m49[39m,
+    MTIR_C: [33m10[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:47:04 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m6[39m,
+    MTIR_DATE: [32m'2016-05-07'[39m,
+    MTIR_1: [33m15[39m,
+    MTIR_2: [33m20[39m,
+    MTIR_3: [33m25[39m,
+    MTIR_4: [33m30[39m,
+    MTIR_5: [33m35[39m,
+    MTIR_C: [33m9[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:04:59 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m4[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m5[39m,
+    MTIR_3: [33m14[39m,
+    MTIR_4: [33m19[39m,
+    MTIR_5: [33m24[39m,
+    MTIR_C: [33m4[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 17:59:14 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m5[39m,
+    MTIR_DATE: [32m'2016-05-04'[39m,
+    MTIR_1: [33m1[39m,
+    MTIR_2: [33m2[39m,
+    MTIR_3: [33m3[39m,
+    MTIR_4: [33m4[39m,
+    MTIR_5: [33m5[39m,
+    MTIR_C: [33m6[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m,
+    updatedAt: [35mTue May 17 2016 18:03:55 GMT+0200 (CEST)[39m },
+  RowDataPacket {
+    id: [33m1[39m,
+    MTIR_DATE: [32m'Invalid date'[39m,
+    MTIR_1: [33m0[39m,
+    MTIR_2: [33m0[39m,
+    MTIR_3: [33m0[39m,
+    MTIR_4: [33m0[39m,
+    MTIR_5: [33m0[39m,
+    MTIR_C: [33m0[39m,
+    MTIR_GAIN: [33m0[39m,
+    MTIR_COUT: [33m0[39m,
+    createdAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m,
+    updatedAt: [35mMon May 16 2016 20:43:57 GMT+0200 (CEST)[39m },
+  [length]: [33m7[39m ]
+[2016-05-22 10:25:15.837] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 10:25:15.848] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 10:25:16.014] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 10:25:16.015] [INFO] console - 
+[2016-05-22 10:25:16.017] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 10:25:16.017] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 10:25:16.017] [INFO] console - What would you like Sails to do?
+[2016-05-22 10:25:16.017] [INFO] console - 
+[2016-05-22 10:25:16.018] [INFO] console - 
+[2016-05-22 10:25:16.018] [INFO] console - 
+[2016-05-22 10:25:16.754] [INFO] console - 
+[2016-05-22 10:25:16.755] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 10:25:16.755] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 10:25:16.755] [INFO] console - 
+[2016-05-22 10:25:25.272] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 10:26:18.498] [WARN] tom.txt - mes tirages
+[2016-05-22 10:26:18.622] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 10:26:35.713] [INFO] tom.txt - ok dans save
+[2016-05-22 10:26:35.716] [DEBUG] tom.txt - { id: [32m'2'[39m,
+  MTIR_DATE: [32m'2016-05-07 20:00:00'[39m,
+  MTIR_1: [32m'40'[39m,
+  MTIR_2: [32m'44'[39m,
+  MTIR_3: [32m'45'[39m,
+  MTIR_4: [32m'47'[39m,
+  MTIR_5: [32m'49'[39m,
+  MTIR_C: [32m'10'[39m,
+  MTIR_COUT: [32m'0'[39m,
+  MTIR_GAIN: [32m'1'[39m }
+[2016-05-22 10:26:35.719] [INFO] tom.txt - 
+[2016-05-22 10:26:35.720] [WARN] tom.txt - OK ca va updater :  { id: '2',
+  MTIR_DATE: '2016-05-07 20:00:00',
+  MTIR_1: '40',
+  MTIR_2: '44',
+  MTIR_3: '45',
+  MTIR_4: '47',
+  MTIR_5: '49',
+  MTIR_C: '10',
+  MTIR_COUT: '0',
+  MTIR_GAIN: '1' }
+[2016-05-22 10:26:35.975] [WARN] tom.txt - null
+[2016-05-22 10:26:36.019] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 11:35:01.342] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 11:35:01.361] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 11:35:01.584] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 11:35:01.584] [INFO] console - 
+[2016-05-22 11:35:01.586] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 11:35:01.587] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 11:35:01.587] [INFO] console - What would you like Sails to do?
+[2016-05-22 11:35:01.587] [INFO] console - 
+[2016-05-22 11:35:01.588] [INFO] console - 
+[2016-05-22 11:35:01.588] [INFO] console - 
+[2016-05-22 11:35:03.458] [INFO] console - 
+[2016-05-22 11:35:03.459] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 11:35:03.459] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 11:35:03.459] [INFO] console - 
+[2016-05-22 11:35:15.126] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 11:35:19.524] [WARN] tom.txt - mes tirages
+[2016-05-22 11:35:19.755] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 11:43:40.812] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 11:43:40.818] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 11:43:40.951] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 11:43:40.952] [INFO] console - 
+[2016-05-22 11:43:40.954] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 11:43:40.954] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 11:43:40.954] [INFO] console - What would you like Sails to do?
+[2016-05-22 11:43:40.954] [INFO] console - 
+[2016-05-22 11:43:40.955] [INFO] console - 
+[2016-05-22 11:43:40.955] [INFO] console - 
+[2016-05-22 11:43:42.774] [INFO] console - 
+[2016-05-22 11:43:42.775] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 11:43:42.775] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 11:43:42.775] [INFO] console - 
+[2016-05-22 11:43:47.821] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 11:43:51.784] [WARN] tom.txt - mes tirages
+[2016-05-22 11:43:51.958] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 11:53:59.007] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 11:54:02.912] [WARN] tom.txt - mes tirages
+[2016-05-22 11:54:03.077] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 11:56:02.670] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 11:56:05.969] [WARN] tom.txt - mes tirages
+[2016-05-22 11:56:06.049] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 11:56:14.490] [INFO] tom.txt - ok dans suppression mes tirages
+[2016-05-22 11:58:06.116] [INFO] tom.txt - ok dans suppression mes tirages
+[2016-05-22 12:04:36.895] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:04:36.901] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:04:37.039] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:04:37.039] [INFO] console - 
+[2016-05-22 12:04:37.041] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:04:37.041] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:04:37.042] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:04:37.042] [INFO] console - 
+[2016-05-22 12:04:37.042] [INFO] console - 
+[2016-05-22 12:04:37.043] [INFO] console - 
+[2016-05-22 12:04:38.335] [INFO] console - 
+[2016-05-22 12:04:38.338] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:04:38.341] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:04:38.341] [INFO] console - 
+[2016-05-22 12:05:10.802] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:05:18.028] [WARN] tom.txt - mes tirages
+[2016-05-22 12:05:18.237] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:05:25.837] [INFO] tom.txt - ok dans suppression mes tirages
+[2016-05-22 12:05:25.882] [WARN] tom.txt - Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+
+Details:  Error: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+
+Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+[2016-05-22 12:14:11.089] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:14:11.096] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:14:11.231] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:14:11.232] [INFO] console - 
+[2016-05-22 12:14:11.234] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:14:11.234] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:14:11.234] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:14:11.234] [INFO] console - 
+[2016-05-22 12:14:11.235] [INFO] console - 
+[2016-05-22 12:14:11.235] [INFO] console - 
+[2016-05-22 12:14:12.206] [INFO] console - 
+[2016-05-22 12:14:12.207] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:14:12.207] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:14:12.208] [INFO] console - 
+[2016-05-22 12:14:15.859] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:14:19.629] [WARN] tom.txt - mes tirages
+[2016-05-22 12:14:19.800] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:14:25.318] [INFO] tom.txt - ok dans suppression mes tirages  { id: '6' }
+[2016-05-22 12:14:25.402] [WARN] tom.txt - Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+
+Details:  Error: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+
+Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+[2016-05-22 12:25:44.177] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:25:44.185] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:25:44.722] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:25:44.722] [INFO] console - 
+[2016-05-22 12:25:44.725] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:25:44.725] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:25:44.725] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:25:44.725] [INFO] console - 
+[2016-05-22 12:25:44.726] [INFO] console - 
+[2016-05-22 12:25:44.726] [INFO] console - 
+[2016-05-22 12:25:47.630] [INFO] console - 
+[2016-05-22 12:25:47.631] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:25:47.631] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:25:47.632] [INFO] console - 
+[2016-05-22 12:25:57.937] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:26:02.397] [WARN] tom.txt - mes tirages
+[2016-05-22 12:26:02.610] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:26:10.014] [INFO] tom.txt - ok dans suppression mes tirages  { id: 6 }
+[2016-05-22 12:26:10.071] [WARN] tom.txt - Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+
+Details:  Error: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+
+Error (E_UNKNOWN) :: Encountered an unexpected error
+: ER_BAD_FIELD_ERROR: Unknown column 'mestirages.undefined' in 'order clause'
+    at Query.Sequence._packetToError (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:48:14)
+    at Query.ErrorPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Query.js:83:18)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+    at Protocol.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:96:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+    --------------------
+    at Protocol._enqueue (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:135:48)
+    at PoolConnection.query (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Connection.js:201:25)
+    at __FIND__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:834:20)
+    at Object.module.exports.adapter.find (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:803:9)
+    at Array.async.auto.findRecords (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1067:21)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:574:38
+    at _arrayEach (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:78:13)
+    at Object.async.auto (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/async/lib/async.js:536:9)
+    at __DESTROY__ (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/adapter.js:1064:15)
+    at afterwards (/home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:84:5)
+    at /home/gilles/node/sailsmydb/node_modules/sails-mysql/lib/connections/spawn.js:40:7
+    at Ping.onOperationComplete [as _callback] (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/Pool.js:99:5)
+    at Ping.Sequence.end (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+    at Ping.Sequence.OkPacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/sequences/Sequence.js:105:8)
+    at Protocol._parsePacket (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Protocol.js:274:23)
+    at Parser.write (/home/gilles/node/sailsmydb/node_modules/sails-mysql/node_modules/mysql/lib/protocol/Parser.js:77:12)
+[2016-05-22 12:29:48.148] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:29:48.155] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:29:48.287] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:29:48.287] [INFO] console - 
+[2016-05-22 12:29:48.289] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:29:48.290] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:29:48.290] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:29:48.290] [INFO] console - 
+[2016-05-22 12:29:48.291] [INFO] console - 
+[2016-05-22 12:29:48.291] [INFO] console - 
+[2016-05-22 12:29:50.038] [INFO] console - 
+[2016-05-22 12:29:50.038] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:29:50.038] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:29:50.039] [INFO] console - 
+[2016-05-22 12:30:14.536] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:30:29.776] [WARN] tom.txt - mes tirages
+[2016-05-22 12:30:29.928] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:30:34.817] [INFO] tom.txt - ok dans suppression mes tirages  { id: 6 }
+[2016-05-22 12:30:35.049] [WARN] tom.txt - null
+[2016-05-22 12:30:48.526] [WARN] tom.txt - mes tirages
+[2016-05-22 12:30:48.603] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:31:56.399] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:31:56.406] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:31:56.565] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:31:56.570] [INFO] console - 
+[2016-05-22 12:31:56.573] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:31:56.574] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:31:56.575] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:31:56.579] [INFO] console - 
+[2016-05-22 12:31:56.583] [INFO] console - 
+[2016-05-22 12:31:56.586] [INFO] console - 
+[2016-05-22 12:31:57.863] [INFO] console - 
+[2016-05-22 12:31:57.863] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:31:57.870] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:31:57.874] [INFO] console - 
+[2016-05-22 12:32:03.251] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:32:09.861] [WARN] tom.txt - mes tirages
+[2016-05-22 12:32:10.052] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:34:57.043] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:34:57.049] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:34:57.180] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:34:57.180] [INFO] console - 
+[2016-05-22 12:34:57.182] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:34:57.183] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:34:57.183] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:34:57.183] [INFO] console - 
+[2016-05-22 12:34:57.184] [INFO] console - 
+[2016-05-22 12:34:57.184] [INFO] console - 
+[2016-05-22 12:34:57.968] [INFO] console - 
+[2016-05-22 12:34:57.968] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:34:57.969] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:34:57.969] [INFO] console - 
+[2016-05-22 12:35:01.428] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:35:05.006] [WARN] tom.txt - mes tirages
+[2016-05-22 12:35:05.246] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:35:46.397] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:35:49.054] [WARN] tom.txt - mes tirages
+[2016-05-22 12:35:49.231] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:41:36.550] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:41:36.557] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:41:36.693] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:41:36.694] [INFO] console - 
+[2016-05-22 12:41:36.696] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:41:36.696] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:41:36.696] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:41:36.696] [INFO] console - 
+[2016-05-22 12:41:36.697] [INFO] console - 
+[2016-05-22 12:41:36.697] [INFO] console - 
+[2016-05-22 12:41:38.043] [INFO] console - 
+[2016-05-22 12:41:38.044] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:41:38.045] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:41:38.045] [INFO] console - 
+[2016-05-22 12:42:01.934] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:42:05.904] [WARN] tom.txt - mes tirages
+[2016-05-22 12:42:06.048] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:42:21.757] [WARN] tom.txt - mes tirages
+[2016-05-22 12:42:21.885] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:51:14.074] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:51:14.080] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:51:14.235] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:51:14.236] [INFO] console - 
+[2016-05-22 12:51:14.238] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:51:14.239] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:51:14.240] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:51:14.240] [INFO] console - 
+[2016-05-22 12:51:14.241] [INFO] console - 
+[2016-05-22 12:51:14.241] [INFO] console - 
+[2016-05-22 12:51:14.884] [INFO] console - 
+[2016-05-22 12:51:14.885] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:51:14.885] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:51:14.885] [INFO] console - 
+[2016-05-22 12:51:19.346] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:51:24.908] [WARN] tom.txt - mes tirages
+[2016-05-22 12:51:25.046] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:51:52.115] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:51:55.733] [WARN] tom.txt - mes tirages
+[2016-05-22 12:51:55.841] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:52:15.594] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:52:20.030] [WARN] tom.txt - mes tirages
+[2016-05-22 12:52:20.154] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:56:53.356] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:56:55.920] [WARN] tom.txt - mes tirages
+[2016-05-22 12:56:56.009] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:57:08.544] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:57:08.550] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 12:57:08.697] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 12:57:08.698] [INFO] console - 
+[2016-05-22 12:57:08.700] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 12:57:08.700] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 12:57:08.700] [INFO] console - What would you like Sails to do?
+[2016-05-22 12:57:08.701] [INFO] console - 
+[2016-05-22 12:57:08.701] [INFO] console - 
+[2016-05-22 12:57:08.701] [INFO] console - 
+[2016-05-22 12:57:09.608] [INFO] console - 
+[2016-05-22 12:57:09.608] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 12:57:09.609] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 12:57:09.609] [INFO] console - 
+[2016-05-22 12:57:14.168] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:57:16.744] [WARN] tom.txt - mes tirages
+[2016-05-22 12:57:16.942] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:58:56.258] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:58:58.738] [WARN] tom.txt - mes tirages
+[2016-05-22 12:58:58.856] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 12:59:11.846] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 12:59:14.394] [WARN] tom.txt - mes tirages
+[2016-05-22 12:59:14.517] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 13:00:54.111] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 13:01:34.955] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 13:01:37.500] [WARN] tom.txt - mes tirages
+[2016-05-22 13:01:37.651] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 13:01:52.771] [INFO] tom.txt - ok dans suppression mes tirages  { id: 5 }
+[2016-05-22 13:01:52.931] [WARN] tom.txt - null
+[2016-05-22 13:06:27.621] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 13:06:30.566] [WARN] tom.txt - mes tirages
+[2016-05-22 13:06:30.682] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 13:06:37.731] [INFO] tom.txt - ok dans suppression mes tirages  { id: 4 }
+[2016-05-22 13:06:37.987] [WARN] tom.txt - null
+[2016-05-22 13:06:38.028] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 14:47:03.438] [INFO] tom.txt - ok dans suppression mes tirages  { id: 1 }
+[2016-05-22 14:47:03.506] [WARN] tom.txt - null
+[2016-05-22 14:47:03.530] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 14:47:19.159] [INFO] tom.txt - ok dans suppression mes tirages  { id: 2 }
+[2016-05-22 14:47:19.278] [WARN] tom.txt - null
+[2016-05-22 14:47:19.338] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 14:47:34.090] [INFO] tom.txt - ok dans save
+[2016-05-22 14:47:34.093] [DEBUG] tom.txt - { id: [32m'7'[39m,
+  MTIR_DATE: [32m'2016-05-30 20:00:00'[39m,
+  MTIR_1: [32m'15'[39m,
+  MTIR_2: [32m'19'[39m,
+  MTIR_3: [32m'24'[39m,
+  MTIR_4: [32m'30'[39m,
+  MTIR_5: [32m'35'[39m,
+  MTIR_C: [32m'9'[39m,
+  MTIR_COUT: [32m'0'[39m,
+  MTIR_GAIN: [32m'1000000'[39m }
+[2016-05-22 14:47:34.134] [INFO] tom.txt - 
+[2016-05-22 14:47:34.135] [WARN] tom.txt - OK ca va updater :  { id: '7',
+  MTIR_DATE: '2016-05-30 20:00:00',
+  MTIR_1: '15',
+  MTIR_2: '19',
+  MTIR_3: '24',
+  MTIR_4: '30',
+  MTIR_5: '35',
+  MTIR_C: '9',
+  MTIR_COUT: '0',
+  MTIR_GAIN: '1000000' }
+[2016-05-22 14:47:34.335] [WARN] tom.txt - null
+[2016-05-22 14:47:34.363] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 14:47:46.722] [INFO] tom.txt - ok dans save
+[2016-05-22 14:47:46.723] [DEBUG] tom.txt - { id: [32m'7'[39m,
+  MTIR_DATE: [32m'2016-05-30 20:00:00'[39m,
+  MTIR_1: [32m'15'[39m,
+  MTIR_2: [32m'19'[39m,
+  MTIR_3: [32m'24'[39m,
+  MTIR_4: [32m'30'[39m,
+  MTIR_5: [32m'35'[39m,
+  MTIR_C: [32m'9'[39m,
+  MTIR_COUT: [32m'0'[39m,
+  MTIR_GAIN: [32m'0'[39m }
+[2016-05-22 14:47:46.725] [INFO] tom.txt - 
+[2016-05-22 14:47:46.726] [WARN] tom.txt - OK ca va updater :  { id: '7',
+  MTIR_DATE: '2016-05-30 20:00:00',
+  MTIR_1: '15',
+  MTIR_2: '19',
+  MTIR_3: '24',
+  MTIR_4: '30',
+  MTIR_5: '35',
+  MTIR_C: '9',
+  MTIR_COUT: '0',
+  MTIR_GAIN: '0' }
+[2016-05-22 14:47:46.833] [WARN] tom.txt - null
+[2016-05-22 14:47:46.867] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 14:59:42.640] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 14:59:42.653] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 14:59:42.795] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 14:59:42.796] [INFO] console - 
+[2016-05-22 14:59:42.798] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 14:59:42.798] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 14:59:42.799] [INFO] console - What would you like Sails to do?
+[2016-05-22 14:59:42.799] [INFO] console - 
+[2016-05-22 14:59:42.799] [INFO] console - 
+[2016-05-22 14:59:42.800] [INFO] console - 
+[2016-05-22 14:59:43.914] [INFO] console - 
+[2016-05-22 14:59:43.915] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 14:59:43.915] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 14:59:43.915] [INFO] console - 
+[2016-05-22 14:59:48.788] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 14:59:58.313] [WARN] tom.txt - mes tirages
+[2016-05-22 14:59:58.501] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 15:04:50.863] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 15:04:53.573] [WARN] tom.txt - mes tirages
+[2016-05-22 15:04:53.681] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 15:05:07.822] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 15:05:10.504] [WARN] tom.txt - mes tirages
+[2016-05-22 15:05:10.588] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 15:07:11.620] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 15:07:14.112] [WARN] tom.txt - mes tirages
+[2016-05-22 15:07:14.221] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 15:07:26.915] [INFO] tom.txt - ok dans suppression mes tirages  { id: 3 }
+[2016-05-22 15:07:27.009] [WARN] tom.txt - null
+[2016-05-22 15:07:27.037] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 15:41:16.131] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 15:41:16.136] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 15:41:16.262] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 15:41:16.262] [INFO] console - 
+[2016-05-22 15:41:16.265] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 15:41:16.265] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 15:41:16.265] [INFO] console - What would you like Sails to do?
+[2016-05-22 15:41:16.265] [INFO] console - 
+[2016-05-22 15:41:16.266] [INFO] console - 
+[2016-05-22 15:41:16.266] [INFO] console - 
+[2016-05-22 15:41:17.013] [INFO] console - 
+[2016-05-22 15:41:17.018] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 15:41:17.018] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 15:41:17.018] [INFO] console - 
+[2016-05-22 15:41:21.857] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:10:52.197] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:10:52.203] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:10:52.205] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:10:52.568] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:10:52.569] [INFO] console - 
+[2016-05-22 16:10:52.570] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:10:52.570] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:10:52.571] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:10:52.571] [INFO] console - 
+[2016-05-22 16:10:52.571] [INFO] console - 
+[2016-05-22 16:10:52.571] [INFO] console - 
+[2016-05-22 16:10:53.397] [INFO] console - 
+[2016-05-22 16:10:53.398] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:10:53.398] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:10:53.398] [INFO] console - 
+[2016-05-22 16:11:00.329] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:12:07.549] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:12:11.517] [WARN] tom.txt - mes tirages
+[2016-05-22 16:12:11.628] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 16:12:15.611] [WARN] tom.txt - mes reductions
+[2016-05-22 16:13:43.689] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:16:17.088] [WARN] tom.txt - mes tirages
+[2016-05-22 16:16:17.263] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 16:16:23.421] [WARN] tom.txt - mes reductions
+[2016-05-22 16:21:57.176] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:21:57.182] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:21:57.184] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:21:57.329] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:21:57.329] [INFO] console - 
+[2016-05-22 16:21:57.331] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:21:57.332] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:21:57.332] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:21:57.332] [INFO] console - 
+[2016-05-22 16:21:57.333] [INFO] console - 
+[2016-05-22 16:21:57.333] [INFO] console - 
+[2016-05-22 16:21:59.104] [INFO] console - 
+[2016-05-22 16:21:59.105] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:21:59.105] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:21:59.105] [INFO] console - 
+[2016-05-22 16:22:09.009] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:22:13.640] [WARN] tom.txt - mes reductions
+[2016-05-22 16:22:15.396] [WARN] tom.txt - mes reductions
+[2016-05-22 16:22:19.936] [WARN] tom.txt - mes tirages
+[2016-05-22 16:22:20.075] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 16:22:25.061] [WARN] tom.txt - mes reductions
+[2016-05-22 16:24:09.859] [WARN] tom.txt - mes reductions
+[2016-05-22 16:24:10.510] [WARN] tom.txt - mes reductions
+[2016-05-22 16:24:20.050] [WARN] tom.txt - mes reductions
+[2016-05-22 16:24:23.362] [WARN] tom.txt - mes reductions
+[2016-05-22 16:24:23.366] [WARN] tom.txt - mes reductions
+[2016-05-22 16:25:11.978] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:25:11.983] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:25:11.985] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:25:12.106] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:25:12.106] [INFO] console - 
+[2016-05-22 16:25:12.108] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:25:12.109] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:25:12.109] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:25:12.109] [INFO] console - 
+[2016-05-22 16:25:12.109] [INFO] console - 
+[2016-05-22 16:25:12.110] [INFO] console - 
+[2016-05-22 16:25:13.599] [INFO] console - 
+[2016-05-22 16:25:13.600] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:25:13.600] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:25:13.600] [INFO] console - 
+[2016-05-22 16:25:22.446] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:35:57.980] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:35:57.990] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:35:57.993] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:35:58.121] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:35:58.121] [INFO] console - 
+[2016-05-22 16:35:58.124] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:35:58.124] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:35:58.124] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:35:58.124] [INFO] console - 
+[2016-05-22 16:35:58.125] [INFO] console - 
+[2016-05-22 16:35:58.125] [INFO] console - 
+[2016-05-22 16:35:59.571] [INFO] console - 
+[2016-05-22 16:35:59.572] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:35:59.572] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:35:59.572] [INFO] console - 
+[2016-05-22 16:36:04.848] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:37:49.872] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:37:49.877] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:37:49.879] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:37:50.013] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:37:50.013] [INFO] console - 
+[2016-05-22 16:37:50.015] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:37:50.015] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:37:50.016] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:37:50.016] [INFO] console - 
+[2016-05-22 16:37:50.016] [INFO] console - 
+[2016-05-22 16:37:50.016] [INFO] console - 
+[2016-05-22 16:37:51.280] [INFO] console - 
+[2016-05-22 16:37:51.281] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:37:51.281] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:37:51.281] [INFO] console - 
+[2016-05-22 16:38:00.013] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:39:51.657] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:39:51.663] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:39:51.664] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:39:51.829] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:39:51.829] [INFO] console - 
+[2016-05-22 16:39:51.832] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:39:51.832] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:39:51.832] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:39:51.832] [INFO] console - 
+[2016-05-22 16:39:51.833] [INFO] console - 
+[2016-05-22 16:39:51.833] [INFO] console - 
+[2016-05-22 16:39:52.926] [INFO] console - 
+[2016-05-22 16:39:52.926] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:39:52.926] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:39:52.927] [INFO] console - 
+[2016-05-22 16:40:00.867] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:42:21.457] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:42:21.463] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:42:21.464] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:42:21.570] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:42:21.570] [INFO] console - 
+[2016-05-22 16:42:21.571] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:42:21.571] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:42:21.572] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:42:21.572] [INFO] console - 
+[2016-05-22 16:42:21.572] [INFO] console - 
+[2016-05-22 16:42:21.572] [INFO] console - 
+[2016-05-22 16:42:22.486] [INFO] console - 
+[2016-05-22 16:42:22.491] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:42:22.491] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:42:22.491] [INFO] console - 
+[2016-05-22 16:42:27.594] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:47:40.452] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:47:40.457] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:47:40.459] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:47:40.587] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:47:40.587] [INFO] console - 
+[2016-05-22 16:47:40.589] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:47:40.589] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:47:40.590] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:47:40.590] [INFO] console - 
+[2016-05-22 16:47:40.590] [INFO] console - 
+[2016-05-22 16:47:40.590] [INFO] console - 
+[2016-05-22 16:47:41.237] [INFO] console - 
+[2016-05-22 16:47:41.238] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:47:41.238] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:47:41.238] [INFO] console - 
+[2016-05-22 16:47:46.577] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:48:01.505] [WARN] tom.txt - mes tirages
+[2016-05-22 16:48:01.643] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 16:54:57.861] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:54:57.867] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:54:57.870] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 16:54:58.012] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 16:54:58.013] [INFO] console - 
+[2016-05-22 16:54:58.015] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 16:54:58.016] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 16:54:58.016] [INFO] console - What would you like Sails to do?
+[2016-05-22 16:54:58.017] [INFO] console - 
+[2016-05-22 16:54:58.017] [INFO] console - 
+[2016-05-22 16:54:58.018] [INFO] console - 
+[2016-05-22 16:54:58.693] [INFO] console - 
+[2016-05-22 16:54:58.693] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 16:54:58.693] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 16:54:58.693] [INFO] console - 
+[2016-05-22 16:55:03.963] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 16:55:09.816] [WARN] tom.txt - mes tirages
+[2016-05-22 16:55:10.050] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 17:02:32.412] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 17:02:36.707] [WARN] tom.txt - mes tirages
+[2016-05-22 17:02:36.810] [INFO] tom.txt - ok dans mestirages/list
+[2016-05-22 17:02:54.443] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 17:02:54.450] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 17:02:54.452] [ERROR] console - log4js.fileAppender - Writing to file /home/gilles/nodes/sailsmydb/logs, error happened  { [Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/gilles/nodes/sailsmydb/logs' }
+Error: ENOENT: no such file or directory, open '/home/gilles/nodes/sailsmydb/logs'
+    at Error (native)
+[2016-05-22 17:02:54.577] [INFO] console - -----------------------------------------------------------------
+[2016-05-22 17:02:54.578] [INFO] console - 
+[2016-05-22 17:02:54.580] [INFO] console -  Excuse my interruption, but it looks like this app
+ does not have a project-wide "migrate" setting configured yet.
+ (perhaps this is the first time you're lifting it with models?)
+ 
+ In short, this setting controls whether/how Sails will attempt to automatically
+ rebuild the tables/collections/sets/etc. in your database schema.
+ You can read more about the "migrate" setting here:
+ http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html?q=migrate
+
+[2016-05-22 17:02:54.580] [INFO] console -  In a production environment (NODE_ENV==="production") Sails always uses
+ migrate:"safe" to protect inadvertent deletion of your data.
+ However during development, you have a few other options for convenience:
+
+ 1. safe  - never auto-migrate my database(s). I will do it myself (by hand) 
+ 2. alter - auto-migrate, but attempt to keep my existing data (experimental)
+ 3. drop  - wipe/drop ALL my data and rebuild models every time I lift Sails
+
+[2016-05-22 17:02:54.580] [INFO] console - What would you like Sails to do?
+[2016-05-22 17:02:54.580] [INFO] console - 
+[2016-05-22 17:02:54.581] [INFO] console - 
+[2016-05-22 17:02:54.581] [INFO] console - 
+[2016-05-22 17:02:56.053] [INFO] console - 
+[2016-05-22 17:02:56.053] [INFO] console -  Temporarily using `sails.config.models.migrate="safe"...
+[2016-05-22 17:02:56.054] [INFO] console -  (press CTRL+C to cancel-- continuing lift automatically in 0.5 seconds...)
+[2016-05-22 17:02:56.054] [INFO] console - 
+[2016-05-22 17:03:01.313] [WARN] tom.txt - coucouroucoucou
+[2016-05-22 17:03:49.426] [WARN] tom.txt - coucouroucoucou

@@ -1,0 +1,113 @@
+<script language="javascript">
+Array.prototype.in_array = function(unite) {
+	 var length = this.length;
+    for(var i = 0; i < length; i++) {
+    	//alert(this[i] + " : " + unite);
+        if(this[i] == unite) return true;
+    }
+    return false;
+    };
+var memo=null;
+$(".noeil").each(function(){
+	
+
+	$(this).click(function(){	
+		if (memo !== null)
+		memo.removeClass("tout_rouge");
+		$(this).parent().parent().addClass("tout_rouge");
+		memo = $(this).parent().parent();
+
+		alert($(this).attr("datas"));
+		var datas = $(this).attr("datas");
+		var tbN = datas.split('-');
+		var objS={'nums':tbN};
+		var laclasse = "";
+		var clO="";
+		$.get('tirages/find_occurences',{'datas':objS},function(datas) {
+			var tbl = "<table id='tblOcc'>";
+			var ligne ="";
+			var retourJSON = JSON.parse(datas);
+			retourJSON.forEach(function(o,idx){
+				var tir = o.tirages[0];
+				ligne += "<tr>";
+				ligne +=   "<td class='occE1'>" + o.stat_date + "</td>";
+				if(o.occurence > 2) clO = "dvct_blue"; else clO = "occE2";
+				ligne +=   "<td class='" + clO + "'>" + o.occurence + "</td>";
+				if(tbN.in_array(tir.TIR_1)) laclasse = "dvct_pink"; else laclasse = "";
+				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_1 + "</td>";
+				if(tbN.in_array(tir.TIR_2)) laclasse = "dvct_pink"; else laclasse = "";
+				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_2 + "</td>";
+				if(tbN.in_array(tir.TIR_3)) laclasse = "dvct_pink"; else laclasse = "";
+				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_3 + "</td>";
+				if(tbN.in_array(tir.TIR_4)) laclasse = "dvct_pink"; else laclasse = "";
+				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_4 + "</td>";
+				if(tbN.in_array(tir.TIR_5)) laclasse = "dvct_pink"; else laclasse = "";
+				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_5 + "</td>";
+				ligne +=   "<td>(" + tir.TIR_C + ")</td>";
+				ligne += "</tr>";
+			});
+			tbl += ligne + "</table>";
+			
+			$("#dvOcc").html(tbl);
+		});
+
+	});
+	
+});
+
+
+
+</script>
+<table>
+<tr>
+	<td colspan="2" id="infos_recherches"></td>
+</tr>
+	<tr>
+		<td>
+			<table>
+			<% for(var t=0;t<datas.length;t++) 
+			{
+
+			var tir_1 = datas[t].NUMS[0].NUMERO;
+			var class1 = datas[t].NUMS[0].CLASS;
+			title1 = datas[t].NUMS[0].TITLE;
+
+			var tir_2 = datas[t].NUMS[1].NUMERO;
+			var class2 = datas[t].NUMS[1].CLASS;
+			title2 = datas[t].NUMS[1].TITLE;
+
+			var tir_3 = datas[t].NUMS[2].NUMERO;
+			var class3 = datas[t].NUMS[2].CLASS;
+			title3 = datas[t].NUMS[2].TITLE
+
+			var tir_4 = datas[t].NUMS[3].NUMERO;
+			var class4 = datas[t].NUMS[3].CLASS;
+			title4 = datas[t].NUMS[3].TITLE;
+
+			var tir_5 = datas[t].NUMS[4].NUMERO;
+			var class5 = datas[t].NUMS[4].CLASS;
+			title5 = datas[t].NUMS[4].TITLE;
+
+			var tir_c = datas[t].NUMS[5].NUMERO;
+			var classc = datas[t].NUMS[5].CLASS;
+
+
+			%>
+			<tr>
+			<td><%=datas[t].TIR_DATE%></td><td></td>
+			<td title ="<%=title1%>" class="<%=class1%>"><%=tir_1 %></td>
+			<td title ="<%=title2%>" class="<%=class2%>"><%=tir_2 %></td>
+			<td title ="<%=title3%>" class="<%=class3%>"><%=tir_3 %></td>
+			<td title ="<%=title4%>" class="<%=class4%>"><%=tir_4 %></td>
+			<td title ="<%=title5%>" class="<%=class5%>"><%=tir_5 %></td>
+			<td title ="complémentaire" class="<%=classc%>"><%=tir_c %></td>
+			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" class='noeil'></div></td>
+			</tr>
+			<%}%></table>
+		</td>
+		<td style="vertical-align:top">
+			<div id="dvOcc" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
+		</td>
+
+	</tr>
+</table>

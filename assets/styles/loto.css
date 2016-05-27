@@ -1,0 +1,203 @@
+.case {
+	border : 1px solid red;
+	width:20px;
+	height:20px;
+	background-color:#ffffff;
+	float:left;
+	margin-right:5px;
+	text-align: center;
+   }
+.casec {
+	border : 1px solid red;
+	width:20px;
+	height:20px;
+	background-color:#ff0000;
+ 	opacity: 0.5;
+
+	float:left;
+	margin-right:5px;
+	text-align: center;
+   }
+  .fort{
+  	background-color:#fff200;
+ 	opacity: 0.4;
+
+  }
+  .moyen{
+  	background-color:#AAAAAA;
+ 	opacity: 0.7;
+
+  }
+  .faible{
+
+  	background-color:#8ec5f2;
+ 	opacity: 0.4;
+  }
+
+ .fort_2{
+  	background-color:#fff200;
+ 	
+
+  }
+  .moyen_2{
+  	background-color:#AAAAAA;
+ 	
+
+  }
+  .faible_2{
+
+  	background-color:#8ec5f2;
+ 	
+  }
+
+   .memo{
+   	border : 1px solid black;
+   	margin-top: 5px; 
+ 	padding: 10px 10px 10px;
+ 	background-color: #F9F990 ;
+
+
+   }
+ #tblOcc .occE1{background-color: #EEEEEE;padding-right:8px;}
+ #tblOcc .occE2{background-color: #CCCCCC;padding-right:15px;}
+ 
+ #scenario {
+ 	background-image: url('../images/png/32x32/Scenario.png');
+ 	background-repeat: no-repeat;
+ 	width:32px;
+ 	height: 32px;
+ 	padding-left: 10px;
+ 	padding-top: 5px;
+ }
+ .noeil {
+ 	background-image: url('../images/png/oeil.png');
+ 	background-repeat: no-repeat;
+ 	width:16px;
+ 	height: 16px;
+ 	padding-left: 10px;
+ 	padding-top: 5px;
+ }
+ .trash {
+  background-image: url('../images/png/16x16/Trash.png');
+  background-repeat: no-repeat;
+  width:16px;
+  height: 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
+.blockDateAnalyse {
+	background-color:#6a68ed;
+
+
+}
+.blockTablePeriode {
+	background-color:#80a7e5;
+
+
+}
+.selection {
+	background-color:#ef6b6b;	
+	
+}
+.dvct_red {
+	border : 1px solid black;
+	height: 20px;
+	background-color:#ff0000;
+ 	
+	margin-right:5px;
+	
+
+}
+.dvct_pink{
+	border : 1px solid black;
+	height: 20px;
+	background-color:#ff0000;
+ 	opacity: 0.5;
+	
+	margin-right:5px;
+	
+
+}
+.tout_rouge {
+	background-color:#ff0000;
+ 	opacity: 0.5;
+}
+.dvct_green{
+	border : 1px solid black;
+	height: 20px;
+	background-color:#00FF00;
+ 	opacity: 0.5;
+	
+	margin-right:5px;
+	
+
+}
+.dvct_blue{
+	border : 1px solid black;
+	height: 20px;
+	background-color:#0000ff;
+ 	opacity: 0.5;
+	margin-right:5px;
+	
+
+}
+.last_tirage {
+	background-color:#ff2222;
+
+
+}
+.btnOrange {
+
+float:left;
+ padding: 10px 10px 10px;
+  line-height: 1;
+   color:#fff; 
+   -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+     border-radius: 30px;
+      background:linear-gradient(to top,#F7BF8F,#F08423)
+
+}
+.infosGen {
+
+float:left;
+width:400px;
+height:200px;
+ padding: 10px 10px 10px;
+  line-height: 1;
+   color:#fff; 
+   -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+     border-radius: 30px;
+      background:linear-gradient(to top,#BAA5A5,#938585)
+
+}
+.btnRose {
+
+float:left;
+ 
+ padding: 10px 10px 10px;
+  line-height: 1;
+   color:#fff; 
+   -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+     border-radius: 30px;
+      background:linear-gradient(to top,#ED283F,#ED7171)
+
+};
+#tblMT tr:nth-child(2n+1) {
+    background: none repeat scroll 0 0 #f3c9fc;
+    color: #000;
+}
+#tblMT tr:nth-child(2n) {
+    background: none repeat scroll 0 0 #bb72db;
+    color: #000;
+}
+
+#tblMT tr:hover {
+  background-color: lightyellow;
+}
+tr.mesreducs:hover {
+  background-color: lightyellow;
+
+}

@@ -1,0 +1,462 @@
+
+<%
+function getType(c) {
+	
+for(var cpt=0;cpt<ecarts.length;cpt++)
+{
+	if(c == ecarts[cpt]["num"] ) return ecarts[cpt]["type"];	
+
+}
+
+}%>
+<script>
+require(['jquery-ui','groupes','occu'], function () {
+
+$("#tableau_numeros").on("mouseover", '.case', function() {
+       	
+       	if($("#info_numero").html() !=$(this).html() )
+       	{
+       		$("#info_numero").html($(this).html());
+			$.get('stats/info_numero',{'numero': $(this).html()},function(data) {
+				  	//retour d'infos
+				  	var dats = JSON.parse(data);
+				  	var aff = "Moyenne de sortie : " + dats.ecart + "</br>";
+				  	aff += "<ul><li>";
+
+				  	aff += dats.tirages.join("</li><li>");
+				  	aff += "</li></ul>";
+				  	$("#lesinfos").html(aff);
+			});
+       	}
+
+
+
+      });
+
+function creationTblRetour(idx,ttl) {
+	
+return $("<table><tr><td>Groupe " + ttl + " </td><td><div groupes='" + ttl + "' id='gs_pertinent_" + idx + "'></div></td><td>Choisir par grille</td><td><input type='text' id='choix_grp_" + idx + "' style='width:30px'></td></tr></table>");
+
+}
+function tb1_moins_tb2(tb1,tb2) {
+	var tbResult = new Array();
+	
+	for(var a=0;a<tb1.length;a++) {	
+		for(var b=0;b<tb2.length;b++) {
+			if( parseInt(tb1[a]) == parseInt(tb2[b]) )tb1[a] = -1;
+		}
+	}
+	alert("les moinss tb1 " + JSON.stringify(tb1));
+	alert("les moinss tb2 " + JSON.stringify(tb2));
+	
+	for(var a=0;a<tb1.length;a++)if(parseInt(tb1[a])>0) tbResult.push(tb1[a]);
+	return tbResult;
+}
+//Affichage des retours de contraintes
+function setRetour(data,idx) {
+	var no_sortie_ko;	
+	data = JSON.parse(data);
+	alert(JSON.stringify(data));
+	$("#gs_retour_" + idx).html("");
+	if(data["gs_" + idx].no_sortie_ko != null)
+	{
+		no_sortie_ko = data["gs_" + idx].no_sortie_ko;
+
+		var html = "<li>Exclus tirages :" + no_sortie_ko.join("-") + "</li>";
+
+		$("#gs_retour_" + idx).prepend("<ul>" + html + "</ul>");
+	
+	}
+	else
+	{
+		data["gs_" + idx].no_sortie_ko = new Array();//init à vide
+		no_sortie_ko = new Array();//pareil
+	}
+	
+	var current_ok = data["gs_" + idx].no_sortie_ok;
+	if(current_ok == null)
+	{
+		current_ok = data["gs_" + idx].echantillon;
+
+	}
+
+	var memo_ok = current_ok;
+	
+	if(data["gs_" + idx].ecart_global_ko != null)
+	{
+		var ecart_global_ko = data["gs_" + idx].ecart_global_ko;
+		//Je retire des ec ko les numeros non pertinents precedents
+
+		ecart_global_ko = tb1_moins_tb2(ecart_global_ko,no_sortie_ko);
+
+        alert("current_ok " + JSON.stringify(current_ok) + " moins " + " ecart_global_ko " + JSON.stringify(ecart_global_ko));
+
+		current_ok=tb1_moins_tb2(current_ok,ecart_global_ko);
+		var html = "<li>Exclus ec global :" + ecart_global_ko.join("-") + "</li>";
+		$("#gs_retour_" + idx).prepend("<ul>" + html + "</ul>");
+	}
+	if(data["gs_" + idx].ecart_moyen_ko != null)
+	{
+		var ecart_moyen_ko = data["gs_" + idx].ecart_moyen_ko;
+		ecart_moyen_ko = tb1_moins_tb2(ecart_moyen_ko,no_sortie_ko);
+		current_ok=tb1_moins_tb2(current_ok,ecart_moyen_ko);
+		var html = "<li>Exclus ec moyen :" + ecart_moyen_ko.join("-") + "</li>";
+		$("#gs_retour_" + idx).prepend("<ul>" + html + "</ul>");	  	
+	}
+	
+	var jsonAffichage = {};
+	jsonAffichage["pertinent"] = current_ok;
+	jsonAffichage["no_sortie_ko"] = no_sortie_ko;
+	jsonAffichage["no_sortie_ok"] = memo_ok;
+	jsonAffichage["ecart_global_ko"] = ecart_global_ko;
+	jsonAffichage["ecart_moyen_ko"] = ecart_moyen_ko;
+	
+	
+	$("#gs_pertinent_" + idx).html("<div class='case'>" + current_ok.join('</div><div class="case">') + '</div>' );
+	
+
+	//alert('ret : ' + JSON.stringify(data["gs_" + idx]));
+	alert('final ok' + JSON.stringify(jsonAffichage));
+
+}
+
+
+
+$("#generation").hide();
+var idx = 0;
+var flagOcc = false;
+var tbSelection = {};
+var restitution = {"contraintes": null};
+
+
+$(".btnOrange").each(function(idx,obj){
+	var dts = $(this).attr('datas');
+	var ttl = $(this).attr('ttl');
+	$(this).click(function(){
+		
+		var dvRetourPertinents = creationTblRetour(idx,ttl);
+	    $("#container_retour").prepend(dvRetourPertinents);
+
+		var grp = $("<div id='gs_" + idx + "'><ul id='gs_retour_" + idx + "'></ul></div>");
+	    $("#mySelection").prepend(grp);
+	    
+	    $("#gs_" + idx).container(
+	    {
+	    	"groups":6,
+	    	"preselection" : ttl, 
+	    	"collection":dts, 
+	    	"callback":function(sortie) { 
+	    		restitution["collection"] = JSON.parse( $("#memoDatas").text() );
+	    		restitution["contraintes"] = sortie; 
+
+	    		 $.get('stats/reduction',{'contraintes':JSON.stringify(restitution)},function(data)
+				  {
+				  	//retour des contraintes
+				  	setRetour(data,idx);
+				  });
+
+
+	    		},
+	    	"fermeture" : function(){
+	    		
+	    		$("#gs_" + idx).remove();
+	    		$("#gs_pertinent_" + idx).remove();
+	    	}
+		});
+
+	});	
+
+
+});
+
+
+
+
+
+$("#btnOccurence").click(function(){
+	if(!flagOcc)
+	{
+		flagOcc = true;
+		
+		var grp = $("<div id='bloc_occ'></div>");
+	    $("#mySelection").prepend(grp);
+	    
+	    $("#bloc_occ").occurences({"callback":function(sortie){
+	    	//tout pourrite il faut voir avec le tb restitution nanani 
+	    	
+	    }});
+    }
+});
+
+
+$("#btnVal").click(function(){
+	
+	
+	//alert( JSON.stringify( restitution ) );
+	//affichage d'un recap
+	var recap = new Array();
+	var resti_con = restitution["contraintes"];
+
+	for(var t=0;t<resti_con.length;t++)
+	{
+		con = resti_con[t];
+		if(resti_con[t] != null)
+		{
+			if(con["numeros"]>0) {
+				
+				var chaine = "Parmis les numéros sortie " + con["groups"].join(" ou ") + " fois, je vais choisir " + con["numeros"] + " numéros";
+				if(con["no_sortie"] != null) {
+					chaine += "<br>Ces numéros ne devront pas avoir été tirés sur les " + con["no_sortie"] + " derniers tirages.";
+				}
+				if(con["ecart_global"] != null)
+				{
+					var tt={"<":'inférieur',">":'supérieur',"=":"égal"};
+					chaine += "<br>Dans cette catégorie, les numéros choisis devront avoir un écart moyen " + tt[con["ecart_global"]] + " à la moyenne des sorties des autres numéros.";
+				}
+				if(con["ecart_moyen"] != null)
+				{
+					if(con["ecart_moyen"]["tirages"]>5)
+					{
+					var tt2={"<":'inférieur',">":'supérieur',"=":"égal"};
+					chaine += "<br>De même, les numéros choisis devront avoir un écart moyen " + tt2[con["ecart_moyen"]["directive"]] + " à la moyenne des sorties des autres numéros sur les " + con["ecart_moyen"]["tirages"] + " derniers tirages.";
+					}
+					else
+					{
+						chaine += "Mais bon, visiblement un écart moyen est requis mais est mal renseigné car il manque le nombre de tirages à prendre en compte pour le calcul des moyennes de tirages... un nombre cohérent donc > à 5";
+					}
+				}
+				
+			}
+			else
+				chaine = "Paramétrage mal fait sur une contrainte, aucun numéros à choisir...";
+			recap.push("<div class='memo'>" + chaine + "</div>");
+		}
+		
+		
+	}
+	$("#gen_recap").html(recap.join("<br>"));
+	
+	$( "#generation" ).dialog({
+	  title: "Génération système 25",
+      resizable: true,
+      height:440,
+      width:800,
+      modal: true,
+      buttons: {
+        "Ok": function() {
+         
+
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+
+
+
+});//fin validation
+
+ 
+});
+
+</script>
+
+
+
+
+
+<div style='background-color:#0000DD'><center><h1>Période d'analyse fixée à <%= periode %> mois</h1></center></div><br>
+<%
+var pluriel=""
+var selection=""
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+for(var ligne=0;ligne<datas.length;ligne++)
+{
+	
+//affichage du tirage suivant
+	 var next_tirage = datas[ligne].datas.last     
+	 var next_date = next_tirage.TIR_DATE
+	 var TIR_1 = next_tirage.TIR_1
+	 var TIR_2 = next_tirage.TIR_2
+	 var TIR_3 = next_tirage.TIR_3
+	 var TIR_4 = next_tirage.TIR_4
+	 var TIR_5 = next_tirage.TIR_5
+	 var TIR_C = next_tirage.TIR_C
+
+	%><div class="blockDateAnalyse"><h2>En date du <%=datas[ligne].date%><br> Analyse du <%=datas[ligne].debut	%> au <%=datas[ligne].fin %></h2></div><br>
+	<%
+	 var obj = datas[ligne].datas.TotalSort
+	 var tbFinal = new Array();
+
+	 var tbDifferentTotaux = new Array()
+	 
+
+	 var tbFld = Object.keys(obj).slice(",")
+	 
+	 tbFld.forEach(function(fld){
+	 	if(!contains(tbDifferentTotaux,obj[fld]))
+	 	{
+			tbDifferentTotaux.push(obj[fld]);
+			
+	 	}
+	 })
+
+	 //Init du tableau de restitution pour une tranche de dates
+	 for(var ini=0;ini<=tbDifferentTotaux[0];ini++)tbFinal.push(new Array())
+
+	 //J' ai un tableau de bonne dimension max
+	 //Je vais remplir les elements de ce tableau avec les totaux par numéros
+	 tbFld.forEach(function(element){
+	 	tbFinal[obj[element]].push(element)
+
+	 })
+
+	 %>
+	 
+	 <div class="blockTablePeriode"><table>
+	 <tr style="vertical-align:top">
+	 <td><table id="tableau_numeros">
+	 <%
+
+	 //Restitution graphique
+	 for(var ini=tbDifferentTotaux[0];ini>=0;ini--)
+	 {
+	 	if(ini>1)
+	 		pluriel="s" 
+	 	else 
+	 		pluriel=""
+
+	 	if(ini==0)
+			css = "dvct_blue";
+		if(ini>0 && ini <=3)
+			css = "dvct_green";
+		if(ini>3)
+				css = "dvct_red";
+		if (ini == tbDifferentTotaux[0])
+			css = "dvct_red";	
+	 	%><tr class="<%=css%>"><td><%=ini %> sortie<%=pluriel%> pour les numéros</td><td>
+		
+
+
+	 	<%
+	 	if(ligne == 0) memoDatas=tbFinal;
+	 	var chaine=""
+	 	tbFinal[ini].forEach(function(ct){
+	 	 ct=ct.replace("N_","")
+	 	 if(ct == TIR_1 || ct == TIR_2 || ct == TIR_3 || ct == TIR_4 || ct == TIR_5)
+	 	 	selection="selection"
+	 	 else if (ligne==0)
+	 	 		selection=getType(ct)
+	 	 	  else
+	 	 		selection= ""
+	 	%><div class='case <%=selection%> '><%=ct%></div><%
+	 	})
+
+
+
+	 	%>
+
+		<%=chaine%></td><td>
+		<% if(ligne == 0) {%>
+		<div id="legrp_<%=ini%>" ttl="<%=ini%>" class="btnOrange"><font style="font-size:8px">Add Grp</font></div>
+
+<%}%>
+		</td></tr>
+
+
+
+
+
+
+	 <%}%>
+	 
+	 <%
+	 
+	 %><tr><td>
+	 <% if (next_date != undefined) {%>
+	 Tirage du <%=next_date%></td><td> 
+ 	<div class='case selection<%=TIR_1%> '><%=TIR_1%></div> 
+ 	<div class='case selection<%=TIR_2%>'><%=TIR_2%></div>
+ 	<div class='case selection<%=TIR_3%>'><%=TIR_3%></div>
+	<div class='case selection<%=TIR_4%>'><%=TIR_4%></div>
+	<div class='case selection<%=TIR_5%>'><%=TIR_5%></div>
+	<div class='case <%=TIR_C%>'><%=TIR_C%></div>
+
+
+<%}%>
+
+</td></tr>
+
+
+
+
+
+
+
+</table></td><td>
+
+<%
+if(ligne==0)
+{%>
+<div id="infosGen" class="infosGen">
+	<table>
+		<tr><td>Informations générales</td><td>Numéro&nbsp;</td><td id="info_numero"></td></tr>
+		<tr><td colspan="3" id="lesinfos"></td></tr></table>
+
+</div>
+<%}%>
+
+</td></tr>
+<%
+
+if(ligne==0)
+{%>
+<tr><td colspan ="2">
+<% 
+
+if (ligne==0)
+{
+//positionnement du diagramme de selection
+%>
+
+
+
+<div id="mySelection" datas="" style="border: solid 1px black; height:350px; overflow-x: scroll;overflow-y: hidden;">
+
+</div>
+
+
+	
+<%
+//fin de diagramme de selection
+}
+%>
+	</td>
+</tr>
+<tr><td colspan ="2">
+
+<table><tr><td>Retour de préselection</td></tr><tr><td>
+<div id="container_retour"></div></td></tr></table>
+
+<div id="btnVal" class="btnRose">Générer</div>
+</td></tr>
+
+<% } %>
+</table></div>
+<br>
+<%}%>
+
+<texarea id="memoDatas" style="visibility:hidden"><%=JSON.stringify(memoDatas)%></textarea>
+<div id="generation">
+	<div id="gen_recap" class="genRecap">
+
+	</div>
+</div>
