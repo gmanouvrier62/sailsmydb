@@ -1,6 +1,7 @@
 var fs = require('fs');
 var util = require("util");
 var moment = require('moment');
+
 var logger = require('../services/logger.init.js').logger("tom.txt");
 module.exports = {
 	
@@ -131,6 +132,36 @@ module.exports = {
 					return res.send(retour);
 				});
 		}
+	},
+	combinaisons: function(req,res) {
+		var ana = new analyse();
+		var panel = req.query.panel.split(',');
+		logger.warn(" panel : " , panel);	
+		var tbFinal = [];
+		ana.GetOccurencesFilteredCombinaison(obj.NUMS,3,36,2,function(err,result){
+
+
+		});
+		/*
+		var deno = new denombrement(panel);
+		deno.List(function(result) {
+			result.map(function(obj,id) {
+				logger.warn("!!!!!!!!!un retour de denos : " , obj);
+				//recherche occurences
+				//panel, combi de , sur periode en mois, seuil >= à
+				
+				//délibération
+
+				//test si pas déjà dans tbFinal
+				if(id == result.length-1)
+					return res.send("ZARMA");
+			});
+		});
+		*/
+
+
+
+
 	}
 
 };

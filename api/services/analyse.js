@@ -6,6 +6,7 @@ var Immutable=require("immutable");
 var moment = require('moment');
 var sleep = require('sleep');
 var getGravite = require ("../services/gravite.js");
+var logger = require('../services/logger.init.js').logger("tom.txt");
 function analyse(){
       //this.pName="/dev/ttyACM0";   
       //this.Temperature="";    
@@ -279,9 +280,9 @@ analyse.prototype.GetOccurences = function(nums,callback) {
 			if(err==null || err=='null'){
 
  				retour["tirages"] = rows;
- 				console.log(util.inspect(rows));
+ 				//console.log(util.inspect(rows));
  				tbRetour.push(retour);
- 				console.log("cpt=" + cpt + ", rstotal : " + rs.length);
+ 				//console.log("cpt=" + cpt + ", rstotal : " + rs.length);
  				if(cpt == rs.length)
  				{
  					console.log("pret pour rendre la main");
@@ -304,7 +305,105 @@ analyse.prototype.GetOccurences = function(nums,callback) {
    
 
 },
+analyse.prototype.GetOccurencesParams = function(params,callback) {
+  var self = this;
+  var nums = params.nums;
+  var arrangement = params.arrangement;
+  var date_min = params.date_min;
+  var date_max = params.date_max;
+  
+  var tbCriteres = new Array();
 
+  var strSQL = "SELECT stat_date, count( stat_date ) AS ttl FROM myloto.stats " +
+      " WHERE stat_date between '" +  date_min  + "' and '" + date_max  +"' and stat_num IN ( " + nums.join(",") +") GROUP BY stat_date HAVING ttl >=" + arrangement + " order by stat_date desc";
+
+
+  console.log(strSQL);
+   
+  sails.models.tirages.query(strSQL,function(err,rs){
+    var tbRetour = new Array();
+    var cpt = 0;
+    console.log("rs count : " + rs.length);
+    var resultat = rs.map(function(obj){
+      
+      var flds = Object.keys(obj);
+      console.log(obj["stat_date"]);
+            var retour = {};
+            retour["stat_date"] = moment(obj["stat_date"]).format("YYYY-MM-DD HH:mm:ss");
+            retour["occurence"] = obj["ttl"]; 
+      self.private_getTirageByDate(retour["stat_date"], function(err,rows){
+        
+      cpt++;
+      if(err==null || err=='null'){
+
+        retour["tirages"] = rows;
+        //console.log(util.inspect(rows));
+        tbRetour.push(retour);
+        //console.log("cpt=" + cpt + ", rstotal : " + rs.length);
+        if(cpt == rs.length)
+        {
+          console.log("pret pour rendre la main");
+          console.log("last date : " + retour["stat_date"]);
+          callback(err,tbRetour);
+        }
+      } else {
+        console.log(err);
+        //callback(err,null);
+      }
+
+
+      });
+      
+    });
+
+
+  });
+    
+   
+
+},
+
+/*
+{ stat_date: '2009-11-09 20:00:00',
+  occurence: 3,
+  tirages: 
+   [ RowDataPacket {
+       id: 889,
+       TIR_DATE: Mon Nov 09 2009 20:00:00 GMT+0100 (CET),
+       TIR_1: 1,
+       TIR_2: 2,
+       TIR_3: 3,
+       TIR_4: 29,
+       TIR_5: 48,
+       TIR_C: 9,
+       createdAt: Wed Mar 23 2016 17:43:09 GMT+0100 (CET),
+       updatedAt: Wed Mar 23 2016 17:43:09 GMT+0100 (CET) },
+     [length]: 1 ] }
+
+
+
+
+*/
+
+//panel, combi de , sur periode en mois, seuil >= à
+analyse.prototype.GetOccurencesFilteredCombinaison = function(panel,arrangement,periode,seuil,callback) {
+  var offset = -periode;
+  var params = {
+    nums: panel,
+    arrangement: arrangement,
+    date_min: moment().add(offset,"month").format("YYYY-MM-DD HH:mm:ss"),
+    date_max: moment().format("YYYY-MM-DD HH:mm:ss");
+  };
+  /*
+  this.GetOccurencesParams(params,function(err,retour){
+    if(err == null) {
+      
+    } else {
+      callback(err,null);
+    }
+  });
+*/
+},
 //Reprise des totaux num par num d'une date à une autre
 analyse.prototype.GetTotaux = function(date_depart,date_fin,callback) {
   self = this;

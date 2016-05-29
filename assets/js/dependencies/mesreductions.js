@@ -28,6 +28,14 @@ require(['jquery-ui','pnotify'], function () {
       		});
       		
       });
+	  $("#tblReduction").on("click", '.radiation', function() {
+        	var panel = $(this).attr('datas');
+      		$.get('mesreductions/combinaisons',{'panel': panel},function(retour) {
+      			alert(retour);
+      		});
+      		
+      });
+
        $("#tblReduction").on("click", '.gettir', function() {
         	var id = $(this).html();
       		var completeDT = id + ' 20:00:00';
@@ -77,7 +85,7 @@ function loadMesreductions() {
     		});	
 		else {
 			//Affichage dans le tableau
-			$("#tblReduction").html("<tr id='trHead'><td>Date</td><td>Numéros</td><td></td></tr>");
+			$("#tblReduction").html("<tr id='trHead'><td>Date</td><td>Numéros</td><td></td><td></td></tr>");
 			
 			console.log(retour);
 			console.log("la suite es parsée");
@@ -92,7 +100,7 @@ function loadMesreductions() {
 				nums += "<div class='case'>" + obj + "</div>";
 			});	
 
-			var rows = $("<tr datas='" + obj.id_reduction + "' class='id_mesreductions' id='mesreducs' ><td style='width:80px' id='recupt' class='gettir'>" + obj.RED_DATE + "</td><td>" + nums + "</td><td><div class='trash' datas='" +  obj.id_reduction  + "'></div></td></tr>");
+			var rows = $("<tr datas='" + obj.id_reduction + "' class='id_mesreductions' id='mesreducs' ><td style='width:80px' id='recupt' class='gettir'>" + obj.RED_DATE + "</td><td>" + nums + "</td><td><div class='trash' datas='" +  obj.id_reduction  + "'></div></td><td><div class='radiation' datas='" +  obj.NUMS  + "'></div></td></tr>");
 			//alert(JSON.stringify(obj));
 			$("#tblReduction").append(rows);		
 			});

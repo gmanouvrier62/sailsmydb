@@ -77,6 +77,14 @@
  	padding-left: 10px;
  	padding-top: 5px;
  }
+ .radiation{
+  background-image: url('../images/png/16x16/Radiation.png');
+  background-repeat: no-repeat;
+  width:16px;
+  height: 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
  .trash {
   background-image: url('../images/png/16x16/Trash.png');
   background-repeat: no-repeat;
