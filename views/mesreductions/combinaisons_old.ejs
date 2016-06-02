@@ -1,0 +1,63 @@
+<table>
+<% 
+for(var cpt = 0; cpt < resultats.length; cpt++) 
+{
+ var nums = resultats[cpt].selection.NUMS;
+ %>
+ <tr>
+ 	<td>
+ 		<div class='case'><%=nums[0]%></div> <div class='case'><%=nums[1]%></div> <div class='case'><%=nums[2]%></div> <div class='case'><%=nums[3]%></div> <div class='case'><%=nums[4]%></div>
+ 	</td>
+ 	<td>
+ 		<table>
+		<tr><td>date</td><td>tirage</td></tr>
+		<% 
+			for(var cpt2 = 0; cpt2 < resultats[cpt].pertinents.length; cpt2)
+			{
+				%><tr><td><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_DATE%></td>
+				  <td>
+ 					<div class='case'><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_1%></div> <div class='case'><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_2%></div> <div class='case'><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_3%></div> <div class='case'><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_4%></div> <div class='case'><%=resultats[cpt].pertinents[cpt2].tirages[0].TIR_5%></div>
+ 				  </td>  	
+
+		<%	} %>
+ 		</table>
+
+
+    </td>
+</tr>
+
+<%
+}
+
+%>		
+</table>	
+{
+    "selection": {
+      "NUMS": [
+        "23",
+        "25",
+        "27",
+        "5",
+        "15"
+      ]
+    },
+    "err": null,
+    "pertinents": [
+      {
+        "stat_date": "2013-06-05 20:00:00",
+        "occurence": 3,
+        "tirages": [
+          {
+            "id": 644,
+            "TIR_DATE": "2013-06-05T18:00:00.000Z",
+            "TIR_1": 4,
+            "TIR_2": 23,
+            "TIR_3": 25,
+            "TIR_4": 27,
+            "TIR_5": 41,
+            "TIR_C": 1,
+            "createdAt": "2016-03-23T16:43:09.000Z",
+            "updatedAt": "2016-03-23T16:43:09.000Z"
+          }
+        ]
+      }

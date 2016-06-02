@@ -40,6 +40,7 @@ module.exports.routes = {
   'mestirages/list' :       'Mestirages.list',
   'mesreductions/save':     'Mesreductions.save',
   'mesreductions/list':     'Mesreductions.list',
+  'mesreductions/combinaisons':  'Mesreductions.combinaisons',
   'tirages/find_tirage':    'TiragesController.find_tirage'
   /***************************************************************************
   *                                                                          *

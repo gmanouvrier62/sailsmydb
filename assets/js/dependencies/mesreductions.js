@@ -31,8 +31,10 @@ require(['jquery-ui','pnotify'], function () {
 	  $("#tblReduction").on("click", '.radiation', function() {
         	var panel = $(this).attr('datas');
       		$.get('mesreductions/combinaisons',{'panel': panel},function(retour) {
-      			alert(retour);
-      		});
+				//sera le fruit d'un render dans le controller combinaison      			
+      			alert('ok');
+      			$("#container_base").html(retour);
+     		});
       		
       });
 

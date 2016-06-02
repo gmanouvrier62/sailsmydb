@@ -56,9 +56,11 @@ denombrement.prototype.List = function(callback) {
 						o.NUMS.push(this.panel[c]);
 						o.NUMS.push(this.panel[d]);
 						o.NUMS.push(this.panel[e]);
+						   
 						result.push(o);           		
 	            		//console.log(this.panel[a]+","+this.panel[b]+","+ this.panel[c] + ","+ this.panel[d] + ","+ this.panel[e]);
 	        		}
+
 	callback(result);
 
 };

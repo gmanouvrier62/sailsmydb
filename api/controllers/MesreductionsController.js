@@ -134,30 +134,68 @@ module.exports = {
 		}
 	},
 	combinaisons: function(req,res) {
+		
+
+		var seuil = 3; //nb de nombre en communs
 		var ana = new analyse();
 		var panel = req.query.panel.split(',');
 		logger.warn(" panel : " , panel);	
-		var tbFinal = [];
-		ana.GetOccurencesFilteredCombinaison(obj.NUMS,3,36,2,function(err,result){
-
-
-		});
-		/*
+		var allResults = [];
+		// suite de 3 nums ds le meme tirage
+		// période 36 mois ( 3 ans )
+		// 2 foix 3 numéros sur cette période pour que ce soit OK
+		
+		
 		var deno = new denombrement(panel);
+		var ttlMax = deno.Count();
 		deno.List(function(result) {
+			logger.warn("OK retour de deno");
+			//logger.util(result);
+			var ttt =0;
+			ttlMax = result.length;
 			result.map(function(obj,id) {
-				logger.warn("!!!!!!!!!un retour de denos : " , obj);
-				//recherche occurences
-				//panel, combi de , sur periode en mois, seuil >= à
+				//logger.warn("!!!!!!!!!un retour de denos : " + id + "= " , obj);
 				
-				//délibération
+				
+				var params = {
+				    nums: obj.NUMS,
+				    arrangement: 3,
+				    seuil: 2,
+				    date_min: moment().subtract(36,"month").format("YYYY-MM-DD HH:mm:ss"),
+				    date_max: moment().format("YYYY-MM-DD HH:mm:ss")
+				};
+				 
+				ana.GetOccurencesParams(params,function(err,retour){
+				    
+				    if(err == null) {
+				      //logger.warn("nb de cas : ", retour.length);
+				      
+				     
+				      	retour["nums"] = obj.NUMS;
+				        if(retour["dates"] != undefined) {
 
-				//test si pas déjà dans tbFinal
-				if(id == result.length-1)
-					return res.send("ZARMA");
+				        	allResults.push(retour);
+				        }
+				     
+				      
+				    } else {
+				      logger.error("une errorette : ", err);
+				    }
+				    logger.warn("numero id : "+id, "pour un compteur reel : " + ttt + " et un max de " + ttlMax );
+				    if(id == ttlMax-1) {
+						logger.warn("byoiunet bayounet!!!");
+						logger.util("bon retours : ", allResults);
+						logger.warn("retour=", allResults);
+						return res.render ('mesreductions/combinaisons',{'resultats': allResults});
+  
+					}	
+					ttt ++;
+				});
+
 			});
+			
 		});
-		*/
+		
 
 
 
@@ -165,3 +203,29 @@ module.exports = {
 	}
 
 };
+
+
+/*
+
+////recherche occurences
+				//obj ={NUMS : [15,23,27,42,5]};
+				//Je vais tester un panel de 5 chiffres pour tester ses occurences
+				
+				ana.GetOccurencesFilteredCombinaison(obj.NUMS,3,36,2,function(err,pertinents){
+					var resultObj = {
+						selection: obj,
+						err: err,
+						pertinents: pertinents
+					}
+					if(pertinents != null) allResults.push(resultObj);
+					logger.warn("courrant : " + id + ", ttl: " + result.length + " sur max de : " + ttlMax);
+					logger.util(resultObj);
+					if(id == ttlMax-1) {
+						return res.render ('mesreductions/combinaisons',{'resultats': allResults});
+  
+						return res.send(allResults);
+					}
+				});
+
+
+				*/
