@@ -26,13 +26,13 @@ module.exports = {
                 {type: 'console'},
                 {
                     type: 'dateFile',
-                    filename: '/home/gilles/node/sailsmydb/logs/sailsmydb.log',
+                    filename: '/home/gilles/node/git/sailsmydb/logs/sailsmydb.log',
                     "pattern": "-yyyy-MM-dd",
                     "alwaysIncludePattern": true
                 }
             ],
             replaceConsole: true,
-            path: '/home/gilles/nodes/sailsmydb/logs'
+            path: '/home/gilles/nodes/git/sailsmydb/logs/sailsmydb.log'
         }
 
 };

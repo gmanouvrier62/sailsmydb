@@ -42,7 +42,7 @@ module.exports = {
          console.log(full_url); // Show the HTML for the Google homepage. 
 
           //mettre dans u n export + call back
-          var chemin_local="/home/gilles/node/sailsmydb/assets/datas/" + file_loto;
+          var chemin_local="/home/gilles/node/git/sailsmydb/assets/datas/" + file_loto;
           //Attention je reload qd meme pour lemois courrant pour faire les mises à jour courrantes du mois
           var date_relative = moment({year: annee,month: mois +1, day:1});
           var date_courrante = moment();
@@ -81,34 +81,6 @@ module.exports = {
    }
    
 
-   /*
-    var file_loto = "toto.htm";
-    var full_url = "http://www.lesbonsnumeros.com/loto/resultats/tirages-mai-2014.htm";
-    var req=new request(full_url, function (error, response, body) {
-            console.log("retour " + response.statusCode + "pour " + full_url);
-            if (!error) {
-              console.log("ok nav : " + full_url);
-              console.log("va ecrire dans : " + "/home/gilles/node/sailsmydb/assets/datas/" + file_loto);
-              fs.writeFile("/home/gilles/node/sailsmydb/assets/datas/" + file_loto, body, function (err) {
-                  if (err) {
-                    console.log("pas bon pour " + full_url);
-                  } else {
-                    console.log('It\'s saved!');
-                  }
-                  
-                    return res.render ('tirages/container',{'nom': 'Manouvrius', 'prenom': 'Gillus','tpl': tom});
-  
-              });
-            }
-            else
-            {
-              
-                    return res.render ('tirages/container',{'nom': 'Manouvrius', 'prenom': 'Gillus','tpl': tom});
-              console.log("erreur nav : " + full_url);
-            }
-          });
-   console.log("c fini c ok");
-  */
 
   },
   liste_tirages: function (req,res) {
@@ -376,7 +348,7 @@ module.exports = {
                                     if(rsGr == null)rsGr = new Array();
                                     //a voir pour faire un render
                                     //res.render fait penser à un objet EFJS 'greffé' à express donc sails
-                                    var range = fs.readFileSync('/home/gilles/node/sailsmydb/views/tirages/range.ejs');
+                                    var range = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/range.ejs');
                                     var rangeEJS = range.toString();
 
                                     res.render('tirages/debug.ejs',{"nfg" : rsGr,"ntirage":next_tirage,"periode":datas.periode,"datas":tbRetour,"ecarts": retourEcart,"rangeEJS":rangeEJS});
@@ -469,14 +441,14 @@ module.exports = {
     
     var imp= new importation();
     //lecture des fichiers du repertoire
-    fs.readdir("/home/gilles/node/sailsmydb/assets/datas", function(err, files) { 
+    fs.readdir("/home/gilles/node/git/sailsmydb/assets/datas", function(err, files) { 
       //console.log(files);
       var cpt=0;
       files.forEach(function(file,index,array){
            
            if(file !='.' && file != '..' && file != '/') {
                     console.log("fichier " + file);
-                    var contentHtml = fs.readFileSync("/home/gilles/node/sailsmydb/assets/datas/" + file);
+                    var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/datas/" + file);
                     $ = cheerio.load(contentHtml);
                     //Traitement du parsing html
                     //console.log(contentHtml.toString());
@@ -539,7 +511,7 @@ module.exports = {
 
                     if (index == (files.length-1) ) {
                       console.log("HIT!");
-                       var menu = fs.readFileSync('/home/gilles/node/sailsmydb/views/tirages/menu.ejs');
+                       var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.ejs');
                        var main = "<div id='container'>-OK import et synchro-</div>";
                        console.log("txt : " + menu);
                        var tom = menu.toString();

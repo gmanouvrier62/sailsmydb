@@ -15,7 +15,10 @@ for(var cpt = 0; cpt < resultats.length; cpt++)
         for (var dt = 0; dt < allDates.length; dt++)
             {
 
-            %><tr><td><%=allDates[dt].stat_date%></td><td></td></tr><%
+            %><tr><td><%=allDates[dt].stat_date%></td><td>
+                <div class='case'><%=allDates[dt].tirages[0]%></div> <div class='case'><%=allDates[dt].tirages[1]%></div> <div class='case'><%=allDates[dt].tirages[2]%></div> <div class='case'><%=allDates[dt].tirages[3]%></div> <div class='case'><%=allDates[dt].tirages[4]%></div>
+                  </td>
+              </tr><%
 
             }
 
@@ -40,4 +43,3 @@ for(var cpt = 0; cpt < resultats.length; cpt++)
 <%=resultats.length%>
 
 
-<%=JSON.stringify(resultats)%>

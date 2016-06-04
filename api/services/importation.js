@@ -23,8 +23,8 @@ importation.prototype.launch = function(full_url,file_loto,callback) {
             	console.log(" retour " + response.statusCode + "pour " + full_url);
             if (!error && response.statusCode == '200') {
               console.log("ok nav : " + full_url);
-              console.log("va ecrire dans : " + "/home/gilles/node/sailsmydb/assets/datas/" + file_loto);
-              fs.writeFile("/home/gilles/node/sailsmydb/assets/datas/" + file_loto, body, function (err) {
+              console.log("va ecrire dans : " + "/home/gilles/node/git/sailsmydb/assets/datas/" + file_loto);
+              fs.writeFile("/home/gilles/node/git/sailsmydb/assets/datas/" + file_loto, body, function (err) {
                   if (err) {
                     console.log("pas bon pour " + full_url);
                   } else {

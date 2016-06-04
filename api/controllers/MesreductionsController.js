@@ -134,18 +134,14 @@ module.exports = {
 		}
 	},
 	combinaisons: function(req,res) {
-		
-
-		var seuil = 3; //nb de nombre en communs
 		var ana = new analyse();
 		var panel = req.query.panel.split(',');
 		logger.warn(" panel : " , panel);	
 		var allResults = [];
+
 		// suite de 3 nums ds le meme tirage
 		// période 36 mois ( 3 ans )
 		// 2 foix 3 numéros sur cette période pour que ce soit OK
-		
-		
 		var deno = new denombrement(panel);
 		var ttlMax = deno.Count();
 		deno.List(function(result) {
@@ -155,8 +151,6 @@ module.exports = {
 			ttlMax = result.length;
 			result.map(function(obj,id) {
 				//logger.warn("!!!!!!!!!un retour de denos : " + id + "= " , obj);
-				
-				
 				var params = {
 				    nums: obj.NUMS,
 				    arrangement: 3,
@@ -168,16 +162,12 @@ module.exports = {
 				ana.GetOccurencesParams(params,function(err,retour){
 				    
 				    if(err == null) {
-				      //logger.warn("nb de cas : ", retour.length);
-				      
-				     
+				        logger.warn("no errors degetoccparams");
 				      	retour["nums"] = obj.NUMS;
-				        if(retour["dates"] != undefined) {
-
+				        if(retour["sorties"] != undefined) {
+				        	logger.util("ok on ajoute ", retour);
 				        	allResults.push(retour);
 				        }
-				     
-				      
 				    } else {
 				      logger.error("une errorette : ", err);
 				    }
@@ -185,9 +175,7 @@ module.exports = {
 				    if(id == ttlMax-1) {
 						logger.warn("byoiunet bayounet!!!");
 						logger.util("bon retours : ", allResults);
-						logger.warn("retour=", allResults);
 						return res.render ('mesreductions/combinaisons',{'resultats': allResults});
-  
 					}	
 					ttt ++;
 				});

@@ -314,7 +314,8 @@ analyse.prototype.GetOccurencesParams = function(params,callback) {
   
   var tbCriteres = new Array();
 
-  var strSQL = "SELECT stat_date, count( stat_date ) AS ttl FROM myloto.stats " +
+  var strSQL = "SELECT stat_date, count( stat_date ) AS ttl, tir_1, tir_2, tir_3, tir_4, tir_5, tir_c FROM myloto.stats inner join myloto.tirages on " +
+      " stat_date=tir_date " +
       " WHERE stat_date between '" +  date_min  + "' and '" + date_max  +"' and stat_num IN ( " + nums.join(",") +") GROUP BY stat_date HAVING ttl >=" + arrangement + " order by stat_date desc";
 
 
@@ -331,22 +332,18 @@ analyse.prototype.GetOccurencesParams = function(params,callback) {
         //logger.log("rs count : " + rs.length);
         if(rs.length < params.seuil) {
            var retour = {};
-            return callback("pas assez de tirages de 3",null);
+           return callback("pas assez de tirages de 3",null);
         } else {
           var retour = {};
           retour["sorties"] = [];
           rs.map(function(obj,id){
-            logger.info("alors : ", retour);
-            
-            var flds = Object.keys(obj);
             console.log(obj["stat_date"]);
             var sretour = {};
             sretour["stat_date"] = moment(obj["stat_date"]).format("YYYY-MM-DD HH:mm:ss");
             sretour["occurence"] = obj["ttl"];
-            sretour["tirages"] = [];
+            sretour["tirages"] = [ obj["tir_1"], obj["tir_2"], obj["tir_3"], obj["tir_4"], obj["tir_5"] ];
             retour["sorties"].push(sretour);
             if(id == rs.length-1) {
-              
               return callback(null,retour);
             }
             

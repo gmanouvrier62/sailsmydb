@@ -11,8 +11,8 @@ module.exports = function(full_url,file_gravite,callback) {
             	console.log(" retour " + response.statusCode + "pour " + full_url);
             if (!error && response.statusCode == '200') {
               console.log("ok nav : " + full_url);
-              console.log("va ecrire dans : " + "/home/gilles/node/sailsmydb/assets/gravites/" + file_gravite);
-              fs.writeFile("/home/gilles/node/sailsmydb/assets/gravites/" + file_gravite, body, function (err) {
+              console.log("va ecrire dans : " + "/home/gilles/node/git/sailsmydb/assets/gravites/" + file_gravite);
+              fs.writeFile("/home/gilles/node/git/sailsmydb/assets/gravites/" + file_gravite, body, function (err) {
                   if (err) {
                     console.log("pas bon pour " + full_url);
                   } else {
