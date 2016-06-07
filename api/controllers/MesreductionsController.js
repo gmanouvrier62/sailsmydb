@@ -133,7 +133,19 @@ module.exports = {
 				});
 		}
 	},
+	compare: function(req,res) {
+
+		var tirage = req.query.tirage;
+		
+
+	},
+
 	combinaisons: function(req,res) {
+
+		var socket = req.socket;
+		var io = sails.io;
+		io.sockets.emit('/mesreductions/combinaisons', {thisIs: 'theMessage'});
+
 		var ana = new analyse();
 		var panel = req.query.panel.split(',');
 		logger.warn(" panel : " , panel);	
@@ -144,12 +156,15 @@ module.exports = {
 		// 2 foix 3 numéros sur cette période pour que ce soit OK
 		var deno = new denombrement(panel);
 		var ttlMax = deno.Count();
+		var step = ttlMax/10;
 		deno.List(function(result) {
 			logger.warn("OK retour de deno");
 			//logger.util(result);
 			var ttt =0;
 			ttlMax = result.length;
+			var cptt = 0;
 			result.map(function(obj,id) {
+
 				//logger.warn("!!!!!!!!!un retour de denos : " + id + "= " , obj);
 				var params = {
 				    nums: obj.NUMS,
@@ -172,6 +187,11 @@ module.exports = {
 				      logger.error("une errorette : ", err);
 				    }
 				    logger.warn("numero id : "+id, "pour un compteur reel : " + ttt + " et un max de " + ttlMax );
+				    cptt ++;
+					if(cptt >= step) {
+						io.sockets.emit('/mesreductions/combinaisons', {current: id,ttl:ttlMax});
+						cptt = 0;	
+					}
 				    if(id == ttlMax-1) {
 						logger.warn("byoiunet bayounet!!!");
 						logger.util("bon retours : ", allResults);

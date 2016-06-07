@@ -32,7 +32,7 @@ require(['jquery-ui','pnotify'], function () {
         	var panel = $(this).attr('datas');
       		$.get('mesreductions/combinaisons',{'panel': panel},function(retour) {
 				//sera le fruit d'un render dans le controller combinaison      			
-      			alert('ok');
+      			//alert('ok');
       			$("#container_base").html(retour);
      		});
       		

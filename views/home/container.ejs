@@ -686,7 +686,7 @@ $("#dvPeriode").hide();
         socket.emit('welcome', {data: 'foo!'});
     });
 */
-var socket = io.connect("localhost:1337");
+var socket = io.connect("localhost:800");
 
 socket.on('connect', function socketConnected() {
 
@@ -696,10 +696,9 @@ socket.on('connect', function socketConnected() {
     'e.g. to send a GET request to Sails via Socket.io, try: \n' +
     '`socket.get("/foo", function (response) { console.log(response); })`'
   );
-	//socket.get("/home", function (response) { console.log(response); });
-  // Attach a listener which fires every time the server publishes a message:
-  socket.on('/home/index', function newMessageFromSails ( message ) {
-
+	
+  socket.on('/mesreductions/combinaisons', function newMessageFromSails ( message ) {
+  	
     typeof console !== 'undefined' &&
     console.log('New message received from Sails ::\n', message);
 

@@ -6,7 +6,9 @@ module.exports = {
 	
 
 home : function (req,res){
-	
+		var socket = req.socket;
+		var io = sails.io;
+		io.sockets.emit('messageName', {thisIs: 'thebeuebuebuessage'});
  	var menu = fs.readFileSync('/home/gilles/node/sailsmydb/views/tirages/menu.ejs');
  	
    	logger.warn("coucouroucoucou");

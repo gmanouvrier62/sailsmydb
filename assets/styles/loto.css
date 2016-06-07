@@ -209,3 +209,11 @@ tr.mesreducs:hover {
   background-color: lightyellow;
 
 }
+
+#lstT tr:hover {
+  background-color: blue;
+}
+tr.mesreducs:hover {
+  background-color: blue;
+
+}

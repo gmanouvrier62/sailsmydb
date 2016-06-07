@@ -8,6 +8,22 @@ Array.prototype.in_array = function(unite) {
     return false;
     };
 var memo=null;
+
+$("#lstT").on("mouseover", '.ligne', function() {
+
+	var n1 = $(this).find('td').eq(2).html();
+	var n2 = $(this).find('td').eq(3).html();
+	var n3 = $(this).find('td').eq(4).html();
+	var n4 = $(this).find('td').eq(5).html();
+	var n5 = $(this).find('td').eq(6).html();
+	var ch = "<div class='case'>" + n1 + "</div>" + 
+				"<div class='case'>" + n2 + "</div>" + 
+				"<div class='case'>" + n3 + "</div>" +
+				"<div class='case'>" + n4 + "</div>" +
+				"<div class='case'>" + n5 + "</div>";
+	$("#dvRappel").html(ch);
+});
+
 $(".noeil").each(function(){
 	
 
@@ -64,7 +80,7 @@ $(".noeil").each(function(){
 </tr>
 	<tr>
 		<td>
-			<table>
+			<table id='lstT'>
 			<% for(var t=0;t<datas.length;t++) 
 			{
 
@@ -93,7 +109,7 @@ $(".noeil").each(function(){
 
 
 			%>
-			<tr>
+			<tr class='ligne'>
 			<td><%=datas[t].TIR_DATE%></td><td></td>
 			<td title ="<%=title1%>" class="<%=class1%>"><%=tir_1 %></td>
 			<td title ="<%=title2%>" class="<%=class2%>"><%=tir_2 %></td>
@@ -108,6 +124,9 @@ $(".noeil").each(function(){
 		<td style="vertical-align:top">
 			<div id="dvOcc" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
 		</td>
-
+		<td style="vertical-align:top">
+			<div id="dvRappel"></div>
+			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
+		</td>
 	</tr>
 </table>

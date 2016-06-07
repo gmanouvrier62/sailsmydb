@@ -1,3 +1,15 @@
+<script>
+
+Array.prototype.in_array = function(unite) {
+     var length = this.length;
+    for(var i = 0; i < length; i++) {
+        //alert(this[i] + " : " + unite);
+        if(this[i] == unite) return true;
+    }
+    return false;
+    };
+
+</script>
 <table>
 <% 
 for(var cpt = 0; cpt < resultats.length; cpt++) 
@@ -14,9 +26,43 @@ for(var cpt = 0; cpt < resultats.length; cpt++)
         var allDates = resultats[cpt].sorties;
         for (var dt = 0; dt < allDates.length; dt++)
             {
+                var lacase0;
+                var lacase1;
+                var lacase2;
+                var lacase3;
+                var lacase4;
+                
+                if(nums.inArray(allDates[dt].tirages[0]))
+                    lacase0 = 'casec';
+                else
+                    lacase0 = 'case';
+
+                if(nums.inArray(allDates[dt].tirages[1]))
+                    lacase1 = 'casec';
+                else
+                    lacase1 = 'case';
+
+                if(nums.inArray(allDates[dt].tirages[2]))
+                    lacase2 = 'casec';
+                else
+                    lacase2 = 'case';
+
+                if(nums.inArray(allDates[dt].tirages[3]))
+                    lacase3 = 'casec';
+                else
+                    lacase3 = 'case';
+
+                if(nums.inArray(allDates[dt].tirages[4]))
+                    lacase4 = 'casec';
+                else
+                    lacase4 = 'case';
 
             %><tr><td><%=allDates[dt].stat_date%></td><td>
-                <div class='case'><%=allDates[dt].tirages[0]%></div> <div class='case'><%=allDates[dt].tirages[1]%></div> <div class='case'><%=allDates[dt].tirages[2]%></div> <div class='case'><%=allDates[dt].tirages[3]%></div> <div class='case'><%=allDates[dt].tirages[4]%></div>
+                <div class='<%=lacase0%>'><%=allDates[dt].tirages[0]%></div> 
+                <div class='<%=lacase1%>'><%=allDates[dt].tirages[1]%></div> 
+                <div class='<%=lacase2%>'><%=allDates[dt].tirages[2]%></div> 
+                <div class='<%=lacase3%>'><%=allDates[dt].tirages[3]%></div> 
+                <div class='<%=lacase4%>'><%=allDates[dt].tirages[4]%></div>
                   </td>
               </tr><%
 
