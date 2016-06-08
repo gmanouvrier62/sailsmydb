@@ -10,6 +10,7 @@ requirejs.config({
       'occu' : './composant/occurences',
       'gogo' : './release/go',
       'mesreductions': './mesreductions'
+      
 
       
     },
@@ -21,6 +22,7 @@ requirejs.config({
       },
       'jquery-ui': { deps: ['jquery']},
       'sliders' : {deps: ['jquery']}
+             
   });
 
 

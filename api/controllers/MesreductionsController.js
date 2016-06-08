@@ -194,6 +194,8 @@ module.exports = {
 					}
 				    if(id == ttlMax-1) {
 						logger.warn("byoiunet bayounet!!!");
+						io.sockets.emit('/mesreductions/combinaisons', null);
+			
 						logger.util("bon retours : ", allResults);
 						return res.render ('mesreductions/combinaisons',{'resultats': allResults});
 					}	

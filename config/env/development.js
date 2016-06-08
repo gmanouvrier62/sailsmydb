@@ -32,7 +32,7 @@ module.exports = {
                 }
             ],
             replaceConsole: true,
-            path: '/home/gilles/nodes/git/sailsmydb/logs/sailsmydb.log'
+            path: '/home/gilles/node/git/sailsmydb/logs/sailsmydb.log'
         }
 
 };

@@ -5,8 +5,11 @@
 <!--<link href="/styles/monitor.css" rel="stylesheet" type="text/css">-->
 <link href="/js/dependencies/pnotify.custom.min.css" rel="stylesheet">
 <link href="/js/dependencies/jquery_ui/jquery-ui.css" rel="stylesheet">
+
 <link href="/styles/loto.css" rel="stylesheet">
 <link href="/styles/highlight.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/circle.css">
+
  <link rel="stylesheet" href="/js/dependencies/jQRangeSlider-5.7.2/css/iThing.css" type="text/css" />
 
 <!--<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>-->
@@ -38,6 +41,7 @@ Array.prototype.in_array = function(unite) {
     }
     return false;
     };
+
 var memo=null;
 
 function GestionAffichage(action) {
@@ -92,6 +96,7 @@ var lineChartDataStats = {
 
 require(['jquery-ui','pnotify','mesreductions'], function () {
 
+$("#progress").hide();
 //gojs section
 	var mestirages = {
 					  id: null,
@@ -628,24 +633,33 @@ $("#lnkListTirages").click(function(){
 
  });
 
+function chargementMesTirages(datas) {
+
+	var tb = datas.split(',');
+	var cl = '';
+	var div_nums = "";
+	var div_comp = "";
+	for(var nn = 1;nn<50;nn++) {
+		if(tb.in_array(nn)) cl = 'casec'; else cl = 'case';
+		div_nums = div_nums + "<div class='" + cl + "' id='boule_" + nn + "'>" +nn + "</div>";
+		if (nn < 11) 
+			div_comp = div_comp + "<div class='case' id='boule_c_" + nn + "'>" +nn + "</div>";
+	}
+	var dvSupp = "<br><br><div style='padding-top:20px'>grille jouée <input id='chkJoue' type='checkbox'></div>";
+	dvSupp +=    "<div>Gains <input type='text' id='txtGain' style='width:80px' value =''></div>";
+	div_nums += dvSupp;
+	$("#container1_nm").html(div_nums);
+	$("#container2_nm").html(div_comp);
+
+		showNonModal("Mes tirages","crea");
+
+}
+
 $("#lnkCreateT").click(function(){
 
 $.get('mestirages/home',{action:'create'},function(data){
            					
-           				var div_nums = "";
-           				var div_comp = "";
-						for(var nn = 1;nn<50;nn++) {
-							div_nums = div_nums + "<div class='case' id='boule_" + nn + "'>" +nn + "</div>";
-							if (nn < 11) 
-								div_comp = div_comp + "<div class='case' id='boule_c_" + nn + "'>" +nn + "</div>";
-						}
-						var dvSupp = "<br><br><div style='padding-top:20px'>grille jouée <input id='chkJoue' type='checkbox'></div>";
-						dvSupp +=    "<div>Gains <input type='text' id='txtGain' style='width:80px' value =''></div>";
-						div_nums += dvSupp;
-						$("#container1_nm").html(div_nums);
-						$("#container2_nm").html(div_comp);
-						
-           				showNonModal("Mes tirages","crea");
+           				chargementMesTirages('');
     });
 });
 
@@ -698,10 +712,16 @@ socket.on('connect', function socketConnected() {
   );
 	
   socket.on('/mesreductions/combinaisons', function newMessageFromSails ( message ) {
-  	
+
     typeof console !== 'undefined' &&
     console.log('New message received from Sails ::\n', message);
-
+    if (message != null) {
+    	var perc = parseInt((message.current * 100) / message.ttl);
+    	$("#progress").show();
+    	$("#progress").addClass(".c100 p" + perc + " dark small green");
+    	$("#progress-span").html(perc + "%");
+	} else
+		$("#progress").hide();
   });
   socket.emit("tom", function(r){
 
@@ -807,6 +827,13 @@ tomorrow.setDate(today.getDate()+1);
 
 	</div>
 	<div id="container4_reduction" style="overflow:auto;padding: 0.5em;height:240px;width:380px;float:left">
+		<div id="progress" class="c100 p1 dark small green">
+                        <span id="progress-span">1%</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+        </div>
 		<table id='tblReduction'>
 			<tr id="trHeadReduction"></tr>
 		</table><br>
