@@ -46,6 +46,6 @@ module.exports = {
                 }
             ],
             replaceConsole: true,
-            path: '/home/gilles/nodes/git/sailsmydb/logs'
+            path: '/home/gilles/node/git/sailsmydb/logs'
         }
 };
