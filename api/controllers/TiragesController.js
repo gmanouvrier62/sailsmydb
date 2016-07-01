@@ -11,6 +11,7 @@ var sleep = require('sleep');
 var cheerio = require('cheerio');
 var Immutable = require('immutable');
 var ejs = require('ejs');
+var logger = require('../services/logger.init.js').logger("tom.txt");
 var getGravite = require ("../services/gravite.js");
 module.exports = {
 	
@@ -173,17 +174,37 @@ module.exports = {
                       if (v1>v2) return 1;
                       return 0;
                   });
-                  res.render('tirages/listTirages.ejs',{"datas":retourResultat});
+
+                  sails.models.reductions.find().exec(function(err,records) {
+                    var tbRetour = [];
+                    records.map(function(obj,id) {
+                      if(tbRetour[obj["RED_DATE"]] == undefined) {
+                          tbRetour[obj["RED_DATE"]] = [];
+                      }
+                      logger.info("bouboubou : " , obj["RED_DATE"]);
+                      tbRetour[obj["RED_DATE"]].push(obj.RED_NUM);
+                      if(id == records.length -1)
+                        res.render('tirages/listTirages.ejs',{"datas":retourResultat,"reductions": tbRetour});
+                      
+
+                    });
+                   
+
+                  });
+                  
+
+
                 }
 
               } else {
                  function sortInt(a,b,field){
-    var v1 = parseInt(a[field]);
-    var v2 = parseInt(b[field]);
-    if (v1<v2) return -1;
-    if (v1>v2) return 1;
-    return 0;
-} console.log("bourdiel de bourricot");
+                    var v1 = parseInt(a[field]);
+                    var v2 = parseInt(b[field]);
+                    if (v1<v2) return -1;
+                    if (v1>v2) return 1;
+                    return 0;
+                } 
+                console.log("bourdiel de bourricot");
                   res.send("errored nanani");
               }
 

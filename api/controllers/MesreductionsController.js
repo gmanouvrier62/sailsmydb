@@ -136,6 +136,37 @@ module.exports = {
 	compare: function(req,res) {
 
 		var tirage = req.query.tirage;
+		var sql = "select * from myloto.reductions where RED_DATE >='" + tirage.date + "' order by id_reduction";
+		sails.models.reductions.query(sql, function creaStat(err,results){
+			logger.warn(err);
+			if(err != undefined) {
+				var retour = {err: err};
+				return res.send(retour);
+			} else {
+				if(results.length>0) {
+					var tbResults = [];
+					/*
+					results.map(function(obj,id) {
+						for(var i = 0; i< tbResults.length; i++) {
+							if(tbResults[i] == undefined) {
+								tbResults[obj.id_reduction] = 
+							}	
+
+						}
+						
+
+					});
+					*/
+				} else {
+					var retour = {err: "pas de retour d'infos réduction"};
+
+					return res.send(retour);
+				}
+
+
+			}
+			
+		});		
 		
 
 	},
@@ -195,9 +226,16 @@ module.exports = {
 				    if(id == ttlMax-1) {
 						logger.warn("byoiunet bayounet!!!");
 						io.sockets.emit('/mesreductions/combinaisons', null);
-			
+						var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.js');
+				 	 	var tom = "";//menu.toString();
 						logger.util("bon retours : ", allResults);
-						return res.render ('mesreductions/combinaisons',{'resultats': allResults});
+						var ana = new analyse();
+						ana.GetDateNextTirage(function(err,result){
+							ana.GetGlobalTotaux(function(err,resultat) {
+								return res.render ('mesreductions/combinaisons',{'tplMenu' : tom, 'resultats': allResults,'nextDate': result,'totaux': JSON.stringify(resultat)});
+							});
+							
+						});
 					}	
 					ttt ++;
 				});

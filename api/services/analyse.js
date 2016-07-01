@@ -356,6 +356,42 @@ analyse.prototype.GetOccurencesParams = function(params,callback) {
    
 
 },
+analyse.prototype.GetGlobalTotaux = function(callback) {
+   var ttlm = 0;
+   var sql = "select * from myloto.stat_total order by id desc limit 1";
+   sails.models.stat_total.query(sql, function(err,rows){
+
+      if(err != undefined) {
+        callback(err,null);
+      } else {
+        var rs = rows[0];
+        var tb = Object.keys(rs);
+        var retour = {};
+        tb.map(function(obj, id) {
+
+          if(id > 1 && id < 51) {
+            retour[obj.replace("N_","")] = {'ttl' : rs[obj], 'class': ''};
+            ttlm += rs[obj];
+          }
+          if(id == 50) {
+            console.warn("alors : ", retour);
+            console.warn("moy : " + (ttlm/49));
+            for(var f = 1;f <= 49; f++) {
+              var current = retour[f];
+              if(current.ttl > (ttlm/49)) 
+                current.class = 'fo';
+              else if (current.ttl < (ttlm/49))
+                  current.class = 'fa';
+
+            }
+            callback(null,retour);
+          }
+        });
+      }
+
+   });
+
+},
 //Reprise des totaux num par num d'une date à une autre
 analyse.prototype.GetTotaux = function(date_depart,date_fin,callback) {
   self = this;

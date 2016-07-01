@@ -35,7 +35,7 @@ importation.prototype.launch = function(full_url,file_loto,callback) {
             }
             else
             {
-                        console.log("erreur nav : " + full_url);
+                 console.log("erreur nav : " + full_url);
                  callback("err");
             }
           });

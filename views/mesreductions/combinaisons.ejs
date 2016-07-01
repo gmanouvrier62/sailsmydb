@@ -1,33 +1,79 @@
 <script>
-$("#progress").hide();
-Array.prototype.in_array = function(unite) {
-     var length = this.length;
-    for(var i = 0; i < length; i++) {
-        //alert(this[i] + " : " + unite);
-        if(this[i] == unite) return true;
-    }
-    return false;
-    };
-    
-$(".toTirage").each(function(){
-    $(this).click(function(){
-        
-        chargementMesTirages($(this).attr("datas"));
-    })
-    
-});
+require(['jquery-ui','pnotify','mesreductions'], function () {
+    var currentCpl = "";
+    $("#dialog_cpl").hide();
+   
+    $("#progress").hide();
+    Array.prototype.in_array = function(unite) {
+         var length = this.length;
+        for(var i = 0; i < length; i++) {
+            //alert(this[i] + " : " + unite);
+            if(this[i] == unite) return true;
+        }
+        return false;
+        };
+    $("#dialog_cpl").on("click", '.case', function() {
+        if(currentCpl == "") {
+            $(this).removeClass('case').addClass('casec');
+            currentCpl = $(this).html();
+        }
+    });
+      $("#dialog_cpl").on("click", '.casec', function() {
+        $(this).removeClass('casec').addClass('case');
+        currentCpl = "";
+      });    
+    $(".toTirage").each(function(){
+        $(this).click(function(){
+            //envoyer les datas directement, pb de chargement des div
+            //chargementMesTirages($(this).attr("datas"));
+            var les_datas = $(this).attr("datas");
+            var tbChoix = les_datas.split(",");
+             $("#dialog_cpl").dialog({
+                autoOpen: true,
+                width: 480,
+                position:['50','50'],
+                title: 'Choisir un complémentaire',
+                modal: true,
+                buttons: [
+                    {
+                        text: "Ok",
+                        click: function() { 
 
+                            var mestirages = {
+                              id: null,
+                              MTIR_DATE: '<%=nextDate.date %>',
+                              MTIR_1: tbChoix[0],
+                              MTIR_2: tbChoix[1],
+                              MTIR_3: tbChoix[2],
+                              MTIR_4: tbChoix[3],
+                              MTIR_5: tbChoix[4],
+                              MTIR_C: currentCpl,
+                              MTIR_COUT: 0,
+                              MTIR_GAIN: 0
+                            };
+                            $.get('mestirages/save',{'datas':mestirages},function(datas) {
+                                alert(datas.err);
+                            });
+
+                        }
+                    }
+                ]
+            });
+        })
+    });
+});
 </script>
 
 <table>
 <% 
+objTotaux = JSON.parse(totaux);
 for(var cpt = 0; cpt < resultats.length; cpt++) 
 {
  var nums = resultats[cpt].nums;
  %>
  <tr>
  	<td>
- 		<div class='case'><%=nums[0]%></div> <div class='case'><%=nums[1]%></div> <div class='case'><%=nums[2]%></div> <div class='case'><%=nums[3]%></div> <div class='case'><%=nums[4]%></div>
+ 		<div class='case <%=objTotaux[nums[0]].class %>'><%=nums[0]%></div> <div class='case <%=objTotaux[nums[1]].class %>'><%=nums[1]%></div> <div class='case <%=objTotaux[nums[2]].class %>'><%=nums[2]%></div> <div class='case <%=objTotaux[nums[3]].class %>'><%=nums[3]%></div> <div class='case <%=objTotaux[nums[4]].class %>'><%=nums[4]%></div>
  	</td>
  	<td><table>
         <tr><td>Dates</td><td></td><td></td></tr>
@@ -89,6 +135,12 @@ for(var cpt = 0; cpt < resultats.length; cpt++)
 %>		
 </table>	
 <br>
-<%=resultats.length%>
+<div id="dialog_cpl" title="">
+<b>Pour le prochain tirage du </b><%=nextDate.date %></b><br>
+<div class='case'>1</div><div class='case'>2</div><div class='case'>3</div><div class='case'>4</div><div class='case'>5</div><div class='case'>6</div><div class='case'>7</div><div class='case'>8</div><div class='case'>9</div>
+</div>
+<%=resultats.length%><br>
+<%=totaux%><br>
+
 
 

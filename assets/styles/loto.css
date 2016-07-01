@@ -18,6 +18,17 @@
 	margin-right:5px;
 	text-align: center;
    }
+
+   .fo{
+
+    color:#FF0000;
+
+   }
+
+   .fa{
+    color:#0000FF;
+
+   }
   .fort{
   	background-color:#fff200;
  	opacity: 0.4;

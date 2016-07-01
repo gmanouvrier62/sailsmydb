@@ -96,6 +96,8 @@ var lineChartDataStats = {
 
 require(['jquery-ui','pnotify','mesreductions'], function () {
 
+
+
 	
 	$("#progress").hide();
 	//gojs section
