@@ -1,3 +1,8 @@
+.masquage {
+
+  visibility: hidden;
+
+}
 .case {
 	border : 1px solid red;
 	width:20px;

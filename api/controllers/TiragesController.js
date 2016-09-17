@@ -85,6 +85,20 @@ module.exports = {
 
   },
   liste_tirages: function (req,res) {
+    Array.prototype.get = function(fld,value) {
+
+        for(var cpt = 0; cpt < this.length;cpt++) {
+          logger.info("regarde si ",this[cpt][fld]," = ",value);
+          if(this[cpt][fld] == value)
+          {
+            logger.info("oui");
+            return this[cpt];
+          } else logger.info("non"); 
+
+        }
+        logger.info("retour final");
+        return null;
+    };
     var params = req.query.datas;
     console.log(params);
     var mois = params.mois;
@@ -178,13 +192,18 @@ module.exports = {
                   sails.models.reductions.find().exec(function(err,records) {
                     var tbRetour = [];
                     records.map(function(obj,id) {
-                      if(tbRetour[obj["RED_DATE"]] == undefined) {
-                          tbRetour[obj["RED_DATE"]] = [];
+                      var fdate = moment(obj["RED_DATE"]).format("YYYY-MM-DD") + " 20:00:00";
+                      if(tbRetour.get("date", fdate) == null) {
+                          var objI = {"date": fdate, "collection": []};
+                          tbRetour.push(objI);
                       }
-                      logger.info("bouboubou : " , obj["RED_DATE"]);
-                      tbRetour[obj["RED_DATE"]].push(obj.RED_NUM);
-                      if(id == records.length -1)
+                      logger.info("bouboubou : " , fdate);
+                      tbRetour.get("date", fdate).collection.push(obj.RED_NUM);
+
+                      if(id == records.length -1) {
+                        logger.info("le retour qui retourne : ", tbRetour);
                         res.render('tirages/listTirages.ejs',{"datas":retourResultat,"reductions": tbRetour});
+                      }
                       
 
                     });

@@ -126,8 +126,45 @@ $(".noeil").each(function(){
 		</td>
 		<td style="vertical-align:top">
 			<div id="dvRappel"></div>
-			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
+			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" >
+			<h3>Liste des réductions effectuées</h3>
+			<font style='size:10px'><i>En survolant les différents tirages à gauche, nous visualiserons les numéros présents dans les sélections ci-dessous</i></font><br><br>
+			
+<div class="panel panel-default">
+ <% for(var t=0;t<reductions.length;t++) 
+			{
+			%>
+			  <!-- Default panel contents -->
+			  <div id="<%=reductions[t].date%>" class="panel-heading">
+
+			  <%=reductions[t].date%>
+			  
+
+			  </div>
+			  <div id="content_<%=reductions[t].date%>" class="panel-body">
+			    <% 
+			    for(var tt = 0;tt<reductions[t].collection.length;tt++) {
+			    %>
+			    <div id="<%=reductions[t].collection[tt]%>" class='case'><%=reductions[t].collection[tt]%></div>
+				<%
+			    }%>
+			  </div>
+
+  <%
+	}
+  %>	
+</div>
+			
+
+
+				
+
+
+
+
+
+			</div>
 		</td>
 	</tr>
 </table>
-<%=reductions%>
+	
