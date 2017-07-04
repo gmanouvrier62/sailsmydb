@@ -93,6 +93,22 @@
  	padding-left: 10px;
  	padding-top: 5px;
  }
+ .getPanel {
+  background-image: url('../images/png/Color palette.png');
+  background-repeat: no-repeat;
+  width:32px;
+  height: 32px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
+ .clDistance {
+  background-image: url('../images/png/History.png');
+  background-repeat: no-repeat;
+  width:16px;
+  height: 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
  .radiation{
   background-image: url('../images/png/16x16/Radiation.png');
   background-repeat: no-repeat;

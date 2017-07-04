@@ -41,7 +41,8 @@ module.exports.routes = {
   'mesreductions/save':     'Mesreductions.save',
   'mesreductions/list':     'Mesreductions.list',
   'mesreductions/combinaisons':  'Mesreductions.combinaisons',
-  'tirages/find_tirage':    'TiragesController.find_tirage'
+  'tirages/find_tirage':    'TiragesController.find_tirage',
+  '/tirages/get_panel':      'TiragesController.RecuperationPanelNumber'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

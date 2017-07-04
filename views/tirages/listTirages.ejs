@@ -8,7 +8,7 @@ Array.prototype.in_array = function(unite) {
     return false;
     };
 var memo=null;
-
+$("#choix_distance").hide();
 $("#lstT").on("mouseover", '.ligne', function() {
 
 	var n1 = $(this).find('td').eq(2).html();
@@ -23,7 +23,57 @@ $("#lstT").on("mouseover", '.ligne', function() {
 				"<div class='case'>" + n5 + "</div>";
 	$("#dvRappel").html(ch);
 });
+$(".clDistance").each (function(){
+	$(this).click(function(){	
+		var datas = $(this).attr("datas");
+		var ladate = $(this).data('ladate');
+		var tbN = datas.split('-');
+		var objS={'nums':tbN};
+		var self = $(this);
+		$.get('tirages/find_distance',{'datas':objS, 'ladate': ladate},function(datas) {
 
+			console.log('proutage' + datas);
+			//alert(self.parent().parent().html());
+			self.parent().parent().find(".eventail").html(datas.eventail);
+
+		});
+	});
+});
+$(".getPanel").click(function(){
+	$( "#choix_distance" ).dialog({
+		autoOpen: true,
+		width: 300,
+		position:['50','50'],
+		title: "Récupérer un panel de numéros",
+		modal: true,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					var self = $(this);
+					var d1 = $("#lstT").find("tr").eq(0).find("td").eq(0).html() + " 21:00:00";
+										
+					var dist = $("#txtDistance").val();
+					
+					$.get('tirages/get_panel',{'d1': d1, 'distance': dist},function(datas) {
+						//alert(datas);
+						$("#dvOcc").html("<div class='case'>" + datas.panel.join("</div><div class='case'>") + "</div>");
+						$( self ).dialog( "close" );
+					});
+					
+				}
+			},
+			{
+				text: "Cancel",
+				click: function() {
+					$( this ).dialog( "close" );
+				
+				}
+			}]
+	});
+	
+	
+});
 $(".noeil").each(function(){
 	
 
@@ -74,7 +124,8 @@ $(".noeil").each(function(){
 
 
 </script>
-<table>
+Récupérer un panel sur X tirages <div class="getPanel"></div>
+<table id="le_tableau">
 <tr>
 	<td colspan="2" id="infos_recherches"></td>
 </tr>
@@ -117,7 +168,8 @@ $(".noeil").each(function(){
 			<td title ="<%=title4%>" class="<%=class4%>"><%=tir_4 %></td>
 			<td title ="<%=title5%>" class="<%=class5%>"><%=tir_5 %></td>
 			<td title ="complémentaire" class="<%=classc%>"><%=tir_c %></td>
-			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" class='noeil'></div></td>
+			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" data-ladate = "<%=datas[t].TIR_DATE%>" class='noeil'></div></td>
+			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" data-ladate = "<%=datas[t].TIR_DATE%>" class='cldistance'></div></td><td class="eventail"></td><td class="panel"></td>
 			</tr>
 			<%}%></table>
 		</td>
@@ -167,4 +219,8 @@ $(".noeil").each(function(){
 		</td>
 	</tr>
 </table>
-	
+<div id="retour_panel">
+</div>
+<div id='choix_distance'>
+Nb de tirages arrières <input type='text' id='txtDistance'>
+</div>

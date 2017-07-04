@@ -84,6 +84,91 @@ module.exports = {
 
 
   },
+  find_distance: function (req, res) {
+   
+    var ladate = req.query.ladate;
+    var numero_reference = req.query.datas.nums;
+    logger.warn("ladate : ", ladate);
+    logger.warn("sortie : ", numero_reference);
+    var flag = false;
+    var memo_date = ladate;
+    var memo_ref = [];
+    var oo = {};
+    var compteur = 1;
+    var panel = [];
+    var datounette = moment(ladate);
+    sails.models.tirages.getLastDateForNumber(numero_reference[0], ladate, function(err, retour) {
+        if (err !== null && err !== undefined) return res.send("ERR");
+        logger.warn("r ", retour);
+        if (retour < datounette) datounette = retour;
+        sails.models.tirages.getLastDateForNumber(numero_reference[1], ladate, function(err, retour) {
+          if (err !== null && err !== undefined) return res.send("ERR");
+          if (retour < datounette) datounette = retour;
+          logger.warn("r ", retour);
+          sails.models.tirages.getLastDateForNumber(numero_reference[2], ladate, function(err, retour) {
+            if (err !== null && err !== undefined) return res.send("ERR");
+            if (retour < datounette) datounette = retour;
+            logger.warn("r ", retour);
+            sails.models.tirages.getLastDateForNumber(numero_reference[3], ladate, function(err, retour) {
+              if (err !== null && err !== undefined) return res.send("ERR");
+              if (retour < datounette) datounette = retour;
+              logger.warn("r ", retour);
+              sails.models.tirages.getLastDateForNumber(numero_reference[4], ladate, function(err, retour) {
+                if (err !== null && err !== undefined) return res.send("ERR");
+                if (retour < datounette) datounette = retour;
+                logger.warn("aurait fini le ", datounette );
+                sql = "select count(*) as ttl from myloto.tirages where TIR_DATE between '" + datounette.format("YYYY-MM-DD HH:mm:ss")  + "' and '" + moment(ladate).format("YYYY-MM-DD HH:mm:ss")  + "'";
+                logger.warn("big sql : ", sql);
+                logger.warn("r ", retour);
+                sails.models.tirages.query(sql,function (err,result2){
+                  var oo = {};
+                  oo.eventail = result2[0].ttl;
+                  oo.date = datounette.format("YYYY-MM-DD HH:mm:ss");
+                  logger.warn(oo);
+                  return res.send(oo);
+                });
+              });
+            });
+          });
+        });
+    });
+  },
+  RecuperationPanelNumber: function (req, res) {
+    Array.prototype.inArray = function (value)
+    {
+     // Returns true if the passed value is found in the
+     // array. Returns false if it is not.
+     var i;
+     for (i=0; i < this.length; i++)
+     {
+       if (this[i] == value)
+       {
+        return true;
+       }
+     }
+     return false;
+    };
+    logger.warn("req.query : ", req.query);
+    if(req.query.d1 !== null && req.query.d1 !== undefined && req.query.distance !== null && req.query.distance !== undefined) {
+      var panel = [];
+      sails.models.tirages.GetPanelNumbers(req.query.d1, req.query.distance, function(err, result) {
+        if (err !== null && err !== undefined) return res.send({'err': err, 'panel': null});
+        
+        for (var c=0; c < result.length; c++) {
+            if (!panel.inArray(result[c].TIR_1)) panel.push(result[c].TIR_1);
+            if (!panel.inArray(result[c].TIR_2)) panel.push(result[c].TIR_2);
+            if (!panel.inArray(result[c].TIR_3)) panel.push(result[c].TIR_3);
+            if (!panel.inArray(result[c].TIR_4)) panel.push(result[c].TIR_4);
+            if (!panel.inArray(result[c].TIR_5)) panel.push(result[c].TIR_5);
+               
+        }
+        return res.send({'err': null, 'panel': panel});
+      });
+
+
+    } else
+        return res.send({'err': 'manque de params', 'panel': null});
+  },
   liste_tirages: function (req,res) {
     Array.prototype.get = function(fld,value) {
 
@@ -99,6 +184,7 @@ module.exports = {
         logger.info("retour final");
         return null;
     };
+
     var params = req.query.datas;
     console.log(params);
     var mois = params.mois;
@@ -241,6 +327,7 @@ module.exports = {
 
 
   },
+
   find_tirage: function (req,res) {
 
     //var debug='2015-11-18 20:00:00';
