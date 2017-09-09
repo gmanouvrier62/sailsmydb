@@ -162,7 +162,10 @@ module.exports = {
             if (!panel.inArray(result[c].TIR_5)) panel.push(result[c].TIR_5);
                
         }
-        return res.send({'err': null, 'panel': panel});
+        var stic = new statistiques();
+        stic.GetEcartMoyenUntil(req.query.d1,100,function(err,ec) {
+          return res.send({'err': null, 'skills': ec, 'panel': panel});
+        });
       });
 
 

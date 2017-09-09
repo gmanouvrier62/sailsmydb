@@ -1,4 +1,6 @@
 <script language="javascript">
+<% tbGlobalSrv = []; %>
+
 Array.prototype.in_array = function(unite) {
 	 var length = this.length;
     for(var i = 0; i < length; i++) {
@@ -39,7 +41,26 @@ $(".clDistance").each (function(){
 		});
 	});
 });
+function retrieveClassNumber() {
+	var tb = new Array();
+	$("td.fort_2").each( function() {
+	//alert($(this));
+		tb[$(this).innerHtml] = "fort_2";
+	});
+
+	$("td.faible_2").each( function() {
+		tb[$(this).innerHtml] = "faible_2";
+	});
+	return tb;
+}
+function getClass(num, tb) {
+	
+	for (var c = 0; c < tb.length; c++) {
+		if (tb[c].num == num) return tb[c].type;
+	}
+}
 $(".getPanel").click(function(){
+	
 	$( "#choix_distance" ).dialog({
 		autoOpen: true,
 		width: 300,
@@ -56,8 +77,16 @@ $(".getPanel").click(function(){
 					var dist = $("#txtDistance").val();
 					
 					$.get('tirages/get_panel',{'d1': d1, 'distance': dist},function(datas) {
-						//alert(datas);
-						$("#dvOcc").html("<div class='case'>" + datas.panel.join("</div><div class='case'>") + "</div>");
+						
+						
+						var le_html = "";
+						for (var i = 0; i < datas.panel.length; i++) {
+							le_html += "<div class='case " + getClass(datas.panel[i], datas.skills) + "'>" + datas.panel[i] + "</div>";
+						} 
+						//$("#dvOcc").html("<div class='case'>" + datas.panel.join("</div><div class='case'>") + "</div>");
+
+						$("#dvOcc").html(le_html);
+						console.log("sk : ", le_html);
 						$( self ).dialog( "close" );
 					});
 					
@@ -137,26 +166,32 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 
 			var tir_1 = datas[t].NUMS[0].NUMERO;
 			var class1 = datas[t].NUMS[0].CLASS;
+			tbGlobalSrv[datas[t].NUMS[0]] = datas[t].NUMS[0].CLASS;
 			title1 = datas[t].NUMS[0].TITLE;
 
 			var tir_2 = datas[t].NUMS[1].NUMERO;
 			var class2 = datas[t].NUMS[1].CLASS;
+			tbGlobalSrv[datas[t].NUMS[1]] = datas[t].NUMS[1].CLASS;
 			title2 = datas[t].NUMS[1].TITLE;
 
 			var tir_3 = datas[t].NUMS[2].NUMERO;
 			var class3 = datas[t].NUMS[2].CLASS;
+			tbGlobalSrv[datas[t].NUMS[2]] = datas[t].NUMS[2].CLASS;
 			title3 = datas[t].NUMS[2].TITLE
 
 			var tir_4 = datas[t].NUMS[3].NUMERO;
 			var class4 = datas[t].NUMS[3].CLASS;
+			tbGlobalSrv[datas[t].NUMS[3]] = datas[t].NUMS[3].CLASS;
 			title4 = datas[t].NUMS[3].TITLE;
 
 			var tir_5 = datas[t].NUMS[4].NUMERO;
 			var class5 = datas[t].NUMS[4].CLASS;
+			tbGlobalSrv[datas[t].NUMS[4]] = datas[t].NUMS[4].CLASS;
 			title5 = datas[t].NUMS[4].TITLE;
 
 			var tir_c = datas[t].NUMS[5].NUMERO;
 			var classc = datas[t].NUMS[5].CLASS;
+			tbGlobalSrv[datas[t].NUMS[5]] = datas[t].NUMS[5].CLASS;
 
 
 			%>
@@ -171,7 +206,9 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" data-ladate = "<%=datas[t].TIR_DATE%>" class='noeil'></div></td>
 			<td title ="voir les occurences"> <div id="" datas="<%=tir_1%>-<%=tir_2%>-<%=tir_3%>-<%=tir_4%>-<%=tir_5%>" data-ladate = "<%=datas[t].TIR_DATE%>" class='cldistance'></div></td><td class="eventail"></td><td class="panel"></td>
 			</tr>
-			<%}%></table>
+			<%}%>
+
+			</table>
 		</td>
 		<td style="vertical-align:top">
 			<div id="dvOcc" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
