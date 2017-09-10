@@ -101,6 +101,14 @@
   padding-left: 10px;
   padding-top: 5px;
  }
+ .la_machine {
+  background-image: url('../images/png/Registry.png');
+  background-repeat: no-repeat;
+  width:32px;
+  height: 32px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
  .clDistance {
   background-image: url('../images/png/History.png');
   background-repeat: no-repeat;

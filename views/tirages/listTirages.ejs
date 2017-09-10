@@ -1,5 +1,7 @@
-<script language="javascript">
+<script type="text/javascript">
 <% tbGlobalSrv = []; %>
+var globalPanel = new Array();
+var globalSkills = new Array();
 
 Array.prototype.in_array = function(unite) {
 	 var length = this.length;
@@ -87,6 +89,8 @@ $(".getPanel").click(function(){
 
 						$("#dvOcc").html(le_html);
 						console.log("sk : ", le_html);
+						globalPanel = datas.panel;
+						globalSkills = datas.skills
 						$( self ).dialog( "close" );
 					});
 					
@@ -100,9 +104,35 @@ $(".getPanel").click(function(){
 				}
 			}]
 	});
-	
-	
 });
+function inArray(id,tb) {
+	for (var c = 0; c < tb.length; c++) {
+		if(tb[c] == id) return true;
+	}
+	return false;
+}
+$("#dvHasard").click(function() {
+	//choix au hasard parmis globalPanel et en appelant la fct de getClasse
+	//alert("lng gp : " + globalPanel.length);
+	var le_html2 = "";
+	var tmpTb = new Array();
+	for (var h = 0; h < 5 ; h++) {
+		var numh = parseInt(Math.round(Math.random()*((globalPanel.length-1)-0))+0);
+		if(!inArray(numh,tmpTb)) {
+			//alert('ok');
+			var hasardum = globalPanel[numh];
+			le_html2 += "<div class='case " + getClass(hasardum, globalSkills) + "'>" + hasardum + "</div>";
+			tmpTb.push(numh);
+			
+		} else {
+			h = h-1;
+		}
+		
+
+	}
+	$("#dvOcc2").html(le_html2);
+});
+
 $(".noeil").each(function(){
 	
 
@@ -211,7 +241,17 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 			</table>
 		</td>
 		<td style="vertical-align:top">
-			<div id="dvOcc" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" ></div>
+			<table>
+			<tr><td>
+			<div id="dvOcc" style="overflow:auto;padding: 0.5em;height:150px;width:400px;float:left" ></div>
+			</td></tr>
+			<tr><td>
+			<div id="dvHasard" class="la_machine"></div>
+			</td></tr>
+			<tr><td>
+			<div id="dvOcc2"  style="overflow:auto;padding: 0.5em;height:100px;width:400px;float:left" ></div>
+			</td></tr>
+			</table>
 		</td>
 		<td style="vertical-align:top">
 			<div id="dvRappel"></div>
