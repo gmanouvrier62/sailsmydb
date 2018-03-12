@@ -35,8 +35,8 @@ module.exports = {
    var tbMois = new Array("janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre");
    var annee_actuelle = moment().year();
   // var date_min = moment({year:2008, month: 9, day:30});
-  var date_min = moment({year:2016, month: 1, day:30});
-   for (var annee = 2016; annee <= annee_actuelle; annee++) {
+  var date_min = moment({year:2017, month: 1, day:30});
+   for (var annee = 2017; annee <= annee_actuelle; annee++) {
       for(var mois = 0; mois <=11;mois++) {
         var file_loto = "tirages-" + tbMois[mois] + "-" + annee + ".htm"; 
         var full_url = "http://www.lesbonsnumeros.com/loto/resultats/" + file_loto;
@@ -47,16 +47,24 @@ module.exports = {
           //Attention je reload qd meme pour lemois courrant pour faire les mises à jour courrantes du mois
           var date_relative = moment({year: annee,month: mois +1, day:1});
           var date_courrante = moment();
-
+         
           console.log("date relative courrante : " + date_relative);
           //!!! Les mois sont indéxés à 0
+          //
           if (fs.existsSync(chemin_local) && moment().month() != mois) {
     
               console.log("le fichier existe déjà : " + file_loto);
          
           }
           else {
-              if(((date_relative <= date_courrante) && (date_relative > date_min)) ||  moment().month()==mois  )
+              console.log("date_relative : ", date_relative);
+              console.log("date_courrante : ", date_courrante);
+              console.log("date_min : ", date_min);
+              console.log("mois : ", mois);
+              
+              //if(((date_relative <= date_courrante) && (date_relative > date_min)) ||  moment().month()==mois  )
+              
+              if(1==1) //pour chopper toutes les dates
               {
                 console.log("!!!!!!!attention reload de : " + file_loto);
                 if(moment().month() == mois) console.log("mise à jour du mois courrant");
@@ -68,7 +76,7 @@ module.exports = {
                 });
              }
              else {
-                console.log("date hors champs");
+                console.log("date horsss champs");
              }
           }
 
@@ -85,7 +93,6 @@ module.exports = {
 
   },
   find_distance: function (req, res) {
-   
     var ladate = req.query.ladate;
     var numero_reference = req.query.datas.nums;
     logger.warn("ladate : ", ladate);
@@ -96,34 +103,43 @@ module.exports = {
     var oo = {};
     var compteur = 1;
     var panel = [];
+    var details = [];
     var datounette = moment(ladate);
+    //recherche des dates les plus éloignées et je calcule le nb de tirages entre les 2 dates extrémités
+    //pour avoir un détails num par num, il faudrait refaire un ttl entre 2 dates pour chaque numéro
     sails.models.tirages.getLastDateForNumber(numero_reference[0], ladate, function(err, retour) {
         if (err !== null && err !== undefined) return res.send("ERR");
         logger.warn("r ", retour);
-        if (retour < datounette) datounette = retour;
+        if (retour.retour_date < datounette) datounette = retour.retour_date;
+        details.push(retour.ecart);
         sails.models.tirages.getLastDateForNumber(numero_reference[1], ladate, function(err, retour) {
           if (err !== null && err !== undefined) return res.send("ERR");
-          if (retour < datounette) datounette = retour;
-          logger.warn("r ", retour);
+          if (retour.retour_date < datounette) datounette = retour.retour_date;
+          logger.warn("r ", retour.retour_date);
+          details.push(retour.ecart);
           sails.models.tirages.getLastDateForNumber(numero_reference[2], ladate, function(err, retour) {
             if (err !== null && err !== undefined) return res.send("ERR");
-            if (retour < datounette) datounette = retour;
-            logger.warn("r ", retour);
+            if (retour.retour_date < datounette) datounette = retour.retour_date;
+            logger.warn("r ", retour.retour_date);
+            details.push(retour.ecart);
             sails.models.tirages.getLastDateForNumber(numero_reference[3], ladate, function(err, retour) {
               if (err !== null && err !== undefined) return res.send("ERR");
-              if (retour < datounette) datounette = retour;
-              logger.warn("r ", retour);
+              if (retour.retour_date < datounette) datounette = retour.retour_date;
+              logger.warn("r ", retour.retour_date);
+              details.push(retour.ecart);
               sails.models.tirages.getLastDateForNumber(numero_reference[4], ladate, function(err, retour) {
                 if (err !== null && err !== undefined) return res.send("ERR");
-                if (retour < datounette) datounette = retour;
+                if (retour.retour_date < datounette) datounette = retour.retour_date;
+                details.push(retour.ecart);
                 logger.warn("aurait fini le ", datounette );
                 sql = "select count(*) as ttl from myloto.tirages where TIR_DATE between '" + datounette.format("YYYY-MM-DD HH:mm:ss")  + "' and '" + moment(ladate).format("YYYY-MM-DD HH:mm:ss")  + "'";
                 logger.warn("big sql : ", sql);
-                logger.warn("r ", retour);
+                logger.warn("r ", retour.retour_date);
                 sails.models.tirages.query(sql,function (err,result2){
                   var oo = {};
                   oo.eventail = result2[0].ttl;
                   oo.date = datounette.format("YYYY-MM-DD HH:mm:ss");
+                  oo.ecart_detail = details;
                   logger.warn(oo);
                   return res.send(oo);
                 });

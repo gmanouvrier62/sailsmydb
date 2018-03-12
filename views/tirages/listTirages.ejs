@@ -2,7 +2,8 @@
 <% tbGlobalSrv = []; %>
 var globalPanel = new Array();
 var globalSkills = new Array();
-
+var tmpTb = new Array();
+var zb = new Array();
 Array.prototype.in_array = function(unite) {
 	 var length = this.length;
     for(var i = 0; i < length; i++) {
@@ -38,7 +39,8 @@ $(".clDistance").each (function(){
 
 			console.log('proutage' + datas);
 			//alert(self.parent().parent().html());
-			self.parent().parent().find(".eventail").html(datas.eventail);
+			var ch = datas.eventail + " details écarts : " + datas.ecart_detail.join("-");
+			self.parent().parent().find(".eventail").html(ch);
 
 		});
 	});
@@ -111,11 +113,68 @@ function inArray(id,tb) {
 	}
 	return false;
 }
+//occurences aprés choix hasard
+
+$("#btnOccu").click(function(){
+	var zb =new Array();
+	$("#machine_hazard").find(".case").each(function(){
+	  zb.push($(this).html());
+
+	});
+	//alert('ok : ' + tmpTb.join('-'));
+
+	var toSend = {'nums': zb};
+
+	/*
+	$.get('tirages/find_occurences',{'datas':toSend},function(datas) {
+		var tbl = "<table id='tblOcc'>";
+		var ligne ="";
+		var retourJSON = JSON.parse(datas);
+		console.log(datas);
+		retourJSON.forEach(function(o,idx){
+
+		});
+	});
+	*/
+	mainOccurence(toSend, zb);
+});
+function mainOccurence(toSend, tbN) {
+	
+	$.get('tirages/find_occurences',{'datas':toSend},function(datas) {
+			var tbl = "<table id='tblOcc'>";
+		var ligne ="";
+		var retourJSON = JSON.parse(datas);
+		retourJSON.forEach(function(o,idx){
+			var tir = o.tirages[0];
+			ligne += "<tr>";
+			ligne +=   "<td class='occE1'>" + o.stat_date + "</td>";
+			if(o.occurence > 2) clO = "dvct_blue"; else clO = "occE2";
+			ligne +=   "<td class='" + clO + "'>" + o.occurence + "</td>";
+			if(tbN.in_array(tir.TIR_1)) laclasse = "dvct_pink"; else laclasse = "";
+			ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_1 + "</td>";
+			if(tbN.in_array(tir.TIR_2)) laclasse = "dvct_pink"; else laclasse = "";
+			ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_2 + "</td>";
+			if(tbN.in_array(tir.TIR_3)) laclasse = "dvct_pink"; else laclasse = "";
+			ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_3 + "</td>";
+			if(tbN.in_array(tir.TIR_4)) laclasse = "dvct_pink"; else laclasse = "";
+			ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_4 + "</td>";
+			if(tbN.in_array(tir.TIR_5)) laclasse = "dvct_pink"; else laclasse = "";
+			ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_5 + "</td>";
+			ligne +=   "<td>(" + tir.TIR_C + ")</td>";
+			ligne += "</tr>";
+		});
+		tbl += ligne + "</table>";
+		
+		$("#retourOccu").html(tbl);
+	});
+
+
+}
 $("#dvHasard").click(function() {
 	//choix au hasard parmis globalPanel et en appelant la fct de getClasse
 	//alert("lng gp : " + globalPanel.length);
 	var le_html2 = "";
-	var tmpTb = new Array();
+	tmpTb = new Array();
 	for (var h = 0; h < 5 ; h++) {
 		var numh = parseInt(Math.round(Math.random()*((globalPanel.length-1)-0))+0);
 		if(!inArray(numh,tmpTb)) {
@@ -123,6 +182,7 @@ $("#dvHasard").click(function() {
 			var hasardum = globalPanel[numh];
 			le_html2 += "<div class='case " + getClass(hasardum, globalSkills) + "'>" + hasardum + "</div>";
 			tmpTb.push(numh);
+
 			
 		} else {
 			h = h-1;
@@ -130,7 +190,8 @@ $("#dvHasard").click(function() {
 		
 
 	}
-	$("#dvOcc2").html(le_html2);
+	
+	$("#dvOcc2").html("<div id='machine_hazard'>" + le_html2 + "</div>");
 });
 
 $(".noeil").each(function(){
@@ -142,39 +203,13 @@ $(".noeil").each(function(){
 		$(this).parent().parent().addClass("tout_rouge");
 		memo = $(this).parent().parent();
 
-		alert($(this).attr("datas"));
+		//alert($(this).attr("datas"));
 		var datas = $(this).attr("datas");
 		var tbN = datas.split('-');
 		var objS={'nums':tbN};
 		var laclasse = "";
 		var clO="";
-		$.get('tirages/find_occurences',{'datas':objS},function(datas) {
-			var tbl = "<table id='tblOcc'>";
-			var ligne ="";
-			var retourJSON = JSON.parse(datas);
-			retourJSON.forEach(function(o,idx){
-				var tir = o.tirages[0];
-				ligne += "<tr>";
-				ligne +=   "<td class='occE1'>" + o.stat_date + "</td>";
-				if(o.occurence > 2) clO = "dvct_blue"; else clO = "occE2";
-				ligne +=   "<td class='" + clO + "'>" + o.occurence + "</td>";
-				if(tbN.in_array(tir.TIR_1)) laclasse = "dvct_pink"; else laclasse = "";
-				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_1 + "</td>";
-				if(tbN.in_array(tir.TIR_2)) laclasse = "dvct_pink"; else laclasse = "";
-				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_2 + "</td>";
-				if(tbN.in_array(tir.TIR_3)) laclasse = "dvct_pink"; else laclasse = "";
-				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_3 + "</td>";
-				if(tbN.in_array(tir.TIR_4)) laclasse = "dvct_pink"; else laclasse = "";
-				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_4 + "</td>";
-				if(tbN.in_array(tir.TIR_5)) laclasse = "dvct_pink"; else laclasse = "";
-				ligne +=   "<td class='" + laclasse + "'>" + tir.TIR_5 + "</td>";
-				ligne +=   "<td>(" + tir.TIR_C + ")</td>";
-				ligne += "</tr>";
-			});
-			tbl += ligne + "</table>";
-			
-			$("#dvOcc").html(tbl);
-		});
+		mainOccurence(objS, tbN);
 
 	});
 	
@@ -251,6 +286,40 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 			<tr><td>
 			<div id="dvOcc2"  style="overflow:auto;padding: 0.5em;height:100px;width:400px;float:left" ></div>
 			</td></tr>
+			<tr><td><div style='float:left' id='btnOccu' class="occurence_h"></div>
+
+			<!--
+
+
+<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dropdown
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			    <li><a href="#">Action</a></li>
+			    <li><a href="#">Another action</a></li>
+			    <li><a href="#">Something else here</a></li>
+			    <li role="separator" class="divider"></li>
+			    <li><a href="#">Separated link</a></li>
+			  </ul>
+			</div>
+
+
+
+
+
+
+
+
+			-->
+			
+			</td></tr>
+			<tr>
+			<td>
+				<div id="retourOccu" style="overflow:auto;padding: 0.5em;height:300px;width:350px;float:left"></div>
+			</td>
+			</tr>
 			</table>
 		</td>
 		<td style="vertical-align:top">

@@ -254,56 +254,37 @@ analyse.prototype.ListeTirages = function(mois,annee,callback) {
 //Occurences de sortie de quelques numéros
 analyse.prototype.GetOccurences = function(nums,callback) {
 	var self = this;
-	
 	var tbCriteres = new Array();
-
 	var strSQL = "SELECT stat_date, count( stat_date ) AS ttl FROM myloto.stats " +
 			" WHERE stat_num IN ( " + nums.join(",") +") GROUP BY stat_date HAVING ttl >=2 order by stat_date desc";
-
-
- 	logger.log(strSQL);
+ 	logger.error(strSQL);
    
  	sails.models.tirages.query(strSQL,function(err,rs){
  		var tbRetour = new Array();
  		var cpt = 0;
  		console.log("rs count : " + rs.length);
  		var resultat = rs.map(function(obj){
- 			
  			var flds = Object.keys(obj);
- 			console.log(obj["stat_date"]);
-            var retour = {};
-            retour["stat_date"] = moment(obj["stat_date"]).format("YYYY-MM-DD HH:mm:ss");
-            retour["occurence"] = obj["ttl"]; 
+ 			//console.log(obj["stat_date"]);
+      var retour = {};
+      retour["stat_date"] = moment(obj["stat_date"]).format("YYYY-MM-DD HH:mm:ss");
+      retour["occurence"] = obj["ttl"]; 
  			self.private_getTirageByDate(retour["stat_date"], function(err,rows){
- 				
-			cpt++;
-			if(err==null || err=='null'){
-
- 				retour["tirages"] = rows;
- 				//console.log(util.inspect(rows));
- 				tbRetour.push(retour);
- 				//console.log("cpt=" + cpt + ", rstotal : " + rs.length);
- 				if(cpt == rs.length)
- 				{
- 					console.log("pret pour rendre la main");
- 					//console.log("last date : " + retour["stat_date"]);
-	 				callback(err,tbRetour);
- 				}
-	 		} else {
-	 			console.log(err);
-	 			//callback(err,null);
-	 		}
-
-
- 			});
+			   cpt++;
+			   if(err==null || err=='null'){
+ 				   this.bRet["tirages"] = rows;
+ 				   tbRetour.push(this.bRet);
+     			 if(cpt == rs.length) {
+     					//console.log("pret pour rendre la main");
+     					callback(err,tbRetour);
+     			 }
+    	 	 } else {
+    	 			console.log(err);
+    	 	 }
+ 			}.bind({'bRet': retour}));//un bind sur retour car "retour" externe à private_... lié avec celui à l'interieur(bRet) 
  		  
  		});
-
-
  	});
-    
-   
-
 },
 analyse.prototype.GetOccurencesParams = function(params,callback) {
   var self = this;

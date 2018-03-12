@@ -118,11 +118,24 @@ module.exports = {
 
   getLastDateForNumber: function(num, ladate, cb) {
    
+    var bigRetour = {
+      'retour_date' : '',
+      'ecart': 0
+    }
     var sql = "select TIR_DATE from myloto.tirages where (TIR_1=" + num + " or TIR_2=" + num + " or TIR_3=" + num + " or TIR_4=" + num + " or TIR_5=" + num + ") and TIR_DATE <'" + moment(ladate).format("YYYY-MM-DD HH:mm:ss") + "' order by TIR_DATE desc limit 1";
-    logger.warn("getlastmachin avant : " + sql);
+    //logger.warn("getlastmachin avant : " + sql);
+    self = this;
     this.query(sql,function (err,result){
       if(err !== null && err !== undefined) return cb(err,null);
-      return cb(null, moment(result[0].TIR_DATE));
+      var sql2 = "select count(*) as ttl from myloto.tirages where TIR_DATE between '" + moment(result[0].TIR_DATE).format("YYYY-MM-DD HH:mm:ss") + "' and '" + ladate + " 20:00:00'";
+      logger.warn("sql count : ", sql2);
+      bigRetour.retour_date = moment(result[0].TIR_DATE);
+      self.query(sql2, function(err, result2) {
+        bigRetour.ecart = result2[0].ttl - 1;
+        logger.warn("va retourner : ", bigRetour, " result2=", result2);
+        return cb(null, bigRetour);  
+      });      
+      
     });
 
   },
