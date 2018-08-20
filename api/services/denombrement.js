@@ -62,9 +62,81 @@ denombrement.prototype.List = function(callback) {
 	        		}
 
 	callback(result);
+denombrement.prototype.NparmisK = function(n, cb) {
+	this.resultat = [];
+	var passage = function(self, tbE,n) {
+		var cpt = 1;
+		var currentN = 1;
+		var tbR = [];
+		var tmp = [];
+		while(cpt < tbE.length)
+		{
+			tmp.push(tbE[0]);
+			for (var nn = 1; nn<n;nn++){
+				tmp.push(tbE[cpt]);
+				cpt++;
+			}
+			self.resultat.push(tmp);
+			
+			tmp = [];
+		}
+		var tbEN = [];
+		for(var x = 1;x < tbE.length;x++)tbEN.push(tbE[x]);
+		
+		return tbEN;
+	};
+
+	var tbR = [];
+	var t = [];
+	var k = this.panel.length;
+	console.log("k=" + k);
+	
+	var tt = passage(this, this.panel,n);
+	while (tt.length>1){
+		tt = passage(this, tt,n);
+	}
+	cb(null, this.resultat);
+
 
 };
+};
+denombrement.prototype.NparmisK = function(n, cb) {
+	this.resultat = [];
+	var passage = function(self, tbE,n) {
+		var cpt = 1;
+		var currentN = 1;
+		var tbR = [];
+		var tmp = [];
+		while(cpt < tbE.length)
+		{
+			tmp.push(tbE[0]);
+			for (var nn = 1; nn<n;nn++){
+				tmp.push(tbE[cpt]);
+				cpt++;
+			}
+			self.resultat.push(tmp);
+			
+			tmp = [];
+		}
+		var tbEN = [];
+		for(var x = 1;x < tbE.length;x++)tbEN.push(tbE[x]);
+		
+		return tbEN;
+	};
 
+	var tbR = [];
+	var t = [];
+	var k = this.panel.length;
+	console.log("k=" + k);
+	
+	var tt = passage(this, this.panel,n);
+	while (tt.length>1){
+		tt = passage(this, tt,n);
+	}
+	cb(null, this.resultat);
+
+
+};
 module.exports = denombrement;
 
 /*

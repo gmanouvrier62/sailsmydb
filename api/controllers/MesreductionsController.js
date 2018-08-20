@@ -171,6 +171,83 @@ module.exports = {
 
 	},
 
+	denombrement_predictif: function(req, res) {
+		var panel = req.query.datas;
+		var ecart_param = req.query.ecart_mois_param;
+		ecart_param = moment().subtract(1,'months');
+		var ana = new analyse();
+		var le_retour_ok = [];
+		//on utilisera getOccurence
+		//ecart_param représentera la date seuil ecart mini devant être respecté pour être valable
+		//
+		var deno = new denombrement(panel);
+		deno.NparmisK(2,function(err, result){
+			//ici on aura result comme array de array de 2 
+			//pour chacune des entrées je vais devoir lancer un getOccurence et traiter en fct de la contrainte param
+			//pour valider ou invalider la présente combi de 2
+			if(err == null || err == undefined) {
+
+			} 
+			if(result.length<1) {
+
+			}
+
+			for(var cc = 0; cc < result.length; cc++) {
+				logger.warn("debut d'histo pour une combi : ", result[cc]);
+				ana.GetOccurences(result[cc], function(err, currCombi) {
+					//ici on a currCombi de result[cc], c'est l'historique de cette combi
+					var bad = "valide";
+					logger.warn("currecombi : ", currCombi);
+					/*
+						currCombi est un array de 
+						{ stat_date: '2016-04-18 20:00:00',
+					    occurence: 2,
+					    tirages: [ [Object] ] }
+					*/
+					var why = [];
+					var why_good = [];
+					for (var cpt = 0; cpt < currCombi.length; cpt++) {
+						var obj = currCombi[cpt];
+						if(moment(obj.stat_date) > ecart_param) {
+							bad = "invalide";
+							why.push(obj);
+						} else {
+							logger.warn("me dit : ", obj.stat_date, " < ", ecart_param);
+							why_good.push(obj);
+						}
+					}	
+					
+					//la combi est OK ou pas
+					var oRet = {};
+					logger.warn("la combi est ", this.combi);
+					oRet["combi"] = this.combi;
+					oRet["datas"] = currCombi;
+					oRet["scoring"] = bad;
+					oRet["why"] = why;
+					oRet["why_good"] = why_good;
+					le_retour_ok.push(oRet);
+					
+					if(this.leCompteur == result.length - 1) {
+						//faire un res avec le_retour_ok
+						
+						logger.warn('nbOcc : ', result.length);
+						logger.error("OKOKOK");
+						var objFullRetour = {'nbOccurences': result.length,
+											 'allDatas': le_retour_ok};
+						logger.util("RETOUR : ", objFullRetour);					 
+						return res.render ('mesreductions/predictif',{'combis' : objFullRetour});
+					}
+
+				}.bind({combi:result[cc],leCompteur:cc}));
+			}
+		
+
+		});
+
+
+
+	},
+
 	combinaisons: function(req,res) {
 
 		var socket = req.socket;

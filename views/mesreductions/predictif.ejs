@@ -1,0 +1,41 @@
+<script>
+require(['jquery-ui','pnotify','mesreductions'], function () {
+   $(document).tooltip({
+          content: function () {
+              return $(this).prop('title');
+          }
+      });
+
+   
+});
+</script>
+
+<table>
+<tr class='line'><td></td><td></td><td></td></tr>
+<% for(var c = 0; c < combis.allDatas.length; c++) {%><tr class='line'>
+<td class='case'><%=combis.allDatas[c].combi[0]%></td><td class='case'><%=combis.allDatas[c].combi[1]%></td><td class='<%=combis.allDatas[c].scoring%>' title='
+<ul>
+<% 
+	var thewhy;
+	if(combis.allDatas[c].scoring == 'invalide') {
+		thewhy = combis.allDatas[c].why;
+	} else {
+		thewhy = combis.allDatas[c].why_good;
+	}
+	for (var cc = 0; cc < thewhy.length; cc++) {
+	var oo = thewhy[cc];
+	var ln = oo.stat_date + " : " + oo.tirages[0].TIR_1 + "-" + oo.tirages[0].TIR_2 + "-" +oo.tirages[0].TIR_3 + "-" +oo.tirages[0].TIR_4 + "-" +oo.tirages[0].TIR_5 + "-(" +oo.tirages[0].TIR_C + ")";
+	%><li><%=ln%></li><%	
+
+}
+%>
+</ul>'><%=combis.allDatas[c].scoring%>
+
+
+
+</td>
+</tr>
+<%}%>
+</table>
+
+

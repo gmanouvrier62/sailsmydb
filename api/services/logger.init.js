@@ -17,7 +17,7 @@ exports.logger = function (filename) {
         var tmpArray = [];
 
         for (var index in arguments) {
-            tmpArray.push(util.inspect(arguments[index], {colors: true, showHidden: true, depth: 5}));
+            tmpArray.push(util.inspect(arguments[index], {colors: true, showHidden: true, depth: 6}));
         }
 
         logger.debug.apply(this, tmpArray);

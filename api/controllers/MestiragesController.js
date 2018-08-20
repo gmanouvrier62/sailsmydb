@@ -33,10 +33,12 @@ module.exports = {
 
 		var tbT = new Array("lundi", "mercredi", "samedi");
   		var jour = moment(datas.MTIR_DATE).locale('fr').format("dddd");
-  		logger.log("joujour à sa mèmère : " + jour);
+  		logger.info("joujour à sa mèmère : " + jour);
   		var offset = 0;
   		if(tbT.inArray(jour)) {
 			if(datas.id == null || parseInt(datas.id) <= 0 || datas.id == '') {
+				logger.info("bien dans create");
+				delete datas["id"];
 				sails.models.mestirages.findOrCreate(datas,datas).exec(function creaStat(err,created){
 					logger.warn(err);
 					var retour = {err: err};

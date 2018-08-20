@@ -173,6 +173,7 @@ function mainOccurence(toSend, tbN) {
 $("#dvHasard").click(function() {
 	//choix au hasard parmis globalPanel et en appelant la fct de getClasse
 	//alert("lng gp : " + globalPanel.length);
+	/*
 	var le_html2 = "";
 	tmpTb = new Array();
 	for (var h = 0; h < 5 ; h++) {
@@ -192,6 +193,17 @@ $("#dvHasard").click(function() {
 	}
 	
 	$("#dvOcc2").html("<div id='machine_hazard'>" + le_html2 + "</div>");
+	*/
+
+	//nouvelle version avec 2 à 2 du tableau
+	$.get('mesreductions/denombrement_predictif',{'datas':globalPanel,'ecart_mois_param': 1},function(datas) {
+                                //alert(datas);
+		$("#dvOcc2").html(datas);
+		                                
+    });
+
+
+
 });
 
 $(".noeil").each(function(){
@@ -284,7 +296,7 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 			<div id="dvHasard" class="la_machine"></div>
 			</td></tr>
 			<tr><td>
-			<div id="dvOcc2"  style="overflow:auto;padding: 0.5em;height:100px;width:400px;float:left" ></div>
+			<div id="dvOcc2"  style="overflow:auto;padding: 0.5em;height:200px;width:400px;float:left" ></div>
 			</td></tr>
 			<tr><td><div style='float:left' id='btnOccu' class="occurence_h"></div>
 

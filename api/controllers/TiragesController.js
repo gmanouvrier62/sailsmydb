@@ -293,7 +293,7 @@ module.exports = {
                       if (v1>v2) return 1;
                       return 0;
                   });
-
+                  //GM ici je dois placer le code pour récupérer les tirages jourés
                   sails.models.reductions.find().exec(function(err,records) {
                     var tbRetour = [];
                     records.map(function(obj,id) {
@@ -302,7 +302,7 @@ module.exports = {
                           var objI = {"date": fdate, "collection": []};
                           tbRetour.push(objI);
                       }
-                      logger.info("bouboubou : " , fdate);
+                      
                       tbRetour.get("date", fdate).collection.push(obj.RED_NUM);
 
                       if(id == records.length -1) {

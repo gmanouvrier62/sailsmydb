@@ -11,17 +11,27 @@ module.exports = {
 
     id : { type: 'int' },
 
-    temperature : { type: 'int' },
+    MTIR_DATE : { type: 'datetime' },
 
-    humidity : { type: 'int' },
+    MTIR_1 : { type: 'int' },
 
-    stamp : { type: 'int' },
+    MTIR_2 : { type: 'int' },
 
-    next_save : { type: 'int' },
+    MTIR_3 : { type: 'int' },
 
-    date_created : { type: 'string' },
+    MTIR_4 : { type: 'int' },
+
+    MTIR_5 : { type: 'int' },
+
+    MTIR_C : { type: 'int' },
+
+    MTIR_GAIN : { type: 'float' },
+
+    MTIR_COUT : { type: 'float' },
+
+    createdAt : { type: 'datetime' },
 	
-	date_next_save : { type: 'string' }
+	  updatedAt : { type: 'datetime' }
   }
 };
 

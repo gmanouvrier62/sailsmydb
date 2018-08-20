@@ -172,6 +172,25 @@
 	
 
 }
+.invalide {
+  border : 1px solid black;
+  height: 20px;
+  background-color:#ff0000;
+  
+  margin-right:5px;
+  
+
+}
+.valide{
+  border : 1px solid black;
+  height: 20px;
+  background-color:#00FF00;
+  opacity: 0.5;
+  
+  margin-right:5px;
+  
+
+}
 .dvct_pink{
 	border : 1px solid black;
 	height: 20px;
