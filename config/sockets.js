@@ -109,7 +109,7 @@ module.exports.sockets = {
    beforeConnect: function(handshake, cb) {
      // `true` allows the connection
       console.log("bef conn");
-    io.socket.emit('coucou',{nom:'giiiiiiilles'}); 
+    //io.socket.emit('coucou',{nom:'giiiiiiilles'}); 
      return cb(null, true);
   
      // (`false` would reject the connection)

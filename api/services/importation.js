@@ -139,6 +139,9 @@ importation.prototype.AddTirages = function(data_values,gravite,callback){
   var grav1 = gravite.replace("lune_th_","");
   var grav2 = grav1.replace(".jpg","");
   var gravite_val = parseFloat(grav2.replace("_","."));
+  gravite =0;
+  gravite_val = 0;
+  
   if(gravite_val>0) 
       gravite_dir=1;
   else

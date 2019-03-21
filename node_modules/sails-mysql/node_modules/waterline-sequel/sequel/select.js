@@ -15,6 +15,7 @@ var hop = utils.object.hasOwnProperty;
 var SelectBuilder = module.exports = function(schema, currentTable, queryObject, options) {
 
   this.schema = schema;
+  this.currentSchema = schema[currentTable].attributes;
   this.currentTable = currentTable;
   this.escapeCharacter = '"';
   this.cast = false;
@@ -31,6 +32,10 @@ var SelectBuilder = module.exports = function(schema, currentTable, queryObject,
   // Add support for WLNext features
   if(options && hop(options, 'wlNext')) {
     this.wlNext = options.wlNext;
+  }
+
+  if(options && hop(options, 'schemaName')) {
+    this.schemaName = options.schemaName;
   }
 
   var queries = [];
@@ -56,7 +61,7 @@ SelectBuilder.prototype.buildSimpleSelect = function buildSimpleSelect(queryObje
   }
 
   // Escape table name
-  var tableName = utils.escapeName(self.schema[self.currentTable].tableName, self.escapeCharacter);
+  var tableName = utils.escapeName(self.schema[self.currentTable].tableName, self.escapeCharacter, self.schemaName);
 
   var selectKeys = [];
   var query = 'SELECT ';
@@ -93,7 +98,6 @@ SelectBuilder.prototype.buildSimpleSelect = function buildSimpleSelect(queryObje
 
   // Add all the columns to be selected
   selectKeys.forEach(function(select) {
-
     // If there is an alias, set it in the select (used for hasFK associations)
     if(select.alias) {
       query += utils.escapeName(select.table, self.escapeCharacter) + '.' + utils.escapeName(select.key, self.escapeCharacter) + ' AS ' + self.escapeCharacter + select.alias + '___' + select.key + self.escapeCharacter + ', ';
@@ -101,12 +105,9 @@ SelectBuilder.prototype.buildSimpleSelect = function buildSimpleSelect(queryObje
     else {
       query += utils.escapeName(select.table, self.escapeCharacter) + '.' + utils.escapeName(select.key, self.escapeCharacter) + ', ';
     }
-
   });
-
   // Remove the last comma
   query = query.slice(0, -2) + ' FROM ' + tableName + ' AS ' + utils.escapeName(self.currentTable, self.escapeCharacter) + ' ';
-
   return query;
 };
 
@@ -135,14 +136,16 @@ SelectBuilder.prototype.processAggregates = function processAggregates(criteria)
 
   // Append groupBy columns to select statement
   if(criteria.groupBy) {
-    if(Array.isArray(criteria.groupBy)) {
-      criteria.groupBy.forEach(function(opt) {
-        query += tableName + '.' + utils.escapeName(opt, self.escapeCharacter) + ', ';
-      });
+    if(!Array.isArray(criteria.groupBy)) criteria.groupBy = [criteria.groupBy];
 
-    } else {
-      query += tableName + '.' + utils.escapeName(criteria.groupBy, self.escapeCharacter) + ', ';
-    }
+    criteria.groupBy.forEach(function(key, index) {
+      // Check whether we are grouping by a column or an expression.
+      if (_.includes(_.keys(self.currentSchema), key)) {
+        query += tableName + '.' + utils.escapeName(key, self.escapeCharacter) + ', ';
+      } else {
+        query += key + ' as group' + index + ', ';
+      }
+    });
   }
 
   // Handle SUM
@@ -215,6 +218,6 @@ SelectBuilder.prototype.processAggregates = function processAggregates(criteria)
   query = query.slice(0, -2) + ' ';
 
   // Add FROM clause
-  query += 'FROM ' + utils.escapeName(self.schema[self.currentTable].tableName, self.escapeCharacter) + ' AS ' + tableName + ' ';
+  query += 'FROM ' + utils.escapeName(self.schema[self.currentTable].tableName, self.escapeCharacter, self.schemaName) + ' AS ' + tableName + ' ';
   return query;
 };

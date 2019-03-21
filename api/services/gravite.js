@@ -11,6 +11,8 @@ module.exports = function(dt,callback){
 	var jour = parseInt(moment(dt).format("DD"));
 	var fichier = mois + "_" + moment(dt).format("YYYY") + ".html";
 	var retour = {"fichier": fichier};
+	callback(null,"");
+/*
 	var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/gravites/" + fichier);
 	$ = cheerio.load(contentHtml);
 	var tbl = $(".calendar-moon");
@@ -26,7 +28,7 @@ module.exports = function(dt,callback){
 			
 		}
 	});
-
+*/
 
 	
 };

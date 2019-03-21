@@ -35,8 +35,8 @@ module.exports = {
    var tbMois = new Array("janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre");
    var annee_actuelle = moment().year();
   // var date_min = moment({year:2008, month: 9, day:30});
-  var date_min = moment({year:2017, month: 1, day:30});
-   for (var annee = 2017; annee <= annee_actuelle; annee++) {
+  var date_min = moment({year:2019, month: 1, day:13});
+   for (var annee = 2019; annee <= annee_actuelle; annee++) {
       for(var mois = 0; mois <=11;mois++) {
         var file_loto = "tirages-" + tbMois[mois] + "-" + annee + ".htm"; 
         var full_url = "http://www.lesbonsnumeros.com/loto/resultats/" + file_loto;
@@ -293,7 +293,7 @@ module.exports = {
                       if (v1>v2) return 1;
                       return 0;
                   });
-                  //GM ici je dois placer le code pour récupérer les tirages jourés
+                  //GM ici je dois placer le code pour récupérer les tirages journées
                   sails.models.reductions.find().exec(function(err,records) {
                     var tbRetour = [];
                     records.map(function(obj,id) {
@@ -307,7 +307,10 @@ module.exports = {
 
                       if(id == records.length -1) {
                         logger.info("le retour qui retourne : ", tbRetour);
-                        res.render('tirages/listTirages.ejs',{"datas":retourResultat,"reductions": tbRetour});
+                        sails.models.mestirages.find().sort("MTIR_DATE DESC").exec(function(err, rows) {
+                          res.render('tirages/listTirages.ejs',{"datas":retourResultat,"reductions": tbRetour,"mestirages": rows});
+                        });
+                        
                       }
                       
 
@@ -388,6 +391,13 @@ module.exports = {
 
     });
 
+  },
+  AddToOccurences: function(req,res) {
+
+     sails.models.occurences.Actualise(function(err,result) {
+      
+     });
+     res.send({'status': 'OK'});
   },
   analyse_periode: function(req,res) {
     //liste des tirages
@@ -632,6 +642,10 @@ module.exports = {
                                                     TIR_4: sortie[3],
                                                     TIR_5: sortie[4],
                                                     TIR_C: sortie[5]};
+                                  
+
+                                   
+                                   
                                    getGravite(y,function(err,alors){
                                    
                                       imp.AddTirages(data_values,alors,function(err){
@@ -644,6 +658,7 @@ module.exports = {
                                       });
 
                                    });
+                                   
                                   }
 
                                   //penser à faire le total stat a fur et à mesure 

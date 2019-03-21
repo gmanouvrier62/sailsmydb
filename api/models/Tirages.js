@@ -42,6 +42,7 @@ module.exports = {
             
     });
   },
+  
   GetTirageDateMoinsUn: function(dt, callback) {
 
     sql = "select TIR_DATE from myloto.tirages where TIR_DATE<'" + dt + "' order by TIR_DATE desc limit 1";

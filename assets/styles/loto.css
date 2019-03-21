@@ -12,6 +12,15 @@
 	margin-right:5px;
 	text-align: center;
    }
+.case_sel {
+  border : 1px solid red;
+  width:20px;
+  height:20px;
+  background-color:#00ff00;
+  float:left;
+  margin-right:5px;
+  text-align: center;
+   }
 .casec {
 	border : 1px solid red;
 	width:20px;
@@ -291,4 +300,7 @@ tr.mesreducs:hover {
 tr.mesreducs:hover {
   background-color: blue;
 
+}
+panel-body2 {
+  padding: 15px;
 }

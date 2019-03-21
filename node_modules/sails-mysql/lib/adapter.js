@@ -646,6 +646,7 @@ module.exports = (function() {
                     };
 
                     var records = [];
+                    var recordsMap = {};
 
                     // Check for any cached parent records
                     if(hop(cachedChildren, alias)) {
@@ -659,8 +660,11 @@ module.exports = (function() {
 
                         // If null value for the parentVal, ignore it
                         if(parent[parentVal] === null) return;
-
-                        records.push(cachedChild);
+                        // If the same record is alreay there, ignore it
+                        if (!recordsMap[cachedChild[childVal]]) {
+                          records.push(cachedChild);
+                          recordsMap[cachedChild[childVal]] = true;
+                        }
                       });
                     }
 
@@ -904,7 +908,18 @@ module.exports = (function() {
         var tableName = collectionName;
 
         // Build find query
-        var query = sql.selectQuery(tableName, options);
+        var schema = connectionObject.schema;
+        var _query;
+
+        var sequel = new Sequel(schema, sqlOptions);
+
+        // Build a query for the specific query strategy
+        try {
+          _query = sequel.find(collectionName, options);
+        } catch(e) {
+          return cb(e);
+        }
+        var query = _query.query[0];
 
         // Run query
         log('MySQL.stream: ', query);
@@ -1224,10 +1239,21 @@ module.exports = (function() {
           rule: 'unique'
         }];
       }
+    } else if(err.code === 'ER_NO_REFERENCED_ROW_2') {
+      var constraintKey = err.message.match(/CONSTRAINT `(.*)` FOREIGN/);
+      var foreignTable = err.message.match(/REFERENCES (.*) ON/);
+      if(constraintKey && constraintKey.length && foreignTable && foreignTable.length) {
+        formattedErr = {};
+        formattedErr.code = 'E_FK';
+        formattedErr.invalidAttributes = {};
+        formattedErr.invalidAttributes[constraintKey[1]] = [{
+          value: 'Corresponding foreign key not found in ' + foreignTable[1],
+          rule: 'required'
+        }];
+      }
     }
 
     return formattedErr || err;
   }
 
 })();
-
