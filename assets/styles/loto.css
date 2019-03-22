@@ -301,6 +301,10 @@ tr.mesreducs:hover {
   background-color: blue;
 
 }
+
+#lstT tr.ligne {
+  width:510px;
+}
 panel-body2 {
   padding: 15px;
 }

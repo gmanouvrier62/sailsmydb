@@ -172,11 +172,70 @@ module.exports = {
 	},
 
 	denombrement_predictif: function(req, res) {
+		
+	   Array.prototype.inArray = function (value)
+	   {
+		    var i;
+		    for (i=0; i < this.length; i++)
+		    {
+		      if (this[i] == value)
+		      {
+		       return true;
+		      }
+		    }
+		    return false;
+	   };
 		var panel = req.query.datas;
 		var ecart_param = req.query.ecart_mois_param;
 		ecart_param = moment().subtract(1,'months');
 		var ana = new analyse();
 		var le_retour_ok = [];
+		//ATTENTION AU 22 MARS 2019 il faut encore definir obj_panel en amont comme ceci
+		/*
+			obj_panel["nb_49"].score = pct de chance de sortir (qui doit être à 100 au départ ou au max que l'on conscent)
+			obj_panel["nb_49"].poids = fort moyen ou faible sortie
+
+
+		*/
+		var choix_unit = function(panel, obj_panel, deja_choisi) {
+
+			var nb = panel.length;
+			var idx = Math.floor(Math.random() * Math.floor(nb));
+			var nb_choisi = panel[idx];
+			if(!deja_choisi.inArray(nb_choisi)) {
+				//on recherche le pédigré du num dans le tb de control
+				var pct_autor = obj_panel["nb_" + nb_choisi].scrore;
+				var prob = Math.floor(Math.random() * Math.floor(100)) + 1;
+				if (prob < pct_autor) {
+					return nb_choisi;
+				} else 
+				{
+					choix_unit(panel, obj_panel, deja_choisi);
+				}
+			} else {
+				choix_unit(panel, obj_panel, deja_choisi);
+			}
+		};
+		var choix = function(panel, obj_panel, couples) {
+			var tb_jeux = [];
+			for (var jeux = 0; jeux < 1; jeux++) {
+				tb_un_tirage = [];
+				for (var n = 0; n<5; n++) {
+					var nn = choix_unit(panel, obj_panel, tb_un_tirage);
+					
+					tb_un_tirage.push(nn);
+					obj_panel["nb_" + nn].scrore -= 10; 
+
+
+				}
+			}
+
+			return tb_jeux;
+		};
+
+
+
+
 		//on utilisera getOccurence
 		//ecart_param représentera la date seuil ecart mini devant être respecté pour être valable
 		//

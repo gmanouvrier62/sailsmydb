@@ -212,7 +212,8 @@ $("#dvHasard").click(function() {
 
 	//nouvelle version avec 2 à 2 du tableau
 	$.get('mesreductions/denombrement_predictif',{'datas':globalPanel,'ecart_mois_param': 1},function(datas) {
-                                //alert(datas);
+        //on vire le render en amont et on retourne les données brut
+        //Le traitement se fera depius les données retournées
 		$("#dvOcc2").html(datas);
 		                                
     });
@@ -351,7 +352,7 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 		</td>
 		<td style="vertical-align:top">
 			<div id="dvRappel"></div>
-			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:400px;float:left" >
+			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:380px;float:left" >
 			<h3>Liste des réductions effectuées</h3>
 			<font style='size:10px'><i>En survolant les différents tirages à gauche, nous visualiserons les numéros présents dans les sélections ci-dessous</i></font><br><br>
 			
