@@ -350,6 +350,72 @@ module.exports = {
 
   },
 
+  getPrediction: function (req, res) {
+    /*
+     req.datas = array de 
+     {"number": numéro, "decr": decrémentation actu/num, "poids": nom de la class fort/moyen/faible}
+
+
+
+    */
+    var getANumber = function(datas, tb) {
+      //tb représente les num déjà pris
+       console.log("len : ", datas.length);
+      var idx = Math.floor(Math.random() * Math.floor(datas.length));
+       console.log("idx : ", idx);
+      if(datas[idx] != '') {
+        var currentN = datas[idx];//voir pour un get dans le tableau
+        console.log("datas de x : ", currentN);
+        var pct_autor = currentN.decrement;
+        var pct = Math.floor(Math.random() * Math.floor(100)) + 1;
+        if(tb.indexOf(idx) < 0) {
+          //on ne prend pas
+          getANumber(datas, tb);
+        }
+        if(pct < pct_autor) {
+          //on peut le prendre
+          return idx;
+          
+        } else {
+          //on ne peut pas le prendre
+          getANumber(datas, tb);
+        }
+      } else {
+        getANumber(datas, tb);
+      }
+    };
+
+    var result = {
+      err: '',
+      resultat : null
+    };
+    var datas = JSON.stringify(req.query.datas);
+    datas = JSON.parse(datas);
+    console.log("len DATAS stringify : ", datas[22].number);
+    var nbTirages = req.query.nbTirages;
+    var decrement = req.query.decrement;
+    console.log("PREDIC DATAS : ", datas);
+    console.log("PREDIC nbT : ", nbTirages);
+    console.log("PREDIC decr : ", decrement);
+      
+   
+
+    var Tirs = [];
+    for(var nbt = 0; nbt < nbTirages; nbt++) {
+      
+      var dejaChoisi = [];
+      for (var num = 0; num < 5; num++) {
+        var uni = getANumber(datas, dejaChoisi);
+        dejaChoisi.push(uni);
+        datas[uni].decrement = datas[uni].decrement - decrement;
+      }
+      console.log("un tirage : ", dejaChoisi.join('-'));
+      //prendre un complémentaire
+    }
+    //return result;
+     console.log("PREDIC DATAS FIN: ", datas);
+  },
+
   find_tirage: function (req,res) {
 
     //var debug='2015-11-18 20:00:00';

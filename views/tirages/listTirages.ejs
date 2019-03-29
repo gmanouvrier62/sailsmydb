@@ -4,6 +4,10 @@ var globalPanel = new Array();
 var globalSkills = new Array();
 var tmpTb = new Array();
 var zb = new Array();
+
+$("#choix_predictif").hide();
+
+
 Array.prototype.in_array = function(unite) {
 	 var length = this.length;
     for(var i = 0; i < length; i++) {
@@ -78,11 +82,21 @@ function getClass(num, tb) {
 		if (tb[c].num == num) return tb[c].type;
 	}
 }
+
+//panel modal des choix predictifs
+
+
+
+
+
+
+
 $(".getPanel").click(function(){
 	
 	$( "#choix_distance" ).dialog({
 		autoOpen: true,
-		width: 300,
+		width: 400,
+		height:200,
 		position:['50','50'],
 		title: "Récupérer un panel de numéros",
 		modal: true,
@@ -97,14 +111,104 @@ $(".getPanel").click(function(){
 					
 					$.get('tirages/get_panel',{'d1': d1, 'distance': dist},function(datas) {
 						
-						
-						var le_html = "";
-						for (var i = 0; i < datas.panel.length; i++) {
-							le_html += "<div class='case " + getClass(datas.panel[i], datas.skills) + "'>" + datas.panel[i] + "</div>";
-						} 
-						//$("#dvOcc").html("<div class='case'>" + datas.panel.join("</div><div class='case'>") + "</div>");
+						// pour le tableau de traitement % 1 ligne sera 8 numéros traitable donc length panel/8 lignes
 
-						$("#dvOcc").html(le_html);
+						var le_html = "";
+						var cptCol=1;
+						var html_table = "<table id='travail'><tr>";
+						for (var i = 0; i < datas.panel.length; i++) {
+							var un_chiffre = "<div class='case " + getClass(datas.panel[i], datas.skills) + "'>" + datas.panel[i] + "</div>";
+							le_html += un_chiffre;
+							//crea de table de travail/num
+							if ((cptCol % 8) == 0) {
+								html_table += "</tr><tr>";
+								cptCol = 1;
+							}
+							html_table += "<td style='padding-left:10px'>" + un_chiffre + "</td><td><input id='mc" + datas.panel[i] + "' type='text' style = 'width:45px' value='100'></td><td style ='border-right: 1px solid black;padding-right:10px'>ctrl</td>";
+
+							cptCol ++;
+						} 
+						var colSpan = (8-cptCol) + 1;
+						if (colSpan > 1) {
+							html_table += "<td colspan='" + colSpan + "'></td></tr></table>";
+						} else {
+							html_table += "</tr></table>";
+						}
+
+						le_html += "<br><br>" + html_table;
+						
+						le_html += "<br><div id='testC' class='noeil'></div><br><br>";
+						
+						l_interface = "<table><tr><td ><div class='case fort'></div>perte proba/tirage</td><td><input type='text' id='perte_fort' value='10'></td></tr>";
+						l_interface += "<tr><td ><div class='case faible'></div>perte proba/tirage</td><td><input type='text' id='perte_faible' value='10'></td></tr>";
+						l_interface += "<tr><td >Nbre Tirages</td><td><input type='text' id='nombre_tirage' value='50'></td></tr>";
+						l_interface += "<tr><td >Decr./selection</td><td><input type='text' id='decrement' value='10'></td></tr>";
+						
+						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'></td></tr></table>";
+
+						le_html += l_interface;
+
+						$("#choix_predictif").html(le_html);
+						
+						$( "#go_tirage" ).on( "click", function() {
+						  //go tirage
+						  var nbTirages = $("#nombre_tirage").val();
+						  var decrement = $("#decrement").val();
+						  var tbD = new Array();
+						  //init d'un tb de 50
+						  for (var v = 0; v < 50; v++) tbD.push(null);
+						  for(var t = 0;t<datas.panel.length;t++) {
+						  	var decr = $("#mc" + datas.panel[t]).val();
+						  	var curr = {"number": datas.panel[t], "decr": decr, "poids": getClass(datas.panel[t], datas.skills)};
+						  	//tbD[datas.panel[t]].push(curr);
+						  	//pb interpretation json plus en avant
+						  	tbD[datas.panel[t]] = curr
+;						  }
+						  $.get('tirages/prediction',{'datas': tbD, 'nbTirages': nbTirages, 'decrement': decrement},function(results) {
+								//alert(self.parent().parent().html());
+								//self.parent().parent().find(".eventail").html(ch);
+								alert(results);
+						  });	
+
+						  
+						});
+
+						$( "#save_db" ).on( "click", function() {
+						  //sauvegarde des tirages en base
+						});
+
+
+
+
+						$("#save_db").prop('disabled', true);
+						
+
+						//$("#travail td").css({background-color:#FF0000});
+
+
+						$( "#choix_predictif" ).dialog({
+							autoOpen: true,
+							width: 900,
+							height:600,
+							position:['20','20'],
+							title: "Récupérer un panel de numéros",
+							modal: true,
+							buttons: [
+								{
+									text: "Ok",
+									click: function() {
+										
+									}
+								},
+								{
+									text: "Cancel",
+									click: function() {
+										$( this ).dialog( "close" );
+									
+									}
+								}]
+						});
+
 						console.log("sk : ", le_html);
 						globalPanel = datas.panel;
 						globalSkills = datas.skills
@@ -209,7 +313,7 @@ $("#dvHasard").click(function() {
 	
 	$("#dvOcc2").html("<div id='machine_hazard'>" + le_html2 + "</div>");
 	*/
-
+	alert('ok');
 	//nouvelle version avec 2 à 2 du tableau
 	$.get('mesreductions/denombrement_predictif',{'datas':globalPanel,'ecart_mois_param': 1},function(datas) {
         //on vire le render en amont et on retourne les données brut
@@ -394,6 +498,12 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 </table>
 <div id="retour_panel">
 </div>
+
+<div id="choix_predictif">
+</div>
+
+
+
 <div id='choix_distance'>
 Nb de tirages arrières <input type='text' id='txtDistance'>
 </div>

@@ -32,7 +32,10 @@
 	margin-right:5px;
 	text-align: center;
    }
-
+.separa {
+  border-right: 1px solid black;
+  margin-right: 5px;
+}
    .fo{
 
     color:#FF0000;

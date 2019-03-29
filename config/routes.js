@@ -44,7 +44,8 @@ module.exports.routes = {
   'mesreductions/denombrement_predictif':  'Mesreductions.denombrement_predictif',
   'tirages/find_tirage':    'TiragesController.find_tirage',
   '/tirages/get_panel':      'TiragesController.RecuperationPanelNumber',
-  '/tirages/actu_occurences': 'TiragesController.AddToOccurences'
+  '/tirages/actu_occurences': 'TiragesController.AddToOccurences',
+  '/tirages/prediction':     'TiragesController.getPrediction'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
