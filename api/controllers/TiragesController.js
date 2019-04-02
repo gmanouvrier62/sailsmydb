@@ -349,7 +349,33 @@ module.exports = {
 
 
   },
-
+  savePrediction: function (req,res) {
+    var result = {
+      err: '',
+      resultat : null,
+      datas: null
+    };
+    console.log("brut : ", req.query.datas);
+    var datas = JSON.stringify(req.query.datas);
+    datas = JSON.parse(datas);
+    //var datas = JSON.parse(req.query.datas);
+    
+    console.log("len DATAS stringify : ", datas);
+    console.log("len : " + datas.length);
+    //faire un json dans jDatas, attention il y a datas.len tirages 
+    for (var c = 0; c < datas.length; c++) {
+      var jDatas = datas[c];
+      datas[c].PRE_DATE = moment().format("YYYY-MM-DD");
+      logger.warn("savePrediction : ", jDatas);
+      sails.models.predictions.findOrCreate(jDatas,jDatas).exec(function creaStat(err,created){
+            logger.warn(err);
+            var retour = {err: err};
+            console.log("err save predic : ", retour);
+            return res.send(retour);
+      });
+    }
+    res.send(JSON.stringify(result));    
+  },
   getPrediction: function (req, res) {
     /*
      req.datas = array de 
@@ -358,36 +384,62 @@ module.exports = {
 
 
     */
+    Array.prototype.inArray = function (value)
+    {
+     // Returns true if the passed value is found in the
+     // array. Returns false if it is not.
+     var i;
+     for (i=0; i < this.length; i++)
+     {
+       if (this[i] == value)
+       {
+        return true;
+       }
+     }
+     return false;
+    };
+
+
     var getANumber = function(datas, tb) {
       //tb représente les num déjà pris
-       console.log("len : ", datas.length);
-      var idx = Math.floor(Math.random() * Math.floor(datas.length));
-       console.log("idx : ", idx);
+       //console.log("len inside getANumber: ", datas.length);
+      var idx = Math.floor(Math.random() * Math.floor(49));
+       console.log("idx choisi 1: ", idx);
       if(datas[idx] != '') {
-        var currentN = datas[idx];//voir pour un get dans le tableau
+        console.log("ok pas vide : ", idx);
+      
+        var currentN = JSON.stringify(datas[idx]);//voir pour un get dans le tableau
+        currentN = JSON.parse(currentN);
+        console.log("avec decr=", currentN.decr);
+        console.log("avec number=", currentN.number);
         console.log("datas de x : ", currentN);
-        var pct_autor = currentN.decrement;
+        var pct_autor = parseInt(currentN.decr);
         var pct = Math.floor(Math.random() * Math.floor(100)) + 1;
-        if(tb.indexOf(idx) < 0) {
+        if(tb.inArray(idx) > 0) {
+          console.log("dejà pris on rechoisi : ", idx);
           //on ne prend pas
-          getANumber(datas, tb);
+          return getANumber(datas, tb);
         }
         if(pct < pct_autor) {
           //on peut le prendre
+          console.log("est dans le % on le prend : ", idx);
           return idx;
           
         } else {
           //on ne peut pas le prendre
-          getANumber(datas, tb);
+          console.log("est KO dans le % on rechoisi : ", idx);
+          return getANumber(datas, tb);
         }
       } else {
-        getANumber(datas, tb);
+        console.log("vide on rechoisi: ", idx);
+        return getANumber(datas, tb);
       }
     };
 
     var result = {
       err: '',
-      resultat : null
+      resultat : null,
+      datas: null
     };
     var datas = JSON.stringify(req.query.datas);
     datas = JSON.parse(datas);
@@ -395,6 +447,7 @@ module.exports = {
     var nbTirages = req.query.nbTirages;
     var decrement = req.query.decrement;
     console.log("PREDIC DATAS : ", datas);
+    console.log("PREDIC DATAS len : ", datas.length);
     console.log("PREDIC nbT : ", nbTirages);
     console.log("PREDIC decr : ", decrement);
       
@@ -407,13 +460,19 @@ module.exports = {
       for (var num = 0; num < 5; num++) {
         var uni = getANumber(datas, dejaChoisi);
         dejaChoisi.push(uni);
-        datas[uni].decrement = datas[uni].decrement - decrement;
+        console.log("le num a été validé : ", datas[uni]);
+        datas[uni].decr = datas[uni].decr - decrement;
       }
-      console.log("un tirage : ", dejaChoisi.join('-'));
       //prendre un complémentaire
+      dejaChoisi.push(Math.floor(Math.random() * Math.floor(9))+1);
+      console.log("un tirage : ", dejaChoisi.join('-'));
+      Tirs.push(dejaChoisi.join('-'));
     }
     //return result;
      console.log("PREDIC DATAS FIN: ", datas);
+     result.datas = datas;
+     result.resultat = Tirs;
+     res.send(JSON.stringify(result)); 
   },
 
   find_tirage: function (req,res) {

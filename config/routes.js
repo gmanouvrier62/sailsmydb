@@ -45,7 +45,8 @@ module.exports.routes = {
   'tirages/find_tirage':    'TiragesController.find_tirage',
   '/tirages/get_panel':      'TiragesController.RecuperationPanelNumber',
   '/tirages/actu_occurences': 'TiragesController.AddToOccurences',
-  '/tirages/prediction':     'TiragesController.getPrediction'
+  '/tirages/prediction':     'TiragesController.getPrediction',
+  '/tirages/prediction_save' : 'TiragesController.savePrediction', 
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

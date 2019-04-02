@@ -132,7 +132,7 @@ module.exports = {
       logger.warn("sql count : ", sql2);
       bigRetour.retour_date = moment(result[0].TIR_DATE);
       self.query(sql2, function(err, result2) {
-        bigRetour.ecart = result2[0].ttl - 1;
+        bigRetour.ecart = result2[0].ttl - 2;
         logger.warn("va retourner : ", bigRetour, " result2=", result2);
         return cb(null, bigRetour);  
       });      

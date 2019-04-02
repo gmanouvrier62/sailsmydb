@@ -87,7 +87,7 @@ function getClass(num, tb) {
 
 
 
-
+var tbPredictif = new Array();
 
 
 
@@ -137,14 +137,17 @@ $(".getPanel").click(function(){
 
 						le_html += "<br><br>" + html_table;
 						
-						le_html += "<br><div id='testC' class='noeil'></div><br><br>";
 						
-						l_interface = "<table><tr><td ><div class='case fort'></div>perte proba/tirage</td><td><input type='text' id='perte_fort' value='10'></td></tr>";
+						l_interface = "<div style='float:left'><table><tr><td ><div class='case fort'></div>perte proba/tirage</td><td><input type='text' id='perte_fort' value='10'></td></tr>";
 						l_interface += "<tr><td ><div class='case faible'></div>perte proba/tirage</td><td><input type='text' id='perte_faible' value='10'></td></tr>";
 						l_interface += "<tr><td >Nbre Tirages</td><td><input type='text' id='nombre_tirage' value='50'></td></tr>";
 						l_interface += "<tr><td >Decr./selection</td><td><input type='text' id='decrement' value='10'></td></tr>";
 						
-						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'></td></tr></table>";
+						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'></td></tr></table></div>";
+
+						l_interface += "<div id='predictor'  style='float:left;width:300px;height:180px;background-color:#DDDDDD'></div>";
+
+
 
 						le_html += l_interface;
 
@@ -167,7 +170,24 @@ $(".getPanel").click(function(){
 						  $.get('tirages/prediction',{'datas': tbD, 'nbTirages': nbTirages, 'decrement': decrement},function(results) {
 								//alert(self.parent().parent().html());
 								//self.parent().parent().find(".eventail").html(ch);
-								alert(results);
+								
+								//results = JSON.stringify(results);
+								results = JSON.parse(results);
+								tbPredictif = results.resultat;
+								var html_content = "";
+								for(var ll = 0; ll<results.resultat.length;ll++) {
+									var tbLigne = results.resultat[ll].split("-");
+									var htmlL = "";
+									for (var lll = 0; lll < 5; lll++) {
+										var cl = getClass(tbLigne[lll],datas.skills);
+										htmlL += "<div class='" + cl +"' style='width:20px;height:20px;float:left;border : 1px solid red;margin-right:5px'>" + tbLigne[lll] + "</div>";
+									}
+									htmlL += " - " + tbLigne[5] + "</br>";
+									html_content += htmlL;
+								}
+								var ct = results.resultat.join("<br>");
+								$("#predictor").html(html_content);
+								$("#save_db").prop('disabled', false);
 						  });	
 
 						  
@@ -175,6 +195,40 @@ $(".getPanel").click(function(){
 
 						$( "#save_db" ).on( "click", function() {
 						  //sauvegarde des tirages en base
+						  //alert(tbPredictif);
+						  
+
+						  var jP = new Array();
+						  for (v = 0; v < tbPredictif.length; v++) {
+							   var tt = tbPredictif[v].split('-');
+
+							   var pr = { 
+								  PRE_DATE: null,
+								  PRE_1: null,
+								  PRE_2: null,
+								  PRE_3: null,
+								  PRE_4: null,
+								  PRE_5: null,
+								  PRE_C: null
+						  	   };
+
+
+							   pr.PRE_1 = tt[0];
+							   pr.PRE_2 = tt[1];
+							   pr.PRE_3 = tt[2];
+							   pr.PRE_4 = tt[3];
+							   pr.PRE_5 = tt[4];
+							   pr.PRE_C = tt[5];
+							   jP.push(pr);
+
+						  }
+
+
+
+						  $.get('tirages/prediction_save',{'datas': jP},function(result_save) {
+
+						  });
+
 						});
 
 
