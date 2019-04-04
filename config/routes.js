@@ -47,6 +47,7 @@ module.exports.routes = {
   '/tirages/actu_occurences': 'TiragesController.AddToOccurences',
   '/tirages/prediction':     'TiragesController.getPrediction',
   '/tirages/prediction_save' : 'TiragesController.savePrediction', 
+  '/predictions/home'        :  'PredictionsController.listPredictions',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

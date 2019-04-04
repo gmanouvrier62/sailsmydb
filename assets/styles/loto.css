@@ -145,6 +145,14 @@
   padding-left: 10px;
   padding-top: 5px;
  }
+ .load_prediction{
+  background-image: url('../images/png/16x16/List.png');
+  background-repeat: no-repeat;
+  width:16px;
+  height: 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
  .toTirage{
   background-image: url('../images/png/16x16/Next.png');
   background-repeat: no-repeat;

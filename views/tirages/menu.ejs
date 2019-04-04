@@ -659,13 +659,19 @@ function chargementMesTirages(datas) {
 
 $("#lnkCreateT").click(function(){
 
-$.get('mestirages/home',{action:'create'},function(data){
-           					
-           				chargementMesTirages('');
-    });
+	$.get('mestirages/home',{action:'create'},function(data){
+	           					
+	           				chargementMesTirages('');
+	});
 });
 
+$("#lnkLoadPredictions").click(function(){
 
+	$.get('predictions/home',{action:'list'},function(data){
+	           					
+	           				
+	});
+});
 
 
 //Fin de menu

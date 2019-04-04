@@ -28,7 +28,20 @@ module.exports = {
     PRE_C : { type: 'int' }
   },
   
-  
+  GetList: function(callback) {
+    var sql = "select distinct PRE_DATE from myloto.predictions order by PRE_DATE desc limit 10";
+    this.query(sql,function creaStat(err,resultat) {
+           
+
+       if(err != null) {
+              logger.error("ATTENTION ! ", err);
+              callback(err,null);
+       } else {
+              callback(null, resultat);
+       }
+    });
+
+  },
  
  
   

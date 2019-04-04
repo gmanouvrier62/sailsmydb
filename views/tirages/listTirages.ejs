@@ -143,7 +143,7 @@ $(".getPanel").click(function(){
 						l_interface += "<tr><td >Nbre Tirages</td><td><input type='text' id='nombre_tirage' value='50'></td></tr>";
 						l_interface += "<tr><td >Decr./selection</td><td><input type='text' id='decrement' value='10'></td></tr>";
 						
-						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'></td></tr></table></div>";
+						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'>  <input type='button' value='LOAD PREDICTION' id='load_prediction'>   </td></tr></table></div>";
 
 						l_interface += "<div id='predictor'  style='float:left;width:300px;height:180px;background-color:#DDDDDD'></div>";
 
@@ -187,49 +187,95 @@ $(".getPanel").click(function(){
 								}
 								var ct = results.resultat.join("<br>");
 								$("#predictor").html(html_content);
+
 								$("#save_db").prop('disabled', false);
 						  });	
 
 						  
 						});
 
-						$( "#save_db" ).on( "click", function() {
+						
 						  //sauvegarde des tirages en base
 						  //alert(tbPredictif);
 						  
 
-						  var jP = new Array();
-						  for (v = 0; v < tbPredictif.length; v++) {
-							   var tt = tbPredictif[v].split('-');
+					
 
-							   var pr = { 
-								  PRE_DATE: null,
-								  PRE_1: null,
-								  PRE_2: null,
-								  PRE_3: null,
-								  PRE_4: null,
-								  PRE_5: null,
-								  PRE_C: null
-						  	   };
+					   $("#save_db").datepicker({
+						      defaultDate: "",
+						      changeMonth: true,
+						      changeYear:true,
+						      dateFormat: "yy-mm-dd",
+						      onSelect: function(datetext){
+
+							        var d = new Date(); // for now
+
+							        var h = d.getHours();
+							        h = (h < 10) ? ("0" + h) : h ;
+
+							        var m = d.getMinutes();
+							        m = (m < 10) ? ("0" + m) : m ;
+
+							        var s = d.getSeconds();
+							        s = (s < 10) ? ("0" + s) : s ;
+
+							        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+							        $(this).val(datetext);
+							    },
+						      onClose: function( selectedDate ) {
+						       
+						      	  var jP = new Array();
+								  for (v = 0; v < tbPredictif.length; v++) {
+									   var tt = tbPredictif[v].split('-');
+
+									   var pr = { 
+										  PRE_DATE: null,
+										  PRE_1: null,
+										  PRE_2: null,
+										  PRE_3: null,
+										  PRE_4: null,
+										  PRE_5: null,
+										  PRE_C: null
+								  	   };
 
 
-							   pr.PRE_1 = tt[0];
-							   pr.PRE_2 = tt[1];
-							   pr.PRE_3 = tt[2];
-							   pr.PRE_4 = tt[3];
-							   pr.PRE_5 = tt[4];
-							   pr.PRE_C = tt[5];
-							   jP.push(pr);
+									   pr.PRE_1 = tt[0];
+									   pr.PRE_2 = tt[1];
+									   pr.PRE_3 = tt[2];
+									   pr.PRE_4 = tt[3];
+									   pr.PRE_5 = tt[4];
+									   pr.PRE_C = tt[5];
+									   jP.push(pr);
 
-						  }
+								  }
 
 
 
-						  $.get('tirages/prediction_save',{'datas': jP},function(result_save) {
 
-						  });
+						          $.get('tirages/prediction_save',{'datas': jP, 'ladate': $(this).val()},function(result_save) {
 
+						          	if(result_save.err != null) {
+						          		alert('zboub de merde');
+										//fabrication d'un msg infos
+						    		} else {
+						    		alert('zboub OK');
+						    			
+						    			$(this).close();
+
+
+									}
+
+
+
+					  			  });
+						        //$( "#dt1" ).datepicker( "option", "minDate", selectedDate );
+						      }
 						});
+
+						  
+
+						
 
 
 
@@ -238,6 +284,37 @@ $(".getPanel").click(function(){
 						
 
 						//$("#travail td").css({background-color:#FF0000});
+						
+						$( "#load_prediction" ).on( "click", function() {
+							$( "#div_load_prediction" ).dialog({
+								open: function( event, ui ) {
+									//C'est là qu'on chare
+									$.get('predictions/home',{},function(result_load) {
+										$( "#div_load_prediction" ).html(result_load);
+									});
+								},
+								autoOpen: true,
+								width: 900,
+								height:600,
+								position:['20','20'],
+								title: "Charger les predictions",
+								modal: true,
+								buttons: [
+									{
+										text: "Ok",
+										click: function() {
+											
+										}
+									},
+									{
+										text: "Cancel",
+										click: function() {
+											$( this ).dialog( "close" );
+										
+										}
+									}]
+							});
+						});
 
 
 						$( "#choix_predictif" ).dialog({
@@ -561,3 +638,5 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 <div id='choix_distance'>
 Nb de tirages arrières <input type='text' id='txtDistance'>
 </div>
+
+<div id='div_load_prediction'>NUNU TU PUE DU CUL, TU PUES DU CUL NUNUUUU!!!!!!!</div>

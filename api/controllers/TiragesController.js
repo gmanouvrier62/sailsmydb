@@ -358,6 +358,8 @@ module.exports = {
     console.log("brut : ", req.query.datas);
     var datas = JSON.stringify(req.query.datas);
     datas = JSON.parse(datas);
+    var ladate = req.query.ladate;
+
     //var datas = JSON.parse(req.query.datas);
     
     console.log("len DATAS stringify : ", datas);
@@ -365,16 +367,20 @@ module.exports = {
     //faire un json dans jDatas, attention il y a datas.len tirages 
     for (var c = 0; c < datas.length; c++) {
       var jDatas = datas[c];
-      datas[c].PRE_DATE = moment().format("YYYY-MM-DD");
+      //datas[c].PRE_DATE = moment().format("YYYY-MM-DD");
+      datas[c].PRE_DATE = ladate;
       logger.warn("savePrediction : ", jDatas);
       sails.models.predictions.findOrCreate(jDatas,jDatas).exec(function creaStat(err,created){
-            logger.warn(err);
-            var retour = {err: err};
-            console.log("err save predic : ", retour);
-            return res.send(retour);
-      });
+            logger.warn("compteur : " + this.cpt);
+            if(this.cpt == datas.length-1) {
+              var retour = {err: err};
+              console.log("err save predic : ", retour);
+              
+              return res.send(retour);
+            }
+      }.bind({cpt:c}));
     }
-    res.send(JSON.stringify(result));    
+    //res.send(JSON.stringify(result));    
   },
   getPrediction: function (req, res) {
     /*
