@@ -60,7 +60,7 @@ module.exports = {
       
       
       //construction d'un tb html
-      var hd = "<table>";
+      var hd = "<table id='table_pr'>";
       var ct = "";
       var ft = "</table>";
       for (var t = 0; t < retours.length; t++) {

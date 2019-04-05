@@ -15,16 +15,97 @@ err en ballade?<%=naverr%><br>
 </div>
 <div id="droite" style="float:left;background-color:#EEEEEE;width:700px;height:500px">
 	<div id="compare_a_prediction" style="float:top;width:90%;height:9%;background-color:#63c9e2">
-	<div id="div_date_compare" style="float:left"></div><div id="previous"></div><div id="next"></div>
+		<div id="div_date_compare" style="float:left"></div><div id="div_tirage_compare" style="float:left"></div><div id="previous" style="float:left"></div><div id="next" style="float:left"></div>
 	</div>
 
-	<div id="div_load_a_prediction" style="float:bottom;width:90%;height:90%;background-color:#a9dbe8"></div>
+	<div id="div_load_a_prediction" style="float:bottom;width:90%;height:90%;background-color:#a9dbe8">
+
+	</div>
 
 
 
 
 </div>
 <script>
+function print_and_compare(tirage) {
+	var cct = "<div class='case' style='float:left'>" + tirage.TIR_1 + "</div>";
+	cct += "<div class='case' >" + tirage.TIR_2 + "</div>";
+	cct += "<div class='case' >" + tirage.TIR_3 + "</div>";
+	cct += "<div class='case' >" + tirage.TIR_4 + "</div>";
+	cct += "<div class='case' >" + tirage.TIR_5 + "</div>";
+	cct += "<div class='case_comp' >" + tirage.TIR_C + "</div>";
+	$("#dic_tirage_compare").html(cct);
+
+	var trs = $("#table_pr").find('tr') ;
+	var nbLignes = trs.length;
+	for (var cpt=0;cpt<nbLignes;cpt++) {
+		var instances = 0;
+		//nm1
+		var nm1 = trs.eq(cpt).find('td').eq(0).text;
+
+		if(nm1 == tirage.TIR1 || nm1 == tirage.TIR_2 || nm1 == tirage.TIR_3 || nm1 == tirage.TIR_4 || nm1 == tirage.TIR_5) {
+			instance ++;
+			trs.eq(cpt).find('td').eq(0).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(0).removeClass(".case_sel");
+
+		//nm2
+		var nm2 = trs.eq(cpt).find('td').eq(1).text;
+		if(nm2 == tirage.TIR1 || nm2 == tirage.TIR_2 || nm2 == tirage.TIR_3 || nm2 == tirage.TIR_4 || nm2 == tirage.TIR_5) {
+			instance ++;
+			trs.eq(cpt).find('td').eq(1).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(1).removeClass(".case_sel");
+
+		//nm3
+		var nm3 = trs.eq(cpt).find('td').eq(2).text;
+		if(nm3 == tirage.TIR1 || nm3 == tirage.TIR_2 || nm3 == tirage.TIR_3 || nm3 == tirage.TIR_4 || nm3 == tirage.TIR_5) {
+			instance ++;
+			trs.eq(cpt).find('td').eq(2).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(2).removeClass(".case_sel");
+
+		var nm4 = trs.eq(cpt).find('td').eq(3).text;
+		if(nm4 == tirage.TIR1 || nm4 == tirage.TIR_2 || nm4 == tirage.TIR_3 || nm4 == tirage.TIR_4 || nm4 == tirage.TIR_5) {
+			instance ++;
+			trs.eq(cpt).find('td').eq(3).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(3).removeClass(".case_sel");
+
+		var nm5 = trs.eq(cpt).find('td').eq(4).text;
+		if(nm5 == tirage.TIR1 || nm5 == tirage.TIR_2 || nm5 == tirage.TIR_3 || nm5 == tirage.TIR_4 || nm5 == tirage.TIR_5) {
+			instance ++;
+			trs.eq(cpt).find('td').eq(4).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(4).removeClass(".case_sel");
+
+
+		var nmc = trs.eq(cpt).find('td').eq(5).text;
+		if(nmc == tirage.TIR_C) {
+			trs.eq(cpt).find('td').eq(5).addClass(".case_sel");
+		} else trs.eq(cpt).find('td').eq(5).removeClass(".case_sel");
+
+
+		if (instance > 1) trs.eq(cpt).find('td').eq(6).text(instance + " numéros");
+
+		instance = 0;
+
+	}
+
+
+
+}
+$("#previous").click(function(){
+	$.get('/tirages/getmoinsun',{'ladate': idx},function(get_tirage) {
+			
+			$( "#div_date_compare" ).html(get_tirage.TIR_DATE);
+			print_and_compare(get_tirage);
+	});
+});
+$("#next").click(function(){
+	$.get('/tirages/getplusun',{'ladate': idx},function(get_tirage) {
+			
+			$( "#div_date_compare" ).html(get_tirage.TIR_DATE);
+			print_and_compare(get_tirage);
+	});
+});
+
+//Pour infos rappel, parse du tb html : .find("td").eq(0).text()
 
 $(".noeil").each(function(){
 	$(this).click(function() {
@@ -35,11 +116,12 @@ $(".noeil").each(function(){
 			alert(result_load);
 			$( "#div_load_a_prediction" ).html(result_load);
 		});
-		$.get('predictions/load',{'ladate': idx},function(result_load) {
-			alert(result_load);
-			$( "#div_load_a_prediction" ).html(result_load);
+		$.get('/tirages/getplusun',{'ladate': idx},function(get_tirage) {
+			//alert(result_load);
+			$( "#div_date_compare" ).html(get_tirage.TIR_DATE);
+			print_and_compare(get_tirage);
 		});
-		
+
 	});
 });
 $(".trash").each(function(){
