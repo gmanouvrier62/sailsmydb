@@ -12,6 +12,15 @@
 	margin-right:5px;
 	text-align: center;
    }
+  .case_comp {
+  border : 1px solid red;
+  width:20px;
+  height:20px;
+  background-color:#f9d475;
+  float:left;
+  margin-right:5px;
+  text-align: center;
+   }
 .case_sel {
   border : 1px solid red;
   width:20px;
@@ -104,6 +113,22 @@
  	height: 16px;
  	padding-left: 10px;
  	padding-top: 5px;
+ }
+ #previous {
+    background-image: url('../images/png/Left.png');
+  background-repeat: no-repeat;
+  width:32px;
+  height: 32px;
+  padding-left: 10px;
+  padding-top: 5px;
+ }
+ #next {
+    background-image: url('../images/png/Right.png');
+  background-repeat: no-repeat;
+  width:32px;
+  height: 32px;
+  padding-left: 10px;
+  padding-top: 5px;
  }
  #btnOccu {
   background-image: url('../images/png/oeil.png');
@@ -318,4 +343,13 @@ tr.mesreducs:hover {
 }
 panel-body2 {
   padding: 15px;
+}
+
+#le_tableau tr:nth-child(2n+1) {
+    background: none repeat scroll 0 0 #f3c9fc;
+    color: #000;
+}
+#le_tableau tr:nth-child(2n) {
+    background: none repeat scroll 0 0 #bb72db;
+    color: #000;
 }

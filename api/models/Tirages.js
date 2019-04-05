@@ -65,6 +65,28 @@ module.exports = {
 
 
   },
+  GetTirageDatePlusUn: function(dt, callback) {
+
+    sql = "select TIR_DATE from myloto.tirages where TIR_DATE>'" + dt + "' order by TIR_DATE asc limit 1";
+    this.query(sql,function creaStat(err,result){
+            if(err != null) {
+              logger.error("ATTENTION ! ", err);
+              callback(err,null);
+            } else {
+
+              dt_moins = moment(result[0].TIR_DATE).format("YYYY-MM-DD HH:mm:ss");
+              logger.warn(dt_moins);
+              sails.models.tirages.GetTirage(dt_moins, function(err,retour) {
+                if (err !== null && err !== undefined) return callback(err,null);
+                return callback(null, retour);
+
+              });
+            }
+            
+    });
+
+
+  },
   GetPanelNumbers: function(d1, distance, cb) {
 
     var sql = "select TIR_DATE, TIR_1, TIR_2, TIR_3, TIR_4, TIR_5 from myloto.tirages where TIR_DATE <= '" + d1 + "' order by TIR_DATE desc limit " + (distance);

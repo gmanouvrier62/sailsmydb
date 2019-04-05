@@ -43,7 +43,37 @@ module.exports = {
 
   },
  
- 
+  delet: function(idx, callback) {
+    var sql = "delete from myloto.predictions where PRE_DATE='" + idx +"'";
+    this.query(sql,function creaStat(err,resultat) {
+           
+
+       if(err != null) {
+              logger.error("ATTENTION ! ", err);
+              callback(err,null);
+       } else {
+              callback(null, resultat);
+       }
+    });
+
+
+  },
+  loadPrediction: function(idx, callback) {
+    var sql = "select * from myloto.predictions where PRE_DATE='" + idx +"'";
+    logger.warn("query load : ", sql);
+    this.query(sql,function creaStat(err,resultat) {
+           
+
+       if(err != null) {
+              logger.error("ATTENTION ! ", err);
+              callback(err,null);
+       } else {
+              callback(null, resultat);
+       }
+    });
+
+
+  }
   
 
 };

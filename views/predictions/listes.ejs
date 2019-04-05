@@ -1,5 +1,4 @@
-toto rototo<br>
-<b>lar chouma!!!!</b><br>
+err en ballade?<%=naverr%><br>
 <div id="gauche" style="float:left;background-color:#CCCCCC;width:250px;height:500px">
 	<table id="le_tableau">
 
@@ -8,15 +7,51 @@ toto rototo<br>
 	</td>
 	<% for(var t=0;t<list.length;t++) 
 	{%>
-		<tr class='ligne'>
-		<td><%=moment(list[t].PRE_DATE).format("YYYY-MM-DD HH:mm:ss")%></td><td>v</td><td>d</td>
+		<tr class='mesreducs'>
+		<td><%=moment(list[t].PRE_DATE).format("YYYY-MM-DD HH:mm:ss")%></td><td><div class='noeil' datas='<%=moment(list[t].PRE_DATE).format("YYYY-MM-DD HH:mm:ss")%>'></div></td><td><div class='trash' datas='<%=moment(list[t].PRE_DATE).format("YYYY-MM-DD HH:mm:ss")%>'></div></td>
 		</tr>
 	<%}%>
 	</table>
 </div>
 <div id="droite" style="float:left;background-color:#EEEEEE;width:700px;height:500px">
+	<div id="compare_a_prediction" style="float:top;width:90%;height:9%;background-color:#63c9e2">
+	<div id="div_date_compare" style="float:left"></div><div id="previous"></div><div id="next"></div>
+	</div>
+
+	<div id="div_load_a_prediction" style="float:bottom;width:90%;height:90%;background-color:#a9dbe8"></div>
 
 
 
 
 </div>
+<script>
+
+$(".noeil").each(function(){
+	$(this).click(function() {
+
+		var idx = $(this).attr("datas");
+
+		$.get('predictions/load',{'ladate': idx},function(result_load) {
+			alert(result_load);
+			$( "#div_load_a_prediction" ).html(result_load);
+		});
+		$.get('predictions/load',{'ladate': idx},function(result_load) {
+			alert(result_load);
+			$( "#div_load_a_prediction" ).html(result_load);
+		});
+		
+	});
+});
+$(".trash").each(function(){
+	$(this).click(function() {
+		var idx = $(this).attr("datas");
+		$.get('predictions/delete',{'ladate': idx},function(result_load) {
+			$( "#div_load_prediction" ).html(result_load);
+		});
+	});
+
+});
+
+
+
+</script>
