@@ -65,11 +65,12 @@ module.exports = {
 
 
   },
-  GetTirageDatePlusUn: function(dt, callback) {
+  GetTirageDatePlusUn : function(dt, callback) {
 
     sql = "select TIR_DATE from myloto.tirages where TIR_DATE>'" + dt + "' order by TIR_DATE asc limit 1";
     this.query(sql,function creaStat(err,result){
-            if(err != null) {
+            if(err != null || result.length <= 0) {
+              if (result.length<=0) err = "Pas encore de tirage aprés la date " + dt;
               logger.error("ATTENTION ! ", err);
               callback(err,null);
             } else {

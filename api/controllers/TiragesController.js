@@ -22,7 +22,39 @@ module.exports = {
       console.log("de retour : " + re);
     });
   },
+  tirageDatePlusUn: function(req, res) {
+    var l_result = {
+      err: '',
+      resultat : null,
+      
+    };
+    sails.models.tirages.GetTirageDatePlusUn(req.query.ladate,function(err, result) {
+      if(err != null) {
+        l_result.err = err;
+      } else {
+        l_result.resultat = result;
+      }
+      return res.send(JSON.stringify(l_result)); 
+    });
 
+  },
+  tirageDateMoinsUn: function(req, res) {
+    var l_result = {
+      err: '',
+      resultat : null,
+      
+    };
+    sails.models.tirages.GetTirageDateMoinsUn(req.query.ladate,function(err, result) {
+      if(err != null) {
+        l_result.err = err;
+      } else {
+        l_result.resultat = result;
+      }
+      return res.send(JSON.stringify(l_result)); 
+    });
+
+
+  },
   /**
    * `TiragesController.import()`
    */
