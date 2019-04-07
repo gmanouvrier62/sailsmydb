@@ -15,7 +15,7 @@ err en ballade?<%=naverr%><br>
 </div>
 <div id="droite" style="float:left;background-color:#EEEEEE;width:700px;height:500px">
 	<div id="compare_a_prediction" style="float:top;width:90%;height:9%;background-color:#63c9e2">
-		<div id="div_date_compare" style="float:left"></div><div id="div_tirage_compare" style="float:left"></div><div id="previous" style="float:left"></div><div id="next" style="float:left"></div>
+		<div id="div_date_compare" style="float:left"></div><div id="div_tirage_compare" style="float:left"></div><div id="previous" class="previous" style="float:left"></div><div id="next" class="next" style="float:left"></div>
 	</div>
 
 	<div id="div_load_a_prediction" style="float:bottom;width:90%;height:90%;background-color:#a9dbe8">
@@ -119,11 +119,12 @@ $(".noeil").each(function(){
 		var idx = $(this).attr("datas");
 
 		$.get('/predictions/load',{'ladate': idx},function(result_load) {
-			alert(result_load);
+			
 			$( "#div_load_a_prediction" ).html(result_load);
 		});
 		$.get('/tirages/getplusun',{'ladate': idx},function(get_tirage) {
 			//alert(result_load);
+			get_tirage = JSON.parse(get_tirage);
 			if(get_tirage.err != null || get_tirage.err != "") {
 				alert(get_tirage.err);
 			} else {

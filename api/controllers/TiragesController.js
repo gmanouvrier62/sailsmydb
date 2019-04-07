@@ -30,10 +30,14 @@ module.exports = {
     };
     sails.models.tirages.GetTirageDatePlusUn(req.query.ladate,function(err, result) {
       if(err != null) {
+        logger.warn("err : " + err);
         l_result.err = err;
       } else {
+        logger.warn("no err");
         l_result.resultat = result;
+
       }
+      logger.warn(l_result);
       return res.send(JSON.stringify(l_result)); 
     });
 
