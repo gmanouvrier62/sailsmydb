@@ -34,7 +34,8 @@ module.exports = {
         l_result.err = err;
       } else {
         logger.warn("no err");
-        l_result.resultat = result;
+        result[0].TIR_DATE = moment(result[0].TIR_DATE).format("YYYY-MM-DD HH:mm:ss");
+        l_result.resultat = result[0];
 
       }
       logger.warn(l_result);
@@ -52,7 +53,8 @@ module.exports = {
       if(err != null) {
         l_result.err = err;
       } else {
-        l_result.resultat = result;
+        result[0].TIR_DATE = moment(result[0].TIR_DATE).format("YYYY-MM-DD HH:mm:ss");
+        l_result.resultat = result[0];
       }
       return res.send(JSON.stringify(l_result)); 
     });
@@ -147,26 +149,26 @@ module.exports = {
         if (err !== null && err !== undefined) return res.send("ERR");
         logger.warn("r ", retour);
         if (retour.retour_date < datounette) datounette = retour.retour_date;
-        details.push(retour.ecart);
+        details.push(retour.ecart + 1);
         sails.models.tirages.getLastDateForNumber(numero_reference[1], ladate, function(err, retour) {
           if (err !== null && err !== undefined) return res.send("ERR");
           if (retour.retour_date < datounette) datounette = retour.retour_date;
           logger.warn("r ", retour.retour_date);
-          details.push(retour.ecart);
+          details.push(retour.ecart + 1);
           sails.models.tirages.getLastDateForNumber(numero_reference[2], ladate, function(err, retour) {
             if (err !== null && err !== undefined) return res.send("ERR");
             if (retour.retour_date < datounette) datounette = retour.retour_date;
             logger.warn("r ", retour.retour_date);
-            details.push(retour.ecart);
+            details.push(retour.ecart + 1);
             sails.models.tirages.getLastDateForNumber(numero_reference[3], ladate, function(err, retour) {
               if (err !== null && err !== undefined) return res.send("ERR");
               if (retour.retour_date < datounette) datounette = retour.retour_date;
               logger.warn("r ", retour.retour_date);
-              details.push(retour.ecart);
+              details.push(retour.ecart + 1);
               sails.models.tirages.getLastDateForNumber(numero_reference[4], ladate, function(err, retour) {
                 if (err !== null && err !== undefined) return res.send("ERR");
                 if (retour.retour_date < datounette) datounette = retour.retour_date;
-                details.push(retour.ecart);
+                details.push(retour.ecart + 1);
                 logger.warn("aurait fini le ", datounette );
                 sql = "select count(*) as ttl from myloto.tirages where TIR_DATE between '" + datounette.format("YYYY-MM-DD HH:mm:ss")  + "' and '" + moment(ladate).format("YYYY-MM-DD HH:mm:ss")  + "'";
                 logger.warn("big sql : ", sql);
@@ -391,7 +393,8 @@ module.exports = {
       resultat : null,
       datas: null
     };
-    console.log("brut : ", req.query.datas);
+    console.log("save query.datas brut : ", req.query.datas);
+    console.log("save query.ladate : ", req.query.ladate);
     var datas = JSON.stringify(req.query.datas);
     datas = JSON.parse(datas);
     var ladate = req.query.ladate;

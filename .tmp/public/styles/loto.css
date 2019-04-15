@@ -106,6 +106,15 @@
  	padding-left: 10px;
  	padding-top: 5px;
  }
+ .debrief {
+  background-color: #f7952c;
+  border : 1px solid red;
+ }
+ .debrief_c {
+  background-color: #f29d9d;
+  border : 1px solid red;
+  padding-left: 5px;
+ }
  .noeil {
  	background-image: url('../images/png/oeil.png');
  	background-repeat: no-repeat;

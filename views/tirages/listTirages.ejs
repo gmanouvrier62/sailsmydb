@@ -252,7 +252,7 @@ $(".getPanel").click(function(){
 
 
 
-
+								  //alert('avant save ' + jP);
 						          $.get('tirages/prediction_save',{'datas': jP, 'ladate': $(this).val()},function(result_save) {
 
 						          	if(result_save.err != null) {
