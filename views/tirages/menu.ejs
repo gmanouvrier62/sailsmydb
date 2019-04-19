@@ -93,11 +93,12 @@ var lineChartDataStats = {
 
 };
 
-
+$("#div2_load_prediction").hide();
 require(['jquery-ui','pnotify','mesreductions'], function () {
 
-	
+	alert('rrr');
 	$("#progress").hide();
+	$("#div2_load_prediction").hide();
 	//gojs section
 	var mestirages = {
 					  id: null,
@@ -667,10 +668,41 @@ $("#lnkCreateT").click(function(){
 
 $("#lnkLoadPredictions").click(function(){
 
-	$.get('predictions/home',{action:'list'},function(data){
-	           					
-	           				
+	
+	
+	$( "#div2_load_prediction" ).dialog({
+		open: function( event, ui ) {
+			//C'est là qu'on chare
+			$.get('predictions/home',{},function(result_load) {
+				$( "#div2_load_prediction" ).html(result_load);
+			});
+		},
+		autoOpen: true,
+		width: 1100,
+		height:650,
+		position:['20','20'],
+		title: "Charger les predictions",
+		modal: true,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					
+				}
+			},
+			{
+				text: "Cancel",
+				click: function() {
+					$( this ).dialog( "close" );
+				
+				}
+			}]
 	});
+						
+
+
+
+
 });
 
 

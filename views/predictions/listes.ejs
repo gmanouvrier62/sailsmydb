@@ -52,8 +52,23 @@ function print_and_compare(tirage) {
 	var nbLignes = trs.length;
 	//alert ("nbLignes " + nbLignes);
 	console.log("le nb ligne",nbLignes);
+	var ttl_gains = 0;
 	for (var cpt=0;cpt<nbLignes;cpt++) {
+		var gains = {
+						"r0c": 2.2, 
+						"r1c": 2.2,
+						"r2": 5, 
+						"r2c": 10, 
+						"r3": 20, 
+						"r3c": 50, 
+						"r4": 500, 
+						"r4c": 1000, 
+						"r5": 100000, 
+						"r5c": 1000000
+					};
+
 		var instance = 0;
+		var complementaire = "";
 		//nm1
 		var nm1 = trs.eq(cpt).find('td').eq(0).text();
 		//alert ("num1 " + nm1);
@@ -95,9 +110,12 @@ function print_and_compare(tirage) {
 		if(nmc == tirage.TIR_C) {
 			trs.eq(cpt).find('td').eq(5).addClass("case_sel");
 			trs.eq(cpt).find('td').eq(7).html("complémentaire");
+			complementaire = "c";
+			//alert("vu");
 		} else {
 			trs.eq(cpt).find('td').eq(5).removeClass("case_sel");
 			trs.eq(cpt).find('td').eq(7).html(" ");
+			complementaire = "";
 		}
 		
 		if (instance > 1) 
@@ -105,11 +123,27 @@ function print_and_compare(tirage) {
 		else 
 			trs.eq(cpt).find('td').eq(6).html(" ");	
 		//alert('zb');
+		
+		var curr_gains = "r" + instance + complementaire;
+		//alert(curr_gains);
+		
+		if(gains[curr_gains] != undefined) {
+			ttl_gains += gains[curr_gains];
+			//if(complementaire != "") alert(gains[curr_gains]);
+		}
 		instance = 0;
 
 	}
-
-
+	var cout = 2.2 * (nbLignes / 2);
+	var solde = (ttl_gains - cout);
+	solde = parseInt(solde * 100) / 100;
+	var debrief_gains = "Cout : " + cout + ", gains : " + ttl_gains + ", solde : " + solde;
+	if ((ttl_gains - cout) > 0) {
+		$("#estimations").css("background-color", "#b9f4b0");
+	} else {
+		$("#estimations").css("background-color", "#fc7e7e");
+	}
+	$("#estimations"). html(debrief_gains);
 
 }
 

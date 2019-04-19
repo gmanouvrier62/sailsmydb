@@ -586,44 +586,7 @@ Récupérer un panel sur X tirages <div class="getPanel"></div>
 			</table>
 		</td>
 		<td style="vertical-align:top">
-			<div id="dvRappel"></div>
-			<div id="dvRed" style="overflow:auto;padding: 0.5em;height:500px;width:380px;float:left" >
-			<h3>Liste des réductions effectuées</h3>
-			<font style='size:10px'><i>En survolant les différents tirages à gauche, nous visualiserons les numéros présents dans les sélections ci-dessous</i></font><br><br>
 			
-<div class="panel panel-default">
- <% for(var t=0;t<mestirages.length;t++) 
-			{
-			%>
-			  <!-- Default panel contents -->
-			  <div id="<%=mestirages[t].MTIR_DATE%>" class="panel-heading">
-
-			  <%=mestirages[t].MTIR_DATE%>
-			  
-
-			  </div>
-			  <div id="content_<%=mestirages[t].MTIR_DATE%>" class="panel-body">
-			    <div id="<%=mestirages[t].MTIR_1%>" class='case'><%=mestirages[t].MTIR_1%></div>
-			    <div id="<%=mestirages[t].MTIR_2%>" class='case'><%=mestirages[t].MTIR_2%></div>
-			    <div id="<%=mestirages[t].MTIR_3%>" class='case'><%=mestirages[t].MTIR_3%></div>
-			    <div id="<%=mestirages[t].MTIR_4%>" class='case'><%=mestirages[t].MTIR_4%></div>
-			    <div id="<%=mestirages[t].MTIR_5%>" class='case'><%=mestirages[t].MTIR_5%></div>
-			    <div id="<%=mestirages[t].MTIR_C%>" class='casec'><%=mestirages[t].MTIR_C%></div>
-			    
-			  </div>
-
- <% } %>	
-</div>
-			
-
-
-				
-
-
-
-
-
-			</div>
 		</td>
 	</tr>
 </table>

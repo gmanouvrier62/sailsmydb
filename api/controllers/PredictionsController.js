@@ -62,14 +62,15 @@ module.exports = {
       //construction d'un tb html
       var hd = "<table id='table_pr'>";
       var ct = "";
-      var ft = "</table>";
+      var ft = "</table><br>";
+      var dv = '<div id="estimations" style="font-size: 14px"></div>';
       for (var t = 0; t < retours.length; t++) {
 
         ct += "<tr><td class='case'>" + retours[t].PRE_1 + "</td><td class='case'>" + retours[t].PRE_2 + "</td><td class='case'>"+ retours[t].PRE_3 + "</td><td class='case'>" + retours[t].PRE_4 + "</td><td class='case'>" + retours[t].PRE_5 + "</td><td class='case_comp'>" + retours[t].PRE_C + "</td><td class = 'debrief'></td><td class = 'debrief_c'></td><tr>";
 
       } 
       //pb de retour ici
-      resultat_html = hd + ct + ft;
+      resultat_html = hd + ct + ft + dv;
       
       return res.send(resultat_html);
 

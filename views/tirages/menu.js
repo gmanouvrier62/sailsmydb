@@ -97,7 +97,7 @@ var lineChartDataStats = {
 require(['jquery-ui','pnotify','mesreductions'], function () {
 
 
-
+$("#div2_load_prediction").hide();
 	
 	$("#progress").hide();
 	//gojs section
@@ -216,6 +216,44 @@ require(['jquery-ui','pnotify','mesreductions'], function () {
 
 
  });
+$("#lnkLoadPredictions").click(function(){
+
+	
+	
+	$( "#div2_load_prediction" ).dialog({
+		open: function( event, ui ) {
+			//C'est là qu'on chare
+			$.get('predictions/home',{},function(result_load) {
+				$( "#div2_load_prediction" ).html(result_load);
+			});
+		},
+		autoOpen: true,
+		width: 1100,
+		height:650,
+		position:['20','20'],
+		title: "Charger les predictions",
+		modal: true,
+		buttons: [
+			{
+				text: "Ok",
+				click: function() {
+					
+				}
+			},
+			{
+				text: "Cancel",
+				click: function() {
+					$( this ).dialog( "close" );
+				
+				}
+			}]
+	});
+						
+
+
+
+
+});
 
 $("#lnkCreateR").click(function(){
 		var div_nums = "";
