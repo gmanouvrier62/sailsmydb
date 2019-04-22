@@ -1,0 +1,12 @@
+{
+    "development": {
+        "host": "localhost",
+        "user": "root",
+        "password": "yoda",
+        "driver": "mysql",
+        "database": "myLotox",
+        "multipleStatements": true
+    },
+    
+    "sql-file": true
+}
