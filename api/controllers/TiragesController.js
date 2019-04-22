@@ -509,7 +509,7 @@ module.exports = {
         datas[uni].decr = datas[uni].decr - decrement;
       }
       //prendre un complémentaire
-      dejaChoisi.push(Math.floor(Math.random() * Math.floor(9))+1);
+      dejaChoisi.push(Math.floor(Math.random() * Math.floor(10))+1);
       console.log("un tirage : ", dejaChoisi.join('-'));
       Tirs.push(dejaChoisi.join('-'));
     }

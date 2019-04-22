@@ -182,7 +182,7 @@ $(".getPanel").click(function(){
 										var cl = getClass(tbLigne[lll],datas.skills);
 										htmlL += "<div class='" + cl +"' style='width:20px;height:20px;float:left;border : 1px solid red;margin-right:5px'>" + tbLigne[lll] + "</div>";
 									}
-									htmlL += " - " + tbLigne[5] + "</br>";
+									htmlL += " - " + tbLigne[5] + "<label>  <input id='presel_" + ll +"' type='checkbox' checked></label></br>";
 									html_content += htmlL;
 								}
 								var ct = results.resultat.join("<br>");
