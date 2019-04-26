@@ -228,7 +228,11 @@ $(".getPanel").click(function(){
 						      	  var jP = new Array();
 								  for (v = 0; v < tbPredictif.length; v++) {
 									   var tt = tbPredictif[v].split('-');
-
+									   var isSel = $("#presel_" + v).prop("checked");
+									   if (isSel) 
+									   	$value_sel = 1;
+									   else 
+									   	$value_sel = 0;
 									   var pr = { 
 										  PRE_DATE: null,
 										  PRE_1: null,
@@ -236,7 +240,8 @@ $(".getPanel").click(function(){
 										  PRE_3: null,
 										  PRE_4: null,
 										  PRE_5: null,
-										  PRE_C: null
+										  PRE_C: null,
+										  PRE_SELECTED: 1,
 								  	   };
 
 
@@ -246,13 +251,14 @@ $(".getPanel").click(function(){
 									   pr.PRE_4 = tt[3];
 									   pr.PRE_5 = tt[4];
 									   pr.PRE_C = tt[5];
+									   pr.PRE_SELECTED = $value_sel;
 									   jP.push(pr);
 
 								  }
 
 
 
-								  //alert('avant save ' + jP);
+								  alert('avant save ' + JSON.stringify(jP));
 						          $.get('tirages/prediction_save',{'datas': jP, 'ladate': $(this).val()},function(result_save) {
 
 						          	if(result_save.err != null) {

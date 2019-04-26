@@ -53,6 +53,7 @@ function print_and_compare(tirage) {
 	//alert ("nbLignes " + nbLignes);
 	console.log("le nb ligne",nbLignes);
 	var ttl_gains = 0;
+	var ttl_maconnerie = 0;
 	for (var cpt=0;cpt<nbLignes;cpt++) {
 		var gains = {
 						"r0c": 2.2, 
@@ -128,7 +129,15 @@ function print_and_compare(tirage) {
 		//alert(curr_gains);
 		
 		if(gains[curr_gains] != undefined) {
-			ttl_gains += gains[curr_gains];
+			var objS = trs.eq(cpt).find('td').eq(9).find("input");
+			var flag = objS.prop("checked");
+			if(flag){
+				ttl_gains += gains[curr_gains];
+
+			}
+			else {
+				ttl_maconnerie += gains[curr_gains];
+			}
 			//if(complementaire != "") alert(gains[curr_gains]);
 		}
 		instance = 0;
@@ -137,7 +146,11 @@ function print_and_compare(tirage) {
 	var cout = 2.2 * (nbLignes / 2);
 	var solde = (ttl_gains - cout);
 	solde = parseInt(solde * 100) / 100;
-	var debrief_gains = "Cout : " + cout + ", gains : " + ttl_gains + ", solde : " + solde;
+	var couillonnade = "";
+	if (ttl_maconnerie > 0) {
+		couillonnade = ", mais ma connerie a couté : " + ttl_maconnerie;
+	}
+	var debrief_gains = "Cout : " + cout + ", gains : " + ttl_gains + ", solde : " + solde + couillonnade;
 	if ((ttl_gains - cout) > 0) {
 		$("#estimations").css("background-color", "#b9f4b0");
 	} else {

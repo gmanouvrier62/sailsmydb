@@ -65,8 +65,9 @@ module.exports = {
       var ft = "</table><br>";
       var dv = '<div id="estimations" style="font-size: 14px"></div>';
       for (var t = 0; t < retours.length; t++) {
-
-        ct += "<tr><td class='case'>" + retours[t].PRE_1 + "</td><td class='case'>" + retours[t].PRE_2 + "</td><td class='case'>"+ retours[t].PRE_3 + "</td><td class='case'>" + retours[t].PRE_4 + "</td><td class='case'>" + retours[t].PRE_5 + "</td><td class='case_comp'>" + retours[t].PRE_C + "</td><td class = 'debrief'></td><td class = 'debrief_c'></td><td><div class='noeil'></div></td><td><input type='checkbox'></td><tr>";
+        var val_sel = "";
+        if(retours[t].PRE_SELECTED > 0) val_sel = "checked";
+        ct += "<tr><td class='case'>" + retours[t].PRE_1 + "</td><td class='case'>" + retours[t].PRE_2 + "</td><td class='case'>"+ retours[t].PRE_3 + "</td><td class='case'>" + retours[t].PRE_4 + "</td><td class='case'>" + retours[t].PRE_5 + "</td><td class='case_comp'>" + retours[t].PRE_C + "</td><td class = 'debrief'></td><td class = 'debrief_c'></td><td><div class='noeil'></div></td><td><input id='presel_" + t + "' type='checkbox' " + val_sel + "></td><tr>";
 
       } 
       //pb de retour ici

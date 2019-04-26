@@ -22,10 +22,11 @@ module.exports = {
 
     PRE_4 : { type: 'int' },
 	
-	PRE_5 : { type: 'int' },
+	  PRE_5 : { type: 'int' },
 
+    PRE_C : { type: 'int' },
 
-    PRE_C : { type: 'int' }
+    PRE_SELECTED : { type: 'int' }
   },
   
   GetList: function(callback) {
