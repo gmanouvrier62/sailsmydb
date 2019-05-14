@@ -3,6 +3,63 @@
 var globalPanel = new Array();
 var globalSkills = new Array();
 var tmpTb = new Array();
+
+
+function drawChart(stats) {
+  //line
+  
+
+  /*
+  disons : stats =
+  {
+  	options : {espace_mois: '1', durée: '12'}, 
+  	datasets: 
+  			 [15] = [], 
+  			 [9] =  []
+  }
+ 
+
+  var ctxL = document.getElementById("lineChart").getContext('2d');
+  var myLineChart = new Chart(ctxL, {
+    type: 'line',
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [{
+          label: "My First dataset",
+          data: [65, 59, 80, 81, 56, 55, 40],
+          backgroundColor: [
+            'rgba(105, 0, 132, .2)',
+          ],
+          borderColor: [
+            'rgba(200, 99, 132, .7)',
+          ],
+          borderWidth: 2
+        },
+        {
+          label: "My Second dataset",
+          data: [28, 48, 40, 19, 86, 27, 90],
+          backgroundColor: [
+            'rgba(0, 137, 132, .2)',
+          ],
+          borderColor: [
+            'rgba(0, 10, 130, .7)',
+          ],
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true
+    }
+  });
+  */
+
+}
+
+
+
+
+
 var zb = new Array();
 
 $("#choix_predictif").hide();
@@ -222,13 +279,15 @@ $(".getPanel").click(function(){
 							        datetext = datetext + " " + h + ":" + m + ":" + s;
 
 							        $(this).val(datetext);
-							    },
-						      onClose: function( selectedDate ) {
-						       
+
+
+							        
 						      	  var jP = new Array();
+						      	  //alert(tbPredictif.length);
 								  for (v = 0; v < tbPredictif.length; v++) {
 									   var tt = tbPredictif[v].split('-');
 									   var isSel = $("#presel_" + v).prop("checked");
+									   //alert($("#presel_" + v).prop("checked"));
 									   if (isSel) 
 									   	$value_sel = 1;
 									   else 
@@ -258,7 +317,7 @@ $(".getPanel").click(function(){
 
 
 
-								  alert('avant save ' + JSON.stringify(jP));
+								  //alert('avant save ' + JSON.stringify(jP));
 						          $.get('tirages/prediction_save',{'datas': jP, 'ladate': $(this).val()},function(result_save) {
 
 						          	if(result_save.err != null) {
@@ -275,6 +334,28 @@ $(".getPanel").click(function(){
 
 
 					  			  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							    },
+						      onClose: function( selectedDate ) {
+
 						        //$( "#dt1" ).datepicker( "option", "minDate", selectedDate );
 						      }
 						});

@@ -1,3 +1,5 @@
+--  insert into myloto.progression (select stat_num, count(*) as ttl,  month(stat_date), year(stat_date), now(), now() from stats group by stat_num, year(stat_date), month(stat_date))
+
 -- phpMyAdmin SQL Dump
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net

@@ -51,7 +51,9 @@ module.exports.routes = {
   '/tirages/prediction_save' : 'TiragesController.savePrediction', 
   '/predictions/home'        :  'PredictionsController.listPredictions',
   '/predictions/delete'      :  'PredictionsController.deletePrediction',
-  '/predictions/load'      :  'PredictionsController.loadPrediction'
+  '/predictions/load'      :  'PredictionsController.loadPrediction',
+  '/progression/construction': 'ProgressionController.construct',
+  '/progression/load'        : 'ProgressionController.getAllStats', 
   
   /***************************************************************************
   *                                                                          *

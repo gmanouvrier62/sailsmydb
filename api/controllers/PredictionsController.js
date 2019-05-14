@@ -51,7 +51,20 @@ module.exports = {
 
 
   },
+  createFrequencies: function(req, res) {
+  
+    var result = "";
+    //créer les frequences de sortie des numéros
 
+    return result;
+  },
+  loadFrequencies: function(req, res) {
+  
+    var result = "";
+    //charger les frequences de sortie des numéros
+
+    return result;
+  },
   loadPrediction: function(req, res) {
     var resultat_html = "";
     var idx = req.query.ladate;
