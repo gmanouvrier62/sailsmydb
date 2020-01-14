@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 <% tbGlobalSrv = []; %>
 var globalPanel = new Array();
@@ -5,56 +6,18 @@ var globalSkills = new Array();
 var tmpTb = new Array();
 
 
-function drawChart(stats) {
-  //line
-  
+function drawTest(lineChartData) {
+	
 
-  /*
-  disons : stats =
-  {
-  	options : {espace_mois: '1', durée: '12'}, 
-  	datasets: 
-  			 [15] = [], 
-  			 [9] =  []
-  }
- 
-
-  var ctxL = document.getElementById("lineChart").getContext('2d');
-  var myLineChart = new Chart(ctxL, {
-    type: 'line',
-    data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [{
-          label: "My First dataset",
-          data: [65, 59, 80, 81, 56, 55, 40],
-          backgroundColor: [
-            'rgba(105, 0, 132, .2)',
-          ],
-          borderColor: [
-            'rgba(200, 99, 132, .7)',
-          ],
-          borderWidth: 2
-        },
-        {
-          label: "My Second dataset",
-          data: [28, 48, 40, 19, 86, 27, 90],
-          backgroundColor: [
-            'rgba(0, 137, 132, .2)',
-          ],
-          borderColor: [
-            'rgba(0, 10, 130, .7)',
-          ],
-          borderWidth: 2
-        }
-      ]
-    },
-    options: {
-      responsive: true
-    }
-  });
-  */
-
+	var ctx = document.getElementById("chartContainer").getContext("2d");
+	window.myLine = new Chart(ctx).Line(lineChartData, {responsive: true});
 }
+
+
+
+
+
+
 
 
 
@@ -200,7 +163,10 @@ $(".getPanel").click(function(){
 						l_interface += "<tr><td >Nbre Tirages</td><td><input type='text' id='nombre_tirage' value='50'></td></tr>";
 						l_interface += "<tr><td >Decr./selection</td><td><input type='text' id='decrement' value='10'></td></tr>";
 						
-						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'>  <input type='button' value='LOAD PREDICTION' id='load_prediction'>   </td></tr></table></div>";
+						l_interface += "<tr><td ><input type='button' value='GO' id='go_tirage'></td><td><input type='button' value='SAVE DB' id='save_db'>  <input type='button' value='LOAD PREDICTION' id='load_prediction'>   </td></tr>";
+
+
+						l_interface += "<tr><td><input type='button' value='Evolution/numéro' id='evolution'></td><td></td></tr></table></div>";
 
 						l_interface += "<div id='predictor'  style='float:left;width:300px;height:180px;background-color:#DDDDDD'></div>";
 
@@ -372,6 +338,46 @@ $(".getPanel").click(function(){
 
 						//$("#travail td").css({background-color:#FF0000});
 						
+						$("#evolution").on("click", function() {
+							//même base avec affichage dialog modal que ci dessous et navigation vers http://localhost:800/progression/load
+							alert('ee');
+							$( "#div_load_evolution" ).dialog({
+								open: function( event, ui ) {
+									//C'est là qu'on chare
+									$.get('/progression/load',{},function(result_load) {
+										//$( "#blocDataEvolution" ).html(result_load);
+										var json_result = JSON.parse(result_load);
+										alert(json_result[14]);
+										
+										drawTest(JSON.parse(json_result[14]));
+									});
+								},
+								autoOpen: true,
+								width: 1100,
+								height:650,
+								position:['20','20'],
+								title: "Charger les predictions",
+								modal: true,
+								buttons: [
+									{
+										text: "Ok",
+										click: function() {
+											
+										}
+									},
+									{
+										text: "Cancel",
+										click: function() {
+											$( this ).dialog( "close" );
+										
+										}
+									}]
+							});
+
+						});
+
+
+
 						$( "#load_prediction" ).on( "click", function() {
 							$( "#div_load_prediction" ).dialog({
 								open: function( event, ui ) {
@@ -690,3 +696,13 @@ Nb de tirages arrières <input type='text' id='txtDistance'>
 </div>
 
 <div id='div_load_prediction'>NUNU TU PUE DU CUL, TU PUES DU CUL NUNUUUU!!!!!!!</div>
+<div id='div_load_evolution'>
+	<div id="blocDataEvolution"></div>
+	<div style="width:30%">
+		<div>
+			<canvas id="chartContainer" height="300" width="500"></canvas>
+		</div>
+	</div>
+</div>
+
+

@@ -5,7 +5,7 @@
 <!--<link href="/styles/monitor.css" rel="stylesheet" type="text/css">-->
 <link href="/js/dependencies/pnotify.custom.min.css" rel="stylesheet">
 <link href="/js/dependencies/jquery_ui/jquery-ui.css" rel="stylesheet">
-
+<script src="/js/dependencies/chart/Chart.js"></script>
 <link href="/styles/loto.css" rel="stylesheet">
 <link href="/styles/highlight.css" rel="stylesheet">
 <link rel="stylesheet" href="/styles/circle.css">
@@ -25,9 +25,12 @@
 
 
 <script type="text/javascript" data-main="/js/dependencies/require.main.js"  src="/js/dependencies/require.js"></script>
+
 <script type="text/javascript" src="/js/loto.mestirages.js"></script>
 <script type="text/javascript" src="/js/dependencies/mesreductions.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
 <script>
 
 var currentMestiragesId = null;
