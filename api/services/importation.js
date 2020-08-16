@@ -2,6 +2,7 @@ var events = require('events');
 var request = require('request');
 var util = require("util");
 var fs = require('fs');
+var cheerio = require('cheerio');
 
 function importation(){
       //this.pName="/dev/ttyACM0";   
@@ -9,15 +10,130 @@ function importation(){
       //this.rawTmp="";//stockage des infos entre les tags D et F
       events.EventEmitter.call(this);    
       //this.serialPort=undefined;
-  }; 
+  };
+
+importation.prototype.nav2second_prep = function(contentHtml, callback) {
+    $ = cheerio.load(contentHtml);
+    //Traitement du parsing html
+    //console.log(contentHtml.toString());
+    var tbL = [];
+    var tb=$('a').each(function(i,elem){
+      //si href commence par /loto/resultats/rapports_tirage alors telechargement
+       var lien_href = $(this).attr('href');
+       //je recherche tous les liens contenant le terme 'rapports' car ce lien pointera sur une info sur le tirage 2
+
+       if(lien_href.substring(24,0) == '/loto/resultats/rapports') {
+          tbL.push(lien_href);
+       }
+
+    });
+    var idd = 0;
+    console.log("les liens : " + tbL.length);
+    console.log("les datas du tb lien : " + util.inspect(tbL));
+
+
+    for(var ttl = 0; ttl < tbL.length; ttl++) {
+
+          var tbPath = tbL[ttl].split('/');
+          var nom_fichier = tbPath[tbPath.length-1];
+          
+          //ok à télécharger
+          idd++;
+          //je navigue sur chaque lien rapports à la recherche du tirage 2
+          this.nav2second(tbL[ttl],nom_fichier, function(err, l_rs) {
+
+            if(this.cpt == tbL.length-1) {
+              callback(null,'OK');
+            }
+
+          }.bind({cpt:idd}));
 
 
 
-importation.prototype.launch = function(full_url,file_loto,callback) {
+
+
+    }
+
+
+
+},
+
+importation.prototype.nav2second = function(full_url, file_loto, callback) {
+  full_url = "https://www.lesbonsnumeros.com" + full_url;
+  var req=new request(full_url, function (error, response, body) {
+            if(response != undefined)
+              console.log(" retour " + response.statusCode + "pour " + full_url);
+            if (!error && response.statusCode == '200') {
+              console.log("ok nav : " + full_url);
+              console.log("va ecrire dans : " + "/home/gilles/node/git/sailsmydb/assets/datas2/" + file_loto);
+              fs.writeFile("/home/gilles/node/git/sailsmydb/assets/datas2/" + file_loto, body, function (err) {
+                  if (err) {
+                    console.log("pas bon pour " + full_url);
+                    
+                  } else {
+                    console.log('It\'s saved! seconde for ' + "/home/gilles/node/git/sailsmydb/assets/datas/" + file_loto);
+                    
+                  }
+
+                  if(err==null || err=='null') {
+                    console.log("ok ça wait");
+                   
+                    callback(null,"OK");
+                    
+                  }
+                  else {
+
+                    console.log("ko ça wait");
+                    callback(err,null);   
+                   
+
+                  }
+
+
+              });
+            } else {
+              console.log("ko nav : " + full_url);
+              callback(response.statusCode,null);
+              
+            }
+          });
+
+//
+  
+
+},
+importation.prototype.synchronizeSecond = function(callback) {
+
+  fs.readdir("/home/gilles/node/git/sailsmydb/assets/datas", function(err, files) { 
+      //console.log(files);
+      var cpt=0;
+      files.forEach(function(file,index,array){
+           
+           if(file !='.' && file != '..' && file != '/') {
+                    console.log("fichier " + file);
+                    var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/datas/" + file);
+                    $ = cheerio.load(contentHtml);
+                   var labase = $("ul").find(".secondTirage");
+                   var chaine = "";
+                   var tb=labase.find("li");
+                   chaine = tb[0].html() + "-" + tb[1].html() + "-" + tb[2].html() + "-" + tb[3].html() + "-" + tb[4].html() + "-" + tb[5].html() + "-" + tb[7].html();
+                   
+                   console.log(chaine);
+
+           }
+
+      });
+
+
+  });
+
+
+},
+importation.prototype.launch = function(full_url, file_loto, callback) {
 
  //tester si fichier existe dejà
  //attention valable pour tous sauf le mois du jour actuel (mis à jour des données du mois)
-	
+ var self = this;
  var req=new request(full_url, function (error, response, body) {
             if(response != undefined)
             	console.log(" retour " + response.statusCode + "pour " + full_url);
@@ -29,8 +145,19 @@ importation.prototype.launch = function(full_url,file_loto,callback) {
                     console.log("pas bon pour " + full_url);
                   } else {
                     console.log('It\'s saved!');
+                    //touca en cb
+                      var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/datas/" + file_loto);
+                     //ok, je sais que le lien vers le tirage 2 se trouvera dans le contentHTML 
+                     self.nav2second_prep(contentHtml, function(err, l_rs) {
+                         callback("ok");
+
+                     });
+
+                    
+
+
                   }
-                 callback("ok");
+                
               });
             }
             else

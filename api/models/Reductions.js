@@ -4,7 +4,7 @@
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
-
+var logger = require('../services/logger.init.js').logger("tom.txt");
 module.exports = {
 
   attributes: {
@@ -15,7 +15,11 @@ module.exports = {
 
     RED_DATE : { type: 'datetime' },
 
-    RED_NUM : { type: 'int' }
+    RED_NUM : { type: 'int' },
+
+    createdAt : { type: 'datetime' },
+  
+    updatedAt : { type: 'datetime' }
     
   },
   compare_a_with_tirage: function (tirage,callback) {

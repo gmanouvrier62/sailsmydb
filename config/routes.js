@@ -35,6 +35,7 @@ module.exports.routes = {
   '/':                      'HomeController.home',
   '/tirages/import' :       'TiragesController.import',
   '/tirages/synchronise' :  'TiragesController.synchronise',
+  '/tirages/synchronise_t2' :  'TiragesController.synchronise_t2',
   '/tirages/getplusun'  :    'TiragesController.tirageDatePlusUn',
   '/tirages/getmoinsun'  :   'TiragesController.tirageDateMoinsUn',
   '/mestirages/home' :      'Mestirages.home',

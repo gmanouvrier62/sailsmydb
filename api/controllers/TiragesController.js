@@ -120,7 +120,8 @@ module.exports = {
 
        if((annee == annee_actuelle) && (mois == 11))
        {
-                   res.redirect("/tirages/synchronise");
+         logger.warn("GILLES on part vers synchro");
+                   res.redirect("/tirages/synchronise?folder=datas");
                   
       }
 
@@ -760,6 +761,7 @@ module.exports = {
 
 
   },
+ 
   /**
    * `TiragesController.synchronise()`
    */
@@ -792,7 +794,10 @@ module.exports = {
                                   var sortie = new Array();
                                   //sortie.push(y);
                                   //var tir = new Tirages();
+                                 
                                   y = y + " 20:00:00";
+                                  
+                                 
                                   var boules=$(this).find("td").eq(1).find("ul");
                                   boules.find("li").each(function()
                                   {
@@ -813,8 +818,8 @@ module.exports = {
                                                     TIR_5: sortie[4],
                                                     TIR_C: sortie[5]};
                                   
-
-                                   
+                                 
+                                 
                                    
                                    getGravite(y,function(err,alors){
                                    
@@ -841,12 +846,20 @@ module.exports = {
                       });//fin de scann tr
 
                     if (index == (files.length-1) ) {
-                      console.log("HIT!");
-                       var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.ejs');
-                       var main = "<div id='container'>-OK import et synchro-</div>";
-                       console.log("txt : " + menu);
-                       var tom = menu.toString();
-                       return res.render ('home/container',{'nom': 'Manouvrius', 'prenom': 'Gillus','tplMenu': tom,'tplMain':main});
+                      
+                     
+                        res.redirect("/tirages/synchronise_t2");
+  
+                        /*
+                        logger.warn("GILLES on a visiblement fini la synchro");
+                        console.log("HIT!");
+                         var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.ejs');
+                         var main = "<div id='container'>-OK import et synchro-</div>";
+                         console.log("txt : " + menu);
+                         var tom = menu.toString();
+                         return res.render ('home/container',{'nom': 'Manouvrius', 'prenom': 'Gillus','tplMenu': tom,'tplMain':main});
+                      */
+                     
                     }
 
                     });
@@ -858,6 +871,72 @@ module.exports = {
     });
 
     
+  },
+
+   synchronise_t2: function (req, res) {
+    
+    var imp= new importation();
+    //lecture des fichiers du repertoire
+    fs.readdir("/home/gilles/node/git/sailsmydb/assets/datas2", function(err, files) { 
+      //console.log(files);
+      var cpt=0;
+      files.forEach(function(file,index,array){
+           
+           if(file !='.' && file != '..' && file != '/') {
+                    console.log("fichier " + file);
+                    var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/datas2/" + file);
+                    $ = cheerio.load(contentHtml);
+                    //Traitement du parsing html
+                    //console.log(contentHtml.toString());
+                    var tbDate=$(this).find("h1").html().split("du ");
+                    var date = "20" + tbDate[1].substr(6,2) + "-" + tbDate[1].substr(3,2) + "-" + tbDate[1].substr(0,2) + " 21:00:00";
+                     console.log("date2 = " + date);
+                    var sortie = new Array();
+                    $(this).find('.tirage tirageSmall loto secondTirage').each(function (i,elem){
+                        $(this).find('li').each(function (i,elem){
+                          if($(this).html()!="")
+                                    sortie.push($(this).html());
+
+                        });
+                    });
+                    var data_values={TIR_DATE:date,
+                                      TIR_1:sortie[0],
+                                      TIR_2:sortie[1],
+                                      TIR_3:sortie[2],
+                                      TIR_4: sortie[3],
+                                      TIR_5: sortie[4],
+                                      TIR_C: 0};
+                    console.log( "les datas de enr2 = " + util.inspect(data_values));
+                    
+                    cpt++;              
+                    getGravite(y,function(err,alors){
+                                   
+                        imp.AddTirages(data_values,alors,function(err){
+
+                            //voir pour mettre des trucs
+                            if(err != null) {
+                              console.log("ERRRRRRRRRRRREURRRRRRR " + err);
+                              //sleep.sleep(10);
+                            }
+                        });
+
+                     });
+           }
+        if (index == (files.length-1) ) {
+                      
+           logger.warn("GILLES on a visiblement fini la synchro");
+           console.log("HIT!");
+           var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.ejs');
+           var main = "<div id='container'>-OK import et synchro-</div>";
+           console.log("txt : " + menu);
+           var tom = menu.toString();
+           return res.render ('home/container',{'nom': 'Manouvrius', 'prenom': 'Gillus','tplMenu': tom,'tplMain':main});
+       
+                     
+         }
+
+      }); //file foreach
+    }); //readdir
   }
 };
 
