@@ -234,12 +234,12 @@ module.exports = {
           logger.info("regarde si ",this[cpt][fld]," = ",value);
           if(this[cpt][fld] == value)
           {
-            logger.info("oui");
+            //logger.info("oui");
             return this[cpt];
           } else logger.info("non"); 
 
         }
-        logger.info("retour final");
+        //logger.info("retour final");
         return null;
     };
 
@@ -345,7 +345,7 @@ module.exports = {
                       tbRetour.get("date", fdate).collection.push(obj.RED_NUM);
 
                       if(id == records.length -1) {
-                        logger.info("le retour qui retourne : ", tbRetour);
+                        //logger.info("le retour qui retourne : ", tbRetour);
                         sails.models.mestirages.find().sort("MTIR_DATE DESC").exec(function(err, rows) {
                           res.render('tirages/listTirages.ejs',{"datas":retourResultat,"reductions": tbRetour,"mestirages": rows});
                         });
@@ -847,7 +847,7 @@ module.exports = {
 
                     if (index == (files.length-1) ) {
                       
-                     
+                        logger.warn("GILLES on part vers synchro_t2");
                         res.redirect("/tirages/synchronise_t2");
   
                         /*
@@ -884,47 +884,54 @@ module.exports = {
            
            if(file !='.' && file != '..' && file != '/') {
                     console.log("fichier " + file);
+                    logger.warn("t2 dans le foreach "  + file);
                     var contentHtml = fs.readFileSync("/home/gilles/node/git/sailsmydb/assets/datas2/" + file);
                     $ = cheerio.load(contentHtml);
                     //Traitement du parsing html
                     //console.log(contentHtml.toString());
-                    var tbDate=$(this).find("h1").html().split("du ");
-                    var date = "20" + tbDate[1].substr(6,2) + "-" + tbDate[1].substr(3,2) + "-" + tbDate[1].substr(0,2) + " 21:00:00";
-                     console.log("date2 = " + date);
-                    var sortie = new Array();
-                    $(this).find('.tirage tirageSmall loto secondTirage').each(function (i,elem){
-                        $(this).find('li').each(function (i,elem){
-                          if($(this).html()!="")
-                                    sortie.push($(this).html());
+                     cpt++;   
+                     logger.warn( "ds fichier " + file + ", h1?=" + $("h2").html());
+                    if($("h2").html() != null) {
+                        var tbDate=$("h2").html().split("du ");
+                        var date = "20" + tbDate[1].substr(6,2) + "-" + tbDate[1].substr(3,2) + "-" + tbDate[1].substr(0,2) + " 21:00:00";
+                         console.log("date2 = " + date);
+                         logger.warn("t2 date dans fichier " + date);
+                        var sortie = new Array();
+                        $('.secondTirage').each(function (i,elem){
+                            logger.warn("t2 on a une classe secondTirage " );
+                            $(this).find('li').each(function (i,elem){
+                              if($(this).html()!="")
+                                        sortie.push($(this).html());
+
+                            });
+                        });
+                        var data_values={TIR_DATE:date,
+                                          TIR_1:sortie[0],
+                                          TIR_2:sortie[1],
+                                          TIR_3:sortie[2],
+                                          TIR_4: sortie[3],
+                                          TIR_5: sortie[4],
+                                          TIR_C: 0};
+                        console.log( "les datas de enr2 = " + util.inspect(data_values));
+                        logger.warn("GILLES on a un set values t2 " + util.inspect(data_values) );
+                                  
+                        getGravite(date,function(err,alors){
+                                       
+                            imp.AddTirages(data_values,alors,function(err){
+
+                                //voir pour mettre des trucs
+                                if(err != null) {
+                                  console.log("ERRRRRRRRRRRREURRRRRRR " + err);
+                                  //sleep.sleep(10);
+                                }
+                            });
 
                         });
-                    });
-                    var data_values={TIR_DATE:date,
-                                      TIR_1:sortie[0],
-                                      TIR_2:sortie[1],
-                                      TIR_3:sortie[2],
-                                      TIR_4: sortie[3],
-                                      TIR_5: sortie[4],
-                                      TIR_C: 0};
-                    console.log( "les datas de enr2 = " + util.inspect(data_values));
-                    
-                    cpt++;              
-                    getGravite(y,function(err,alors){
-                                   
-                        imp.AddTirages(data_values,alors,function(err){
-
-                            //voir pour mettre des trucs
-                            if(err != null) {
-                              console.log("ERRRRRRRRRRRREURRRRRRR " + err);
-                              //sleep.sleep(10);
-                            }
-                        });
-
-                     });
+                    }
            }
-        if (index == (files.length-1) ) {
-                      
-           logger.warn("GILLES on a visiblement fini la synchro");
+        if (cpt == (files.length-1) ) {
+           logger.warn("GILLES index synchro_t2 = " + cpt + " pour un fl length = " + files.length-1 );           
+           logger.warn("GILLES on a visiblement fini la synchro_t2" );
            console.log("HIT!");
            var menu = fs.readFileSync('/home/gilles/node/git/sailsmydb/views/tirages/menu.ejs');
            var main = "<div id='container'>-OK import et synchro-</div>";

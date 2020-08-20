@@ -53,7 +53,7 @@ module.exports = {
             } else {
 
               dt_moins = moment(result[0].TIR_DATE).format("YYYY-MM-DD HH:mm:ss");
-              logger.warn(dt_moins);
+              //logger.warn(dt_moins);
               sails.models.tirages.GetTirage(dt_moins, function(err,retour) {
                 if (err !== null && err !== undefined) return callback(err,null);
                 return callback(null, retour);
@@ -117,7 +117,7 @@ module.exports = {
     };
     sails.models.tirages.GetTirageDateMoinsUn(ladate, function(err, retour, panel) {
         if (err !== null & err !== undefined) return cb("Erreur : " + err, null, null);
-        logger.warn(retour);
+        //logger.warn(retour);
         if (numero_reference.inArray(retour.TIR_1))
           delete numero_reference(retour.TIR_1);
         if (numero_reference.inArray(retour.TIR_2))
