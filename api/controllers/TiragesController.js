@@ -74,7 +74,7 @@ module.exports = {
    var annee_actuelle = moment().year();
   // var date_min = moment({year:2008, month: 9, day:30});
   var date_min = moment({year:2019, month: 1, day:13});
-   for (var annee = 2019; annee <= annee_actuelle; annee++) {
+   for (var annee = 2020; annee <= annee_actuelle; annee++) {
       for(var mois = 0; mois <=11;mois++) {
         var file_loto = "tirages-" + tbMois[mois] + "-" + annee + ".htm"; 
         var full_url = "http://www.lesbonsnumeros.com/loto/resultats/" + file_loto;
